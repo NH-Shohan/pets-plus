@@ -10,11 +10,11 @@ import Link from "next/link";
 
 const BreederCTA = () => {
   return (
-    <section className="bg-mi py-16 px-6 lg:px-20 font-jakarta">
-      <div className="container mx-auto">
-        <div className="bg-[#f3faf8] rounded-[2rem] p-8 md:p-12 lg:p-16 flex flex-col md:flex-row items-center gap-10 md:gap-20">
+    <section className="bg-white py-12 sm:py-16 lg:py-24 font-jakarta">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-mint-faint rounded-[2rem] p-6 sm:p-10 lg:p-16 flex flex-col md:flex-row items-center gap-8 md:gap-12">
           {/* Illustration - Left side */}
-          <div className="shrink-0 w-32 h-32 md:w-48 md:h-48 lg:w-56 lg:h-56 relative">
+          <div className="shrink-0 w-32 h-32 md:w-48 md:h-48 relative">
             <Image
               src="/breeder.svg"
               alt="Breeder illustration"
@@ -24,16 +24,16 @@ const BreederCTA = () => {
           </div>
 
           {/* Content - Right side */}
-          <div className="flex-1 space-y-6 text-center md:text-left">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+          <div className="flex-1 space-y-4 text-center md:text-left">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground tracking-tight">
               Are you a responsible breeder?
             </h2>
-            <p className="text-foreground/70 text-lg leading-relaxed max-w-2xl">
+            <p className="text-foreground text-lg leading-relaxed">
               We'd love to invite you to join our community of trusted breeders.
               We only list screened breeders and help connect you directly with
               educated, serious buyers.
             </p>
-            <div className="pt-2">
+            <div>
               <Link
                 href="/become-a-breeder"
                 className="text-foreground font-bold text-xl underline underline-offset-8 decoration-2 hover:text-primary transition-colors"

@@ -13,8 +13,8 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-primary-dark text-white pt-18 pb-8 font-jakarta border-t border-white/5">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-2">
+    <footer className="bg-primary-dark text-white pt-12 pb-6 font-jakarta border-t border-white/5">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-12">
           {/* Brand Column - Wider for logo and description */}
@@ -166,7 +166,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar - Refined with subtle border and better hierarchy */}
-        <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="border-t border-white/5 pt-6 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
             <p className="text-paragraph text-xs tracking-wide">
               © {currentYear} Pets & Plus. All rights reserved.

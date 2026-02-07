@@ -79,9 +79,9 @@ const breedData = [
 
 const PopularBreeds = () => {
   return (
-    <section className="bg-[#F8F8F8] py-25 font-jakarta">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-2">
-        <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-15 tracking-tight">
+    <section className="bg-[#F8F8F8] py-12 sm:py-16 lg:py-24 font-jakarta">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-12 tracking-tight">
           Learn more about our popular breeds
         </h2>
 

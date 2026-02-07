@@ -56,13 +56,13 @@ const FAQ = () => {
   };
 
   return (
-    <section className="bg-[#f8f9fa] py-24 px-6 lg:px-20 font-jakarta">
-      <div className="max-w-4xl mx-auto">
+    <section className="bg-white py-12 sm:py-16 lg:py-24 font-jakarta">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 space-y-4">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-[#2e2e2e] tracking-tight">
+          <h2 className="text-hero-secondary text-foreground mb-4 font-extrabold tracking-tight">
             Frequently asked questions
           </h2>
-          <p className="text-gray-500 text-lg">
+          <p className="text-body-medium text-foreground">
             Whether you're browsing or selling, we've made it easy.
           </p>
         </div>
