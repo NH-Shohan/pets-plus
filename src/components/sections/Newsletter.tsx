@@ -28,7 +28,7 @@ const Newsletter = () => {
               className="mt-6 max-w-xl mx-auto"
               onSubmit={(e) => e.preventDefault()}
             >
-              <div className="relative flex flex-row items-center p-1 bg-white rounded-full shadow-lg">
+              <div className="relative flex flex-row items-center p-1 bg-white rounded-full">
                 <input
                   type="email"
                   placeholder="Email Address"
