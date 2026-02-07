@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 export default function VerifiedBreeders() {
   return (
-    <section className="w-full bg-mint-faint py-16 sm:py-20 lg:py-24">
+    <section className="w-full bg-mint-subtle! py-16 sm:py-20 lg:py-24">
       <div className="mx-auto container px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-52 items-center">
           {/* Left - Image */}
@@ -36,7 +36,7 @@ export default function VerifiedBreeders() {
               Every member is carefully screened before joining.
             </h2>
 
-            <p className="text-body-base text-foreground max-w-lg">
+            <p className="text-body-medium text-foreground max-w-lg text-left!">
               Every seller on our platform is carefully screened to help ensure authenticity, transparency, and
               responsible practices.
             </p>

@@ -31,7 +31,7 @@ export default function Categories() {
         {/* Header */}
         <div className="flex flex-col items-center text-center mb-8 sm:mb-12">
           <h2 className="text-hero-tertiary text-foreground mb-4">Browse by category</h2>
-          <p className="text-body-base text-foreground max-w-xl">
+          <p className="text-body-medium text-foreground max-w-xl">
             These dogs have the potential to be wonderful companions for your whole family with the right training.
           </p>
         </div>
