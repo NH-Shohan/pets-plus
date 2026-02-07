@@ -1,26 +1,195 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@import 'tailwindcss';
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Color System */
+  --color-background: #f8f9fa;
+  --color-background-light: #f6f6f6;
+  --color-foreground: #2e2e2e;
+
+  --color-primary: #1f8f86;
+  --color-primary-dark: #0f3d3a;
+
+  --color-surface: #ffffff;
+  --color-surface-light: #e2e4e9;
+
+  --color-mint-light: #edf8f7;
+  --color-mint-subtle: #e8f2f2;
+  --color-mint-faint: #f3faf8;
+
+  --color-border: #e5e7eb;
+
+  --color-light: #cdcdcd;
+
+  /* Font Aliases for Utilities (font-jakarta, font-vietnam) */
+  --font-jakarta: var(--font-plus-jakarta-sans);
+  --font-vietnam: var(--font-be-vietnam-pro);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Root Variable Definitions (Fallbacks) */
+:root {
+  --background: #f8f9fa;
+  --foreground: #2e2e2e;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-plus-jakarta-sans), sans-serif;
+}
+
+/* Typography System - Semantic Classes */
+@layer utilities {
+  /* Hero Titles */
+  .text-hero-primary {
+    font-family: var(--font-plus-jakarta-sans);
+    font-size: 100px;
+    font-weight: 700;
+    line-height: 90px;
+    letter-spacing: -0.01em;
+  }
+
+  .text-hero-secondary {
+    font-family: var(--font-plus-jakarta-sans);
+    font-size: 80px;
+    font-weight: 700;
+    line-height: 100%;
+    letter-spacing: -0.01em;
+    text-align: center;
+  }
+
+  .text-hero-tertiary {
+    font-family: var(--font-plus-jakarta-sans);
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 60px;
+    letter-spacing: -0.01em;
+    text-align: center;
+  }
+
+  /* Display Headings */
+  .text-display-large {
+    font-family: var(--font-plus-jakarta-sans);
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 100%;
+    letter-spacing: -0.01em;
+  }
+
+  .text-display-medium {
+    font-family: var(--font-plus-jakarta-sans);
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0.01em;
+    text-align: center;
+    text-transform: capitalize;
+  }
+
+  .text-display-small {
+    font-family: var(--font-plus-jakarta-sans);
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 34px;
+    letter-spacing: 0.01em;
+    text-align: center;
+  }
+
+  /* Headings */
+  .text-heading-large {
+    font-family: var(--font-plus-jakarta-sans);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 34px;
+    letter-spacing: 0;
+  }
+
+  .text-heading-medium {
+    font-family: var(--font-plus-jakarta-sans);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: 0.01em;
+    text-align: center;
+  }
+
+  .text-heading-small {
+    font-family: var(--font-plus-jakarta-sans);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 50px;
+    letter-spacing: 0.01em;
+    text-transform: capitalize;
+  }
+
+  /* Body Text */
+  .text-body-large {
+    font-family: var(--font-plus-jakarta-sans);
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 34px;
+    letter-spacing: 0;
+  }
+
+  .text-body-medium {
+    font-family: var(--font-plus-jakarta-sans);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0.01em;
+    text-align: center;
+  }
+
+  .text-body-small {
+    font-family: var(--font-plus-jakarta-sans);
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 30px;
+    letter-spacing: 0;
+    text-align: center;
+  }
+
+  .text-body-base {
+    font-family: var(--font-plus-jakarta-sans);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 30px;
+    letter-spacing: 0;
+  }
+
+  .text-body-xs {
+    font-family: var(--font-plus-jakarta-sans);
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 34px;
+    letter-spacing: 0;
+  }
+
+  /* Accent Text (Be Vietnam Pro) */
+  .text-accent-title {
+    font-family: var(--font-be-vietnam-pro);
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 44px;
+    letter-spacing: 0.01em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .text-accent-large {
+    font-family: var(--font-be-vietnam-pro);
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 44px;
+    letter-spacing: 0;
+    text-align: center;
+  }
+
+  .text-accent-small {
+    font-family: var(--font-be-vietnam-pro);
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    letter-spacing: 0.01em;
+    text-align: center;
+  }
 }
