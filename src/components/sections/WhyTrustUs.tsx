@@ -30,7 +30,7 @@ export default function WhyTrustUs() {
         {/* Header */}
         <div className="flex flex-col items-center text-center mb-12 sm:mb-16">
           <h2 className="text-hero-secondary text-foreground mb-4">Why buyers trust us</h2>
-          <p className="text-body-base text-foreground">
+          <p className="text-body-medium text-foreground">
             Whether you&apos;re browsing or selling, we&apos;ve made it easy.
           </p>
         </div>
