@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @theme inline {
   /* Color System */
@@ -20,6 +20,7 @@
 
   --color-light: #cdcdcd;
 
+  --color-paragraph: #cfeae7;
   /* Font Aliases for Utilities (font-jakarta, font-vietnam) */
   --font-jakarta: var(--font-plus-jakarta-sans);
   --font-vietnam: var(--font-be-vietnam-pro);
