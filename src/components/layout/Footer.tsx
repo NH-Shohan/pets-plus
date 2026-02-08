@@ -1,12 +1,5 @@
 import Link from "next/link";
-import {
-  Facebook,
-  Instagram,
-  Twitter,
-  Youtube,
-  Globe,
-  Heart,
-} from "lucide-react";
+import { Facebook, Instagram, Twitter, Youtube, Heart } from "lucide-react";
 import Image from "next/image";
 
 const Footer = () => {
@@ -51,7 +44,7 @@ const Footer = () => {
                 <Link
                   key={idx}
                   href="#"
-                  className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-[#1f8f86] hover:text-white transition-all duration-300 transform hover:-translate-y-1"
+                  className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-all duration-300 transform hover:-translate-y-1"
                   aria-label={social.label}
                 >
                   {social.icon}
