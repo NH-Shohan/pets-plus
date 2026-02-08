@@ -1,30 +1,30 @@
-"use client";
+'use client';
 
-import AnimateInView from "@/components/ui/AnimateInView";
-import SectionHeader from "@/components/ui/SectionHeader";
-import { defaultStagger, defaultTransition, fadeUp } from "@/lib/animations";
-import { motion } from "motion/react";
-import Image from "next/image";
-import Link from "next/link";
+import AnimateInView from '@/components/ui/AnimateInView';
+import SectionHeader from '@/components/ui/SectionHeader';
+import { defaultStagger, defaultTransition, fadeUp } from '@/lib/animations';
+import { motion } from 'motion/react';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const categories = [
   {
     id: 1,
-    name: "Pets & Companions",
-    image: "/category-1.png",
-    href: "/",
+    name: 'Pets & Companions',
+    image: '/category-1.png',
+    href: '/',
   },
   {
     id: 2,
-    name: "Farm & Livestock",
-    image: "/category-2.png",
-    href: "/",
+    name: 'Farm & Livestock',
+    image: '/category-2.png',
+    href: '/',
   },
   {
     id: 3,
-    name: "Exotic Species",
-    image: "/category-3.png",
-    href: "/",
+    name: 'Exotic Species',
+    image: '/category-3.png',
+    href: '/',
   },
 ];
 
@@ -40,10 +40,7 @@ export default function Categories() {
         />
 
         {/* View all link */}
-        <AnimateInView
-          variants={fadeUp}
-          className="flex justify-end mb-[27px] mr-6"
-        >
+        <AnimateInView variants={fadeUp} className="flex justify-end mb-[27px] mr-6">
           <Link
             href="/"
             className="text-body-small text-foreground underline underline-offset-4 hover:text-primary transition-colors"
@@ -53,22 +50,12 @@ export default function Categories() {
         </AnimateInView>
 
         {/* Category Cards - stagger when in view */}
-        <AnimateInView
-          variants={defaultStagger}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
+        <AnimateInView variants={defaultStagger} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {categories.map((category) => (
-            <motion.div
-              key={category.id}
-              variants={fadeUp}
-              transition={defaultTransition}
-            >
-              <Link
-                href={category.href}
-                className="group flex flex-col items-center"
-              >
+            <motion.div key={category.id} variants={fadeUp} transition={defaultTransition}>
+              <Link href={category.href} className="group flex flex-col items-center">
                 {/* Image Container */}
-                <div className="w-full rounded-2xl overflow-hidden mb-7">
+                <div className="w-full rounded-2xl overflow-hidden mb-5 lg:mb-7">
                   <Image
                     src={category.image}
                     alt={category.name}
@@ -79,9 +66,7 @@ export default function Categories() {
                 </div>
 
                 {/* Category Name */}
-                <h3 className="text-display-medium text-foreground">
-                  {category.name}
-                </h3>
+                <h3 className="text-display-medium text-foreground">{category.name}</h3>
               </Link>
             </motion.div>
           ))}
