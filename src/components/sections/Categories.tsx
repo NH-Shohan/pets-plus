@@ -2,6 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "motion/react";
+import AnimateInView from "@/components/ui/AnimateInView";
+import { defaultStagger, defaultTransition, fadeUp } from "@/lib/animations";
 
 const categories = [
   {
@@ -29,7 +32,10 @@ export default function Categories() {
     <section className="w-full bg-background py-12 sm:py-16 lg:py-24">
       <div className="mx-auto container px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="flex flex-col items-center text-center mb-8 sm:mb-12">
+        <AnimateInView
+          variants={fadeUp}
+          className="flex flex-col items-center text-center mb-8 sm:mb-12"
+        >
           <h2 className="text-hero-tertiary text-foreground mb-4">
             Browse by category
           </h2>
@@ -37,44 +43,52 @@ export default function Categories() {
             These dogs have the potential to be wonderful companions for your
             whole family with the right training.
           </p>
-        </div>
+        </AnimateInView>
 
         {/* View all link */}
-        <div className="flex justify-end mb-3">
+        <AnimateInView variants={fadeUp} className="flex justify-end mb-3">
           <Link
             href="/"
             className="text-body-xs text-foreground underline underline-offset-4 hover:text-primary transition-colors"
           >
             View all listings
           </Link>
-        </div>
+        </AnimateInView>
 
-        {/* Category Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Category Cards - stagger when in view */}
+        <AnimateInView
+          variants={defaultStagger}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
           {categories.map((category) => (
-            <Link
+            <motion.div
               key={category.id}
-              href="/"
-              className="group flex flex-col items-center"
+              variants={fadeUp}
+              transition={defaultTransition}
             >
-              {/* Image Container */}
-              <div className="w-full rounded-2xl overflow-hidden mb-4">
-                <Image
-                  src={category.image}
-                  alt={category.name}
-                  width={400}
-                  height={500}
-                  className="w-full h-full object-cover"
-                />
-              </div>
+              <Link
+                href={category.href}
+                className="group flex flex-col items-center"
+              >
+                {/* Image Container */}
+                <div className="w-full rounded-2xl overflow-hidden mb-4">
+                  <Image
+                    src={category.image}
+                    alt={category.name}
+                    width={400}
+                    height={500}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
 
-              {/* Category Name */}
-              <h3 className="text-display-medium text-foreground">
-                {category.name}
-              </h3>
-            </Link>
+                {/* Category Name */}
+                <h3 className="text-display-medium text-foreground">
+                  {category.name}
+                </h3>
+              </Link>
+            </motion.div>
           ))}
-        </div>
+        </AnimateInView>
       </div>
     </section>
   );

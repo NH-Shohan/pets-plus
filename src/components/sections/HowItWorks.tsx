@@ -1,6 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "motion/react";
+import AnimateInView from "@/components/ui/AnimateInView";
+import { defaultStagger, defaultTransition, fadeUp } from "@/lib/animations";
 
 const steps = [
   {
@@ -31,20 +34,29 @@ export default function HowItWorks() {
     <section className="w-full bg-white py-12 sm:py-16 lg:py-24">
       <div className="mx-auto container px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="flex flex-col items-center text-center mb-12 sm:mb-16">
+        <AnimateInView
+          variants={fadeUp}
+          transition={defaultTransition}
+          className="flex flex-col items-center text-center mb-12 sm:mb-16"
+        >
           <h2 className="text-hero-secondary text-foreground mb-4">
             How it works
           </h2>
           <p className="text-body-medium text-foreground">
             Whether you&apos;re browsing or selling, we&apos;ve made it easy.
           </p>
-        </div>
+        </AnimateInView>
 
-        {/* Steps */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Steps - stagger when in view */}
+        <AnimateInView
+          variants={defaultStagger}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
           {steps.map((step) => (
-            <div
+            <motion.div
               key={step.id}
+              variants={fadeUp}
+              transition={defaultTransition}
               className="flex flex-col items-center text-center"
             >
               {/* Image */}
@@ -67,9 +79,9 @@ export default function HowItWorks() {
               <p className="text-body-base text-foreground max-w-[300px]">
                 {step.description}
               </p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </AnimateInView>
       </div>
     </section>
   );
