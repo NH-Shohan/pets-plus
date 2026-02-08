@@ -1,24 +1,24 @@
-'use client';
+"use client";
 
-import Button from '@/components/ui/Button';
-import NavDropdown, { type DropdownItem } from '@/components/ui/NavDropdown';
-import SearchInput from '@/components/ui/SearchInput';
-import { defaultStagger, defaultTransition, fadeUp } from '@/lib/animations';
-import { Menu, MoreHorizontal, X } from 'lucide-react';
-import { AnimatePresence, motion } from 'motion/react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { useState } from 'react';
+import Button from "@/components/ui/Button";
+import NavDropdown, { type DropdownItem } from "@/components/ui/NavDropdown";
+import SearchInput from "@/components/ui/SearchInput";
+import { defaultStagger, defaultTransition, fadeUp } from "@/lib/animations";
+import { Menu, MoreHorizontal, X } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
+import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 
 // Static data for Browse dropdown
 const browseItems: DropdownItem[] = [
-  { id: '1', label: 'Pets & Companions', href: '#' },
-  { id: '2', label: 'Farm & Livestock', href: '#' },
-  { id: '3', label: 'Exotic Species', href: '#' },
-  { id: '4', label: 'Breeders', href: '#' },
+  { id: "1", label: "Pets & Companions", href: "#" },
+  { id: "2", label: "Farm & Livestock", href: "#" },
+  { id: "3", label: "Exotic Species", href: "#" },
+  { id: "4", label: "Breeders", href: "#" },
 ];
 
-const shopItem: DropdownItem = { id: '1', label: 'Shop', href: '#' };
+const shopItem: DropdownItem = { id: "1", label: "Shop", href: "#" };
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -27,18 +27,40 @@ export default function Navbar() {
     setIsMobileMenuOpen((prev) => !prev);
   };
 
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMobileMenuOpen]);
+
   return (
     <header className="sticky top-0 z-50 w-full bg-surface border-b border-border">
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8 py-2">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link href="/" className="shrink-0">
-            <Image src="/logo.svg" alt="Pets&Plus" width={242} height={60} className="w-auto" priority />
+            <Image
+              src="/logo.svg"
+              alt="Pets&Plus"
+              width={242}
+              height={60}
+              className="w-auto"
+              priority
+            />
           </Link>
 
           {/* Desktop Search - Centered */}
           <div className="hidden lg:flex flex-1 justify-center max-w-lg">
-            <SearchInput placeholder="Search" className="w-full" onSearch={(query) => console.log('Search:', query)} />
+            <SearchInput
+              placeholder="Search"
+              className="w-full"
+              onSearch={(query) => console.log("Search:", query)}
+            />
           </div>
 
           {/* Desktop Navigation */}
@@ -69,16 +91,24 @@ export default function Navbar() {
             type="button"
             onClick={toggleMobileMenu}
             className="lg:hidden p-2 text-foreground hover:text-primary hover:bg-surface-light rounded-lg transition-all duration-200"
-            aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={isMobileMenuOpen}
           >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isMobileMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
           </button>
         </div>
 
         {/* Mobile Search - Below navbar on desktop, visible on tablet */}
         <div className="hidden md:flex lg:hidden py-4">
-          <SearchInput placeholder="Search" className="w-full" onSearch={(query) => console.log('Search:', query)} />
+          <SearchInput
+            placeholder="Search"
+            className="w-full"
+            onSearch={(query) => console.log("Search:", query)}
+          />
         </div>
       </nav>
 
@@ -100,70 +130,100 @@ export default function Navbar() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ x: '100%' }}
+            initial={{ x: "100%" }}
             animate={{ x: 0 }}
-            exit={{ x: '100%' }}
-            transition={{ type: 'tween', duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="lg:hidden fixed top-20 right-0 bottom-0 w-[85%] max-w-sm z-50 bg-surface border-l border-border shadow-lg h-screen"
+            exit={{ x: "100%" }}
+            transition={{
+              type: "tween",
+              duration: 0.3,
+              ease: [0.25, 0.46, 0.45, 0.94],
+            }}
+            className="lg:hidden fixed top-20 right-0 bottom-0 w-full z-50 bg-surface border-l border-border shadow-lg h-[100dvh-80px]"
           >
-            <div className="px-4 py-6 space-y-4 h-full overflow-y-auto">
-              {/* Mobile Search */}
-              <div className="md:hidden">
-                <SearchInput
-                  placeholder="Search"
-                  className="w-full"
-                  onSearch={(query) => {
-                    console.log('Search:', query);
-                    setIsMobileMenuOpen(false);
-                  }}
-                />
-              </div>
+            <div className="px-4 py-6 space-y-4 h-full overflow-y-auto flex flex-col justify-between">
+              <div className="">
+                {/* Mobile Search */}
+                <div className="md:hidden">
+                  <SearchInput
+                    placeholder="Search"
+                    className="w-full"
+                    onSearch={(query) => {
+                      console.log("Search:", query);
+                      setIsMobileMenuOpen(false);
+                    }}
+                  />
+                </div>
 
-              {/* Mobile Navigation Links with Stagger Animation */}
-              <motion.nav variants={defaultStagger} initial="initial" animate="animate" className="space-y-1">
-                {/* Browse Section */}
-                <motion.div variants={fadeUp} transition={defaultTransition} className="py-2">
-                  <p className="px-3 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">Browse</p>
-                  <motion.ul variants={defaultStagger} initial="initial" animate="animate" className="space-y-1">
-                    {browseItems.map((item) => (
-                      <motion.li key={item.id} variants={fadeUp} transition={defaultTransition}>
-                        <Link
-                          href={item.href}
-                          className="block px-3 py-2 text-sm text-foreground hover:text-primary hover:bg-mint-faint rounded-lg transition-colors duration-150"
-                          onClick={() => setIsMobileMenuOpen(false)}
-                        >
-                          {item.label}
-                        </Link>
-                      </motion.li>
-                    ))}
-                  </motion.ul>
-                </motion.div>
-
-                {/* Divider */}
-                <motion.div variants={fadeUp} transition={defaultTransition} className="border-t border-border my-2" />
-
-                {/* Shop Link */}
-                <motion.div variants={fadeUp} transition={defaultTransition}>
-                  <Link
-                    href="#"
-                    className="block px-3 py-2 text-sm font-medium text-foreground hover:text-primary hover:bg-mint-faint rounded-lg transition-colors duration-150"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    Shop
-                  </Link>
-                </motion.div>
-
-                {/* More Options */}
-                <motion.button
-                  type="button"
-                  variants={fadeUp}
-                  transition={defaultTransition}
-                  className="flex items-center gap-2 w-full px-3 py-2 text-sm text-foreground hover:text-primary hover:bg-mint-faint rounded-lg transition-colors duration-150"
+                {/* Mobile Navigation Links with Stagger Animation */}
+                <motion.nav
+                  variants={defaultStagger}
+                  initial="initial"
+                  animate="animate"
+                  className="space-y-1"
                 >
-                  <MoreHorizontal className="w-4 h-4" />
-                  <span>More options</span>
-                </motion.button>
-              </motion.nav>
+                  {/* Browse Section */}
+                  <motion.div
+                    variants={fadeUp}
+                    transition={defaultTransition}
+                    className="py-2"
+                  >
+                    <p className="px-3 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                      Browse
+                    </p>
+                    <motion.ul
+                      variants={defaultStagger}
+                      initial="initial"
+                      animate="animate"
+                      className="space-y-1"
+                    >
+                      {browseItems.map((item) => (
+                        <motion.li
+                          key={item.id}
+                          variants={fadeUp}
+                          transition={defaultTransition}
+                        >
+                          <Link
+                            href={item.href}
+                            className="block px-3 py-2 text-sm text-foreground hover:text-primary hover:bg-mint-faint rounded-lg transition-colors duration-150"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                          >
+                            {item.label}
+                          </Link>
+                        </motion.li>
+                      ))}
+                    </motion.ul>
+                  </motion.div>
+
+                  {/* Divider */}
+                  <motion.div
+                    variants={fadeUp}
+                    transition={defaultTransition}
+                    className="border-t border-border my-2"
+                  />
+
+                  {/* Shop Link */}
+                  <motion.div variants={fadeUp} transition={defaultTransition}>
+                    <Link
+                      href="#"
+                      className="block px-3 py-2 text-sm font-medium text-foreground hover:text-primary hover:bg-mint-faint rounded-lg transition-colors duration-150"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Shop
+                    </Link>
+                  </motion.div>
+
+                  {/* More Options */}
+                  <motion.button
+                    type="button"
+                    variants={fadeUp}
+                    transition={defaultTransition}
+                    className="flex items-center gap-2 w-full px-3 py-2 text-sm text-foreground hover:text-primary hover:bg-mint-faint rounded-lg transition-colors duration-150"
+                  >
+                    <MoreHorizontal className="w-4 h-4" />
+                    <span>More options</span>
+                  </motion.button>
+                </motion.nav>
+              </div>
 
               {/* Mobile Sign Up Button */}
               <motion.div
