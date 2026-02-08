@@ -2,6 +2,7 @@
 
 import { ChevronDown } from 'lucide-react';
 import { useState } from 'react';
+import SectionHeader from '../ui/SectionHeader';
 
 /* 
   FAQ Section
@@ -58,14 +59,11 @@ const FAQ = () => {
   return (
     <section className="bg-white section-padding-bottom font-jakarta">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 space-y-4">
-          <h2 className="text-hero-secondary text-foreground heading-bottom-padding font-extrabold tracking-tight">
-            Frequently asked questions
-          </h2>
-          <p className="text-body-medium text-foreground">
-            Whether you&apos;re browsing or selling, we&apos;ve made it easy.
-          </p>
-        </div>
+        <SectionHeader
+          title="Frequently asked questions"
+          description="Whether you're browsing or selling, we've made it easy."
+          animated={false}
+        />
 
         <div className="space-y-4">
           {faqData.map((faq, index) => (

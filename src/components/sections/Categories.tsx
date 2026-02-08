@@ -1,6 +1,7 @@
 'use client';
 
 import AnimateInView from '@/components/ui/AnimateInView';
+import SectionHeader from '@/components/ui/SectionHeader';
 import { defaultStagger, defaultTransition, fadeUp } from '@/lib/animations';
 import { motion } from 'motion/react';
 import Image from 'next/image';
@@ -29,15 +30,14 @@ const categories = [
 
 export default function Categories() {
   return (
-    <section className="w-full bg-background section-padding-top-bottom">
+    <section className="w-full bg-background section-padding-bottom">
       <div className="mx-auto container px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <AnimateInView variants={fadeUp} className="flex flex-col items-center text-center heading-bottom-padding">
-          <h2 className="text-hero-tertiary text-foreground heading-bottom-padding">Browse by category</h2>
-          <p className="text-body-medium text-foreground max-w-xl">
-            These dogs have the potential to be wonderful companions for your whole family with the right training.
-          </p>
-        </AnimateInView>
+        <SectionHeader
+          title="Browse by category"
+          description="These dogs have the potential to be wonderful companions for your whole family with the right training."
+          headingClassName="text-hero-tertiary"
+          descriptionClassName="text-body-medium max-w-xl"
+        />
 
         {/* View all link */}
         <AnimateInView variants={fadeUp} className="flex justify-end mb-3">
