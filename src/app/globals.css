@@ -43,8 +43,8 @@ body {
   /* Hero Titles - Responsive */
   .text-hero-primary {
     @apply font-jakarta font-bold tracking-tight;
-    font-size: 36px;
-    line-height: 40px;
+    font-size: 48px;
+    line-height: 1.1;
   }
 
   @media (min-width: 640px) {
