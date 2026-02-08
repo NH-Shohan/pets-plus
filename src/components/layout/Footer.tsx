@@ -2,8 +2,40 @@ import { Heart } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
+const SOCIAL_LINKS = [
+  { icon: '/facebook.svg', label: 'Facebook', href: '#' },
+  { icon: '/instagram.svg', label: 'Instagram', href: '#' },
+  { icon: '/pinterest.svg', label: 'Pinterest', href: '#' },
+  { icon: '/youtube.svg', label: 'Youtube', href: '#' },
+];
+
+const FOOTER_SECTIONS = [
+  {
+    title: 'Marketplace',
+    links: ['Browse Listings', 'Find Breeders', 'Pricing'],
+  },
+  {
+    title: 'Company',
+    links: ['About Us', 'Contact', 'Careers'],
+  },
+  {
+    title: 'Sellers',
+    links: ['Sign Up', 'Become a Seller', 'Seller Guidelines', 'Seller FAQ', 'Trust & Verification'],
+  },
+  {
+    title: 'Support',
+    links: ['Help Center', 'Safety Tips', 'Report an Issue'],
+  },
+  {
+    title: 'Legal',
+    links: ['Terms of Service', 'Privacy Policy', 'Cookie Policy', 'Breeder Agreement', 'Buyer Protection'],
+  },
+];
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const linkClassName =
+    "relative inline-block w-fit text-paragraph text-body-xs transition-colors duration-300 hover:text-white after:content-[''] after:absolute after:left-0 after:bottom-1.5 after:h-px after:w-full after:scale-x-0 after:origin-left after:bg-white after:transition-transform after:duration-300 hover:after:scale-x-100";
 
   return (
     <footer className="bg-primary-dark text-white pt-12 pb-6 font-jakarta border-t border-white/5">
@@ -11,28 +43,23 @@ const Footer = () => {
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-12 gap-8 md:gap-12 mb-12">
           {/* Brand Column - Wider for logo and description */}
-          <div className="md:col-span-4 lg:col-span-3 space-y-6 md:space-y-8">
+          <div className="md:col-span-4 lg:col-span-3 space-y-2 md:space-y-8">
             <Link href="/">
               <Image src="/logo-1.svg" alt="Pets&Plus" width={242} height={60} className="w-auto" priority />
             </Link>
 
-            <div className="space-y-4">
-              <p className="text-paragraph text-sm leading-relaxed max-w-sm mt-5">
+            <div className="space-y-2">
+              <p className="text-paragraph leading-[180%]! text-body-xs max-w-sm mt-5">
                 Connecting loving families with verified breeders since 2020.
               </p>
 
-              <p className="text-paragraph text-sm leading-relaxed max-w-sm">Miami, FL</p>
+              <p className="text-paragraph text-body-xs max-w-sm">Miami, FL</p>
             </div>
 
             {/* Social Icons with animated hover circles */}
             <div className="flex gap-5">
-              {[
-                { icon: '/facebook.svg', label: 'Facebook' },
-                { icon: '/instagram.svg', label: 'Instagram' },
-                { icon: '/pinterest.svg', label: 'Pinterest' },
-                { icon: '/youtube.svg', label: 'Youtube' },
-              ].map((social, idx) => (
-                <Link key={idx} href="#" aria-label={social.label}>
+              {SOCIAL_LINKS.map((social) => (
+                <Link key={social.label} href={social.href} aria-label={social.label}>
                   <Image src={social.icon} alt={social.label} width={20} height={20} />
                 </Link>
               ))}
@@ -41,79 +68,20 @@ const Footer = () => {
 
           {/* Links Columns - Responsive grid */}
           <div className="md:col-span-4 lg:col-span-9 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-            {/* Marketplace Column */}
-            <div className="space-y-6">
-              <h4 className="text-base font-bold text-paragraph">Marketplace</h4>
-              <ul className="space-y-4 text-sm">
-                {['Browse Listings', 'Find Breeders', 'Pricing'].map((link) => (
-                  <li key={link}>
-                    <Link href="#" className="text-paragraph text-sm font-light inline-block">
-                      {link}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Company Column */}
-            <div className="space-y-6">
-              <h4 className="text-base font-bold text-paragraph">Company</h4>
-              <ul className="space-y-4 text-sm">
-                {['About Us', 'Contact', 'Careers'].map((link) => (
-                  <li key={link}>
-                    <Link href="#" className="text-paragraph text-sm font-light inline-block">
-                      {link}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Sellers Column */}
-            <div className="space-y-6">
-              <h4 className="text-base font-bold text-paragraph">Sellers</h4>
-              <ul className="space-y-4 text-sm">
-                {['Sign Up', 'Become a Seller', 'Seller Guidelines', 'Seller FAQ', 'Trust & Verification'].map(
-                  (link) => (
+            {FOOTER_SECTIONS.map((section) => (
+              <div key={section.title} className="space-y-2">
+                <h4 className="text-heading-medium text-left! text-paragraph">{section.title}</h4>
+                <ul className="space-y-0 text-sm">
+                  {section.links.map((link) => (
                     <li key={link}>
-                      <Link href="#" className="text-paragraph text-sm font-light inline-block">
+                      <Link href="#" className={linkClassName}>
                         {link}
                       </Link>
                     </li>
-                  )
-                )}
-              </ul>
-            </div>
-
-            {/* Support Column */}
-            <div className="space-y-6">
-              <h4 className="text-base font-bold text-paragraph">Support</h4>
-              <ul className="space-y-4 text-sm">
-                {['Help Center', 'Safety Tips', 'Report an Issue'].map((link) => (
-                  <li key={link}>
-                    <Link href="#" className="text-paragraph text-sm font-light inline-block">
-                      {link}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Legal Column */}
-            <div className="space-y-6">
-              <h4 className="text-base font-bold text-paragraph">Legal</h4>
-              <ul className="space-y-4 text-sm">
-                {['Terms of Service', 'Privacy Policy', 'Cookie Policy', 'Breeder Agreement', 'Buyer Protection'].map(
-                  (link) => (
-                    <li key={link}>
-                      <Link href="#" className="text-paragraph text-sm font-light inline-block">
-                        {link}
-                      </Link>
-                    </li>
-                  )
-                )}
-              </ul>
-            </div>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -124,7 +92,7 @@ const Footer = () => {
           </div>
 
           <p className="text-paragraph text-xs tracking-wide flex items-center gap-1">
-            Made with {<Heart size={16} className="text-red-400" />} for pet lovers everywhere
+            Made with <Heart size={16} className="text-red-400" /> for pet lovers everywhere
           </p>
         </div>
       </div>
