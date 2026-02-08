@@ -3,7 +3,9 @@
 import Button from '@/components/ui/Button';
 import NavDropdown, { type DropdownItem } from '@/components/ui/NavDropdown';
 import SearchInput from '@/components/ui/SearchInput';
+import { defaultStagger, defaultTransition, fadeUp } from '@/lib/animations';
 import { Menu, MoreHorizontal, X } from 'lucide-react';
+import { AnimatePresence, motion } from 'motion/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -26,7 +28,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-surface/95 backdrop-blur-sm border-b border-border">
+    <header className="sticky top-0 z-50 w-full bg-surface border-b border-border">
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8 py-2">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
@@ -75,88 +77,110 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Search - Below navbar on desktop, visible on tablet */}
-        <div className="hidden md:flex lg:hidden pb-4">
+        <div className="hidden md:flex lg:hidden py-4">
           <SearchInput placeholder="Search" className="w-full" onSearch={(query) => console.log('Search:', query)} />
         </div>
       </nav>
 
       {/* Mobile Menu Overlay */}
-      {isMobileMenuOpen && (
-        <div
-          className="lg:hidden fixed inset-0 top-16 z-40 bg-black/50 animate-in fade-in duration-200"
-          onClick={toggleMobileMenu}
-        />
-      )}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="lg:hidden fixed inset-0 top-20 z-40 bg-black/50 h-screen"
+            onClick={toggleMobileMenu}
+          />
+        )}
+      </AnimatePresence>
 
-      {/* Mobile Menu Panel */}
-      <div
-        className={`lg:hidden fixed top-16 left-0 right-0 z-50 bg-surface border-b border-border shadow-lg transition-all duration-300 transform ${
-          isMobileMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 pointer-events-none'
-        }`}
-      >
-        <div className="px-4 py-6 space-y-4">
-          {/* Mobile Search */}
-          <div className="md:hidden">
-            <SearchInput
-              placeholder="Search"
-              className="w-full"
-              onSearch={(query) => {
-                console.log('Search:', query);
-                setIsMobileMenuOpen(false);
-              }}
-            />
-          </div>
+      {/* Mobile Menu Panel - Slides from right */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ x: '100%' }}
+            animate={{ x: 0 }}
+            exit={{ x: '100%' }}
+            transition={{ type: 'tween', duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="lg:hidden fixed top-20 right-0 bottom-0 w-[85%] max-w-sm z-50 bg-surface border-l border-border shadow-lg h-screen"
+          >
+            <div className="px-4 py-6 space-y-4 h-full overflow-y-auto">
+              {/* Mobile Search */}
+              <div className="md:hidden">
+                <SearchInput
+                  placeholder="Search"
+                  className="w-full"
+                  onSearch={(query) => {
+                    console.log('Search:', query);
+                    setIsMobileMenuOpen(false);
+                  }}
+                />
+              </div>
 
-          {/* Mobile Navigation Links */}
-          <nav className="space-y-1">
-            {/* Browse Section */}
-            <div className="py-2">
-              <p className="px-3 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">Browse</p>
-              <ul className="space-y-1">
-                {browseItems.map((item) => (
-                  <li key={item.id}>
-                    <Link
-                      href={item.href}
-                      className="block px-3 py-2 text-sm text-foreground hover:text-primary hover:bg-mint-faint rounded-lg transition-colors duration-150"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      {item.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+              {/* Mobile Navigation Links with Stagger Animation */}
+              <motion.nav variants={defaultStagger} initial="initial" animate="animate" className="space-y-1">
+                {/* Browse Section */}
+                <motion.div variants={fadeUp} transition={defaultTransition} className="py-2">
+                  <p className="px-3 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">Browse</p>
+                  <motion.ul variants={defaultStagger} initial="initial" animate="animate" className="space-y-1">
+                    {browseItems.map((item) => (
+                      <motion.li key={item.id} variants={fadeUp} transition={defaultTransition}>
+                        <Link
+                          href={item.href}
+                          className="block px-3 py-2 text-sm text-foreground hover:text-primary hover:bg-mint-faint rounded-lg transition-colors duration-150"
+                          onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                          {item.label}
+                        </Link>
+                      </motion.li>
+                    ))}
+                  </motion.ul>
+                </motion.div>
+
+                {/* Divider */}
+                <motion.div variants={fadeUp} transition={defaultTransition} className="border-t border-border my-2" />
+
+                {/* Shop Link */}
+                <motion.div variants={fadeUp} transition={defaultTransition}>
+                  <Link
+                    href="#"
+                    className="block px-3 py-2 text-sm font-medium text-foreground hover:text-primary hover:bg-mint-faint rounded-lg transition-colors duration-150"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Shop
+                  </Link>
+                </motion.div>
+
+                {/* More Options */}
+                <motion.button
+                  type="button"
+                  variants={fadeUp}
+                  transition={defaultTransition}
+                  className="flex items-center gap-2 w-full px-3 py-2 text-sm text-foreground hover:text-primary hover:bg-mint-faint rounded-lg transition-colors duration-150"
+                >
+                  <MoreHorizontal className="w-4 h-4" />
+                  <span>More options</span>
+                </motion.button>
+              </motion.nav>
+
+              {/* Mobile Sign Up Button */}
+              <motion.div
+                variants={fadeUp}
+                initial="initial"
+                animate="animate"
+                transition={{ ...defaultTransition, delay: 0.4 }}
+                className="pt-4"
+              >
+                <Button variant="primary" className="w-full">
+                  Sign up
+                </Button>
+              </motion.div>
             </div>
-
-            {/* Divider */}
-            <div className="border-t border-border my-2" />
-
-            {/* Shop Link */}
-            <Link
-              href="#"
-              className="block px-3 py-2 text-sm font-medium text-foreground hover:text-primary hover:bg-mint-faint rounded-lg transition-colors duration-150"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Shop
-            </Link>
-
-            {/* More Options */}
-            <button
-              type="button"
-              className="flex items-center gap-2 w-full px-3 py-2 text-sm text-foreground hover:text-primary hover:bg-mint-faint rounded-lg transition-colors duration-150"
-            >
-              <MoreHorizontal className="w-4 h-4" />
-              <span>More options</span>
-            </button>
-          </nav>
-
-          {/* Mobile Sign Up Button */}
-          <div className="pt-4">
-            <Button variant="primary" className="w-full">
-              Sign up
-            </Button>
-          </div>
-        </div>
-      </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }
