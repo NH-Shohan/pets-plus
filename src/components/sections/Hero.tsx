@@ -1,21 +1,16 @@
 'use client';
 
-import Button from '@/components/ui/Button';
 import AnimateInView from '@/components/ui/AnimateInView';
-import Image from 'next/image';
+import Button from '@/components/ui/Button';
+import { defaultStagger, defaultTransition, fadeInRight, fadeUp } from '@/lib/animations';
 import { motion } from 'motion/react';
-import {
-  defaultStagger,
-  defaultTransition,
-  fadeUp,
-  fadeInRight,
-} from '@/lib/animations';
+import Image from 'next/image';
 
 export default function Hero() {
   return (
     <section className="relative w-full overflow-hidden bg-mint-faint">
       <div className="mx-auto container px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center py-12 sm:py-16 lg:py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center section-padding-top-bottom">
           {/* Left Content - stagger when in view */}
           <AnimateInView
             variants={defaultStagger}
