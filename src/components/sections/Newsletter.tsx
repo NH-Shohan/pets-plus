@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import AnimateInView from "@/components/ui/AnimateInView";
+import Button from "@/components/ui/Button";
 import {
   defaultStagger,
   defaultTransition,
@@ -54,7 +55,7 @@ const Newsletter = () => {
                 <input
                   type="email"
                   placeholder="Email Address"
-                  className="w-full sm:flex-1 px-8 py-4 bg-transparent text-gray-800 placeholder-gray-400 outline-none font-normal text-base"
+                  className="w-full sm:flex-1 px-8 py-4 bg-transparent text-foreground placeholder-foreground outline-none font-light text-base"
                   required
                 />
                 <button
