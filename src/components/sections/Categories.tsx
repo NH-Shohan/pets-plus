@@ -69,7 +69,7 @@ export default function Categories() {
               >
                 {/* Image Container - shadow lift, image zoom inside frame */}
                 <motion.div
-                  className="w-full rounded-2xl overflow-hidden mb-7 bg-surface-light shadow-none"
+                  className="w-full rounded-2xl overflow-hidden mb-5 lg:mb-7  bg-surface-light shadow-none"
                   whileHover={{
                     boxShadow:
                       "0 12px 24px -8px rgba(0, 0, 0, 0.08), 0 4px 12px -4px rgba(0, 0, 0, 0.04)",
