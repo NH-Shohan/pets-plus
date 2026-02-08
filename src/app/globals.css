@@ -422,7 +422,7 @@ body {
   .text-accent-small {
     @apply font-vietnam font-light text-center;
     letter-spacing: 0.01em;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 18px;
   }
 
@@ -430,6 +430,75 @@ body {
     .text-accent-small {
       font-size: 14px;
       line-height: 22px;
+    }
+  }
+
+  /* Section Spacing */
+  .section-padding-top {
+    padding-top: 48px;
+  }
+
+  @media (min-width: 640px) {
+    .section-padding-top {
+      padding-top: 64px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .section-padding-top {
+      padding-top: 96px;
+    }
+  }
+
+  .section-padding-bottom {
+    padding-bottom: 48px;
+  }
+
+  @media (min-width: 640px) {
+    .section-padding-bottom {
+      padding-bottom: 64px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .section-padding-bottom {
+      padding-bottom: 96px;
+    }
+  }
+
+  .section-padding-top-bottom {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  @media (min-width: 640px) {
+    .section-padding-top-bottom {
+      padding-top: 64px;
+      padding-bottom: 64px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .section-padding-top-bottom {
+      padding-top: 96px;
+      padding-bottom: 96px;
+    }
+  }
+
+  /* Heading Spacing */
+  .heading-bottom-padding {
+    margin-bottom: 16px;
+  }
+
+  @media (min-width: 640px) {
+    .heading-bottom-padding {
+      margin-bottom: 16px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .heading-bottom-padding {
+      margin-bottom: 16px;
     }
   }
 }

@@ -69,7 +69,7 @@ export default function VerifiedBreeders() {
 
   return (
     <section
-      className="w-full bg-mint-subtle! py-12 sm:py-16 lg:py-24 overflow-hidden"
+      className="w-full bg-mint-subtle! section-padding-top-bottom overflow-hidden"
       onMouseMove={handleSectionMouseMove}
       onMouseLeave={handleSectionMouseLeave}
     >

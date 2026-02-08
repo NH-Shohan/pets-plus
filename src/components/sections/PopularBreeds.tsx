@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { motion } from "motion/react";
-import AnimateInView from "@/components/ui/AnimateInView";
-import { defaultStagger, defaultTransition, fadeUp } from "@/lib/animations";
+import AnimateInView from '@/components/ui/AnimateInView';
+import { defaultStagger, defaultTransition, fadeUp } from '@/lib/animations';
+import { motion } from 'motion/react';
+import Link from 'next/link';
 
 /* 
   PopularBreeds Section
@@ -15,83 +15,79 @@ import { defaultStagger, defaultTransition, fadeUp } from "@/lib/animations";
 
 const breedData = [
   {
-    title: "Pets",
-    link: "/breeds/pets",
+    title: 'Pets',
+    link: '/breeds/pets',
     items: [
-      "Dogs",
-      "Cats",
-      "Birds",
-      "Rabbits",
-      "Hamsters",
-      "Guinea pigs",
-      "Gerbils",
-      "Mice & Rats",
-      "Ferrets",
-      "Chinchillas",
-      "Hedgehogs",
-      "Sugar gliders",
-      "Turtles",
-      "Lizards",
-      "Snakes",
-      "Frogs",
-      "Mini pigs",
+      'Dogs',
+      'Cats',
+      'Birds',
+      'Rabbits',
+      'Hamsters',
+      'Guinea pigs',
+      'Gerbils',
+      'Mice & Rats',
+      'Ferrets',
+      'Chinchillas',
+      'Hedgehogs',
+      'Sugar gliders',
+      'Turtles',
+      'Lizards',
+      'Snakes',
+      'Frogs',
+      'Mini pigs',
     ],
   },
   {
-    title: "Farm & Livestock",
-    link: "/breeds/farm",
+    title: 'Farm & Livestock',
+    link: '/breeds/farm',
     items: [
-      "Horses",
-      "Ponies",
-      "Cows (Cattle)",
-      "Bulls",
-      "Goats",
-      "Sheep",
-      "Pigs",
-      "Chickens",
-      "Ducks",
-      "Turkeys",
-      "Geese",
-      "Quail",
-      "Donkeys",
-      "Mules",
-      "Alpacas",
-      "Llamas",
+      'Horses',
+      'Ponies',
+      'Cows (Cattle)',
+      'Bulls',
+      'Goats',
+      'Sheep',
+      'Pigs',
+      'Chickens',
+      'Ducks',
+      'Turkeys',
+      'Geese',
+      'Quail',
+      'Donkeys',
+      'Mules',
+      'Alpacas',
+      'Llamas',
     ],
   },
   {
-    title: "Exotic Species",
-    link: "/breeds/exotic",
+    title: 'Exotic Species',
+    link: '/breeds/exotic',
     items: [
-      "Snakes",
-      "Lizards",
-      "Chameleons",
-      "Turtles",
-      "Tortoises",
-      "Parrots",
-      "Macaws",
-      "Cockatoos",
-      "Freshwater tropical fish",
-      "Saltwater reef fish",
-      "Shrimp",
-      "Snails",
-      "Crayfish",
-      "Corals",
-      "Degus",
-      "Hedgehogs",
+      'Snakes',
+      'Lizards',
+      'Chameleons',
+      'Turtles',
+      'Tortoises',
+      'Parrots',
+      'Macaws',
+      'Cockatoos',
+      'Freshwater tropical fish',
+      'Saltwater reef fish',
+      'Shrimp',
+      'Snails',
+      'Crayfish',
+      'Corals',
+      'Degus',
+      'Hedgehogs',
     ],
   },
 ];
 
 const PopularBreeds = () => {
   return (
-    <section className="bg-[#F8F8F8] py-12 sm:py-16 lg:py-24 font-jakarta">
+    <section className="bg-[#F8F8F8] section-padding-top-bottom font-jakarta">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <AnimateInView
-          variants={fadeUp}
-          transition={defaultTransition}
-          className="mb-12"
-        >
+        <AnimateInView variants={fadeUp} transition={defaultTransition} className="mb-12">
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground tracking-tight">
             Learn more about our popular breeds
           </h2>
@@ -108,15 +104,13 @@ const PopularBreeds = () => {
               transition={defaultTransition}
               className="flex flex-col h-full space-y-3"
             >
-              <h3 className="text-xl font-bold text-foreground">
-                {category.title}
-              </h3>
+              <h3 className="text-xl font-bold text-foreground">{category.title}</h3>
 
               <div className="grid grid-cols-2 gap-x-4 gap-y-3">
                 {category.items.map((item) => (
                   <Link
                     key={item}
-                    href={`/breeds/${item.toLowerCase().replace(/\s+/g, "-")}`}
+                    href={`/breeds/${item.toLowerCase().replace(/\s+/g, '-')}`}
                     className="relative inline-block w-fit max-w-full text-foreground text-base font-light truncate transition-colors duration-300 hover:text-primary after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-px after:w-full after:scale-x-0 after:origin-left after:bg-primary after:transition-transform after:duration-300 hover:after:scale-x-100"
                   >
                     {item}
@@ -125,10 +119,7 @@ const PopularBreeds = () => {
               </div>
 
               <div className="mt-auto pt-4">
-                <Link
-                  href={category.link}
-                  className="text-primary font-normal text-base underline"
-                >
+                <Link href={category.link} className="text-primary font-normal text-base underline">
                   view all {category.title.toLowerCase()}
                 </Link>
               </div>

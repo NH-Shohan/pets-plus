@@ -56,10 +56,10 @@ const FAQ = () => {
   };
 
   return (
-    <section className="bg-white py-12 sm:py-16 lg:py-24 font-jakarta">
+    <section className="bg-white section-padding-bottom font-jakarta">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 space-y-4">
-          <h2 className="text-hero-secondary text-foreground mb-4 font-extrabold tracking-tight">
+          <h2 className="text-hero-secondary text-foreground heading-bottom-padding font-extrabold tracking-tight">
             Frequently asked questions
           </h2>
           <p className="text-body-medium text-foreground">
