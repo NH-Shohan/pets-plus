@@ -49,7 +49,7 @@ export default function SectionHeader({
       <AnimateInView
         variants={fadeUp}
         transition={defaultTransition}
-        className={`flex flex-col items-center text-center heading-bottom-padding mb-12! lg:mb-22! ${containerClassName}`}
+        className={`flex flex-col items-center text-center heading-bottom-padding mb-12! lg:mb-18! ${containerClassName}`}
       >
         {content}
       </AnimateInView>

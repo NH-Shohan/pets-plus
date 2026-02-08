@@ -21,7 +21,7 @@ export default function Hero() {
             </motion.div>
 
             <motion.p
-              className="text-body-base text-foreground max-w-md"
+              className="text-body-large text-foreground max-w-md"
               variants={fadeUp}
               transition={defaultTransition}
             >
