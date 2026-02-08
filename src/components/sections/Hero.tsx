@@ -1,22 +1,31 @@
-'use client';
+"use client";
 
-import AnimateInView from '@/components/ui/AnimateInView';
-import Button from '@/components/ui/Button';
-import { defaultStagger, defaultTransition, fadeInRight, fadeUp } from '@/lib/animations';
-import { motion } from 'motion/react';
-import Image from 'next/image';
+import AnimateInView from "@/components/ui/AnimateInView";
+import Button from "@/components/ui/Button";
+import {
+  defaultStagger,
+  defaultTransition,
+  fadeInRight,
+  fadeUp,
+} from "@/lib/animations";
+import { motion } from "motion/react";
+import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative w-full overflow-hidden bg-mint-faint">
+    <section className="relative w-full overflow-hidden ">
       <div className="mx-auto container px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center section-padding-top-bottom">
           {/* Left Content - stagger when in view */}
           <AnimateInView
             variants={defaultStagger}
-            className="flex flex-col items-start gap-6 sm:gap-8 order-2 lg:order-1"
+            className="flex flex-col items-start gap-6 sm:gap-8 "
           >
-            <motion.div className="relative" variants={fadeUp} transition={defaultTransition}>
+            <motion.div
+              className="relative"
+              variants={fadeUp}
+              transition={defaultTransition}
+            >
               <h1 className="text-hero-primary">
                 <span className="block">Browse</span>
                 hundreds of listings
@@ -42,7 +51,7 @@ export default function Hero() {
           <AnimateInView
             variants={fadeInRight}
             transition={defaultTransition}
-            className="relative order-1 lg:order-2 flex justify-center lg:justify-end"
+            className="relative  flex justify-center lg:justify-end"
           >
             <div className="relative w-full max-w-md sm:max-w-lg lg:max-w-xl">
               <div className="absolute top-4 right-4 sm:top-8 sm:right-8 w-[85%] h-[85%] bg-mint-subtle rounded-[32px] sm:rounded-[48px]" />

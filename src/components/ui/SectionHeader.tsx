@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import AnimateInView from '@/components/ui/AnimateInView';
-import { defaultTransition, fadeUp } from '@/lib/animations';
+import AnimateInView from "@/components/ui/AnimateInView";
+import { defaultTransition, fadeUp } from "@/lib/animations";
 
 interface SectionHeaderProps {
   title: string;
@@ -29,13 +29,15 @@ export default function SectionHeader({
   title,
   description,
   animated = true,
-  headingClassName = 'text-hero-secondary',
-  descriptionClassName = 'text-body-medium',
-  containerClassName = '',
+  headingClassName = "text-hero-secondary",
+  descriptionClassName = "text-body-medium",
+  containerClassName = "",
 }: SectionHeaderProps) {
   const content = (
     <>
-      <h2 className={`${headingClassName} text-foreground heading-bottom-padding font-extrabold tracking-tight`}>
+      <h2
+        className={`${headingClassName} text-foreground heading-bottom-padding font-extrabold tracking-tight`}
+      >
         {title}
       </h2>
       <p className={`${descriptionClassName} text-foreground`}>{description}</p>
@@ -47,12 +49,18 @@ export default function SectionHeader({
       <AnimateInView
         variants={fadeUp}
         transition={defaultTransition}
-        className={`flex flex-col items-center text-center heading-bottom-padding ${containerClassName}`}
+        className={`flex flex-col items-center text-center heading-bottom-padding mb-12! lg:mb-22! ${containerClassName}`}
       >
         {content}
       </AnimateInView>
     );
   }
 
-  return <div className={`text-center heading-bottom-padding !mb-12 ${containerClassName}`}>{content}</div>;
+  return (
+    <div
+      className={`text-center heading-bottom-padding  ${containerClassName}`}
+    >
+      {content}
+    </div>
+  );
 }

@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @theme inline {
   /* Color System */
@@ -70,8 +70,8 @@ body {
 
   @media (min-width: 1440px) {
     .text-hero-primary {
-      font-size: 92px;
-      line-height: 90px;
+      font-size: 120px;
+      line-height: 1;
     }
   }
 
