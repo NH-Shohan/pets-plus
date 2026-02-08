@@ -54,7 +54,7 @@ export default function WhyTrustUs() {
               <h3 className="text-display-small text-primary mb-3">{feature.title}</h3>
 
               {/* Description */}
-              <p className="text-body-base text-foreground">{feature.description}</p>
+              <p className="text-body-base text-body-small text-foreground">{feature.description}</p>
             </motion.div>
           ))}
         </AnimateInView>

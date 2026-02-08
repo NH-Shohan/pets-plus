@@ -47,14 +47,14 @@ const Newsletter = () => {
             <motion.form
               variants={fadeUp}
               transition={defaultTransition}
-              className="mt-8 max-w-xl mx-auto"
+              className="mt-8 max-w-2xl mx-auto"
               onSubmit={(e) => e.preventDefault()}
             >
-              <div className="relative flex flex-col sm:flex-row items-center p-1 bg-white rounded-2xl sm:rounded-full shadow-lg">
+              <div className="relative flex flex-col sm:flex-row items-center p-1 bg-white rounded-2xl sm:rounded-full">
                 <input
                   type="email"
                   placeholder="Email Address"
-                  className="w-full sm:flex-1 px-8 py-4 bg-transparent text-foreground placeholder-foreground outline-none font-light text-base"
+                  className="w-full sm:flex-1 px-8 py-4 bg-transparent text-foreground placeholder-foreground outline-none text-body-small text-left!"
                   required
                 />
                 <button

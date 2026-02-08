@@ -65,7 +65,7 @@ export default function Categories() {
                 className="group flex flex-col items-center"
               >
                 {/* Image Container */}
-                <div className="w-full rounded-2xl overflow-hidden mb-4">
+                <div className="w-full rounded-2xl overflow-hidden mb-7">
                   <Image
                     src={category.image}
                     alt={category.name}

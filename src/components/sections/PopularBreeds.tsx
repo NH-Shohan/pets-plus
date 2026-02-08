@@ -102,7 +102,7 @@ const PopularBreeds = () => {
               key={category.title}
               variants={fadeUp}
               transition={defaultTransition}
-              className="flex flex-col h-full space-y-3"
+              className="flex flex-col h-full space-y-4"
             >
               <h3 className="text-xl font-bold text-foreground">{category.title}</h3>
 

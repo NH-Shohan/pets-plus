@@ -48,13 +48,13 @@ const Footer = () => {
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-12 gap-8 md:gap-12 mb-12">
           {/* Brand Column - Wider for logo and description */}
-          <div className="md:col-span-4 lg:col-span-3 space-y-2 md:space-y-8">
+          <div className="md:col-span-4 lg:col-span-4 space-y-2 md:space-y-8">
             <Link href="/">
               <Image src="/logo-1.svg" alt="Pets&Plus" width={242} height={60} className="w-auto" priority />
             </Link>
 
             <div className="space-y-2">
-              <p className="text-paragraph leading-[180%]! text-body-xs max-w-sm mt-5">
+              <p className="text-paragraph leading-[180%]! text-body-xs max-w-84 mt-5">
                 Connecting loving families with verified breeders since 2020.
               </p>
 
@@ -74,7 +74,7 @@ const Footer = () => {
           {/* Links Columns - Responsive grid */}
           <AnimateInView
             variants={defaultStagger}
-            className="md:col-span-4 lg:col-span-9 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8"
+            className="md:col-span-4 lg:col-span-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8"
           >
             {FOOTER_SECTIONS.map((section) => (
               <motion.div key={section.title} variants={fadeUp} transition={defaultTransition} className="space-y-2">
