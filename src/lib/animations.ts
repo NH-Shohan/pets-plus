@@ -32,6 +32,12 @@ export const fadeInRight = {
   animate: { opacity: 1, x: 0 },
 };
 
+/** Fade in and move from left (good for mobile menus, slide-in panels) */
+export const fadeInLeft = {
+  initial: { opacity: 0, x: -32 },
+  animate: { opacity: 1, x: 0 },
+};
+
 /** Fade in and move up slightly (good for overlays, images) */
 export const fadeInUp = {
   initial: { opacity: 0, y: 20 },

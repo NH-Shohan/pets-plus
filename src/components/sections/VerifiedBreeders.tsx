@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import Button from "@/components/ui/Button";
-import Image from "next/image";
-import { useRef, useCallback } from "react";
-import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
-import type { MotionValue } from "motion/react";
-import AnimateInView from "@/components/ui/AnimateInView";
-import { defaultStagger, defaultTransition, fadeUp, fadeInRight, scaleIn } from "@/lib/animations";
+import AnimateInView from '@/components/ui/AnimateInView';
+import Button from '@/components/ui/Button';
+import { defaultStagger, defaultTransition, fadeInRight, fadeUp, scaleIn } from '@/lib/animations';
+import type { MotionValue } from 'motion/react';
+import { motion, useMotionValue, useSpring, useTransform } from 'motion/react';
+import Image from 'next/image';
+import { useCallback, useRef } from 'react';
 
 function VerifiedBadge({ mouseX, mouseY }: { mouseX: MotionValue<number>; mouseY: MotionValue<number> }) {
   const springConfig = { stiffness: 80, damping: 22, mass: 0.5 };
@@ -21,18 +21,11 @@ function VerifiedBadge({ mouseX, mouseY }: { mouseX: MotionValue<number>; mouseY
       whileInView="animate"
       viewport={{ once: true, amount: 0.2 }}
       transition={{ ...defaultTransition, delay: 0.25 }}
-      style={{ x, y, willChange: "transform" }}
+      style={{ x, y, willChange: 'transform' }}
     >
-      <Image
-        src="/check-circle.svg"
-        alt="Verified"
-        width={53}
-        height={53}
-      />
+      <Image src="/check-circle.svg" alt="Verified" width={53} height={53} />
       <div>
-        <p className="text-body-medium text-foreground leading-tight!">
-          Verified Breeder
-        </p>
+        <p className="text-body-medium text-foreground leading-tight!">Verified Breeder</p>
         <p className="text-body-base">Health Guaranteed</p>
       </div>
     </motion.div>
@@ -76,25 +69,21 @@ export default function VerifiedBreeders() {
 
   return (
     <section
-      className="w-full bg-mint-subtle! py-12 sm:py-16 lg:py-24"
+      className="w-full bg-mint-subtle! py-12 sm:py-16 lg:py-24 overflow-hidden"
       onMouseMove={handleSectionMouseMove}
       onMouseLeave={handleSectionMouseLeave}
     >
       <div className="mx-auto container px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-52 items-center">
           {/* Left - Image */}
-          <AnimateInView
-            variants={fadeInRight}
-            transition={defaultTransition}
-            className="relative col-span-2"
-          >
-            <div className="relative rounded-3xl overflow-hidden">
+          <AnimateInView variants={fadeInRight} transition={defaultTransition} className="relative col-span-2">
+            <div className="relative rounded-3xl overflow-hidden aspect-square lg:aspect-auto">
               <Image
                 src="/verified.png"
                 alt="Verified breeder with puppy"
                 width={500}
                 height={400}
-                className="w-full h-auto object-cover"
+                className="w-full h-full object-cover object-center"
               />
             </div>
 
@@ -103,10 +92,7 @@ export default function VerifiedBreeders() {
           </AnimateInView>
 
           {/* Right - Content - stagger when in view */}
-          <AnimateInView
-            variants={defaultStagger}
-            className="flex flex-col items-start gap-6 lg:col-span-3"
-          >
+          <AnimateInView variants={defaultStagger} className="flex flex-col items-start gap-6 lg:col-span-3">
             <motion.h2
               className="text-hero-secondary text-foreground text-left!"
               variants={fadeUp}
@@ -120,8 +106,8 @@ export default function VerifiedBreeders() {
               variants={fadeUp}
               transition={defaultTransition}
             >
-              Every seller on our platform is carefully screened to help ensure
-              authenticity, transparency, and responsible practices.
+              Every seller on our platform is carefully screened to help ensure authenticity, transparency, and
+              responsible practices.
             </motion.p>
 
             <motion.div variants={fadeUp} transition={defaultTransition}>
