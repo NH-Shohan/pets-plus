@@ -4,6 +4,7 @@ import AnimateInView from '@/components/ui/AnimateInView';
 import { defaultStagger, defaultTransition, fadeUp } from '@/lib/animations';
 import { motion } from 'motion/react';
 import Image from 'next/image';
+import SectionHeader from '../ui/SectionHeader';
 
 const features = [
   {
@@ -30,13 +31,10 @@ export default function WhyTrustUs() {
   return (
     <section className="w-full bg-background section-padding-top-bottom">
       <div className="mx-auto container px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <AnimateInView variants={fadeUp} className="flex flex-col items-center text-center heading-bottom-padding">
-          <h2 className="text-hero-secondary text-foreground heading-bottom-padding">Why buyers trust us</h2>
-          <p className="text-body-medium text-foreground">
-            Whether you&apos;re browsing or selling, we&apos;ve made it easy.
-          </p>
-        </AnimateInView>
+        <SectionHeader
+          title="Why buyers trust us"
+          description="Whether you're browsing or selling, we've made it easy."
+        />
 
         {/* Feature Cards - stagger when in view */}
         <AnimateInView variants={defaultStagger} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
