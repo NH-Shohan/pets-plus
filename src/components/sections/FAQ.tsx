@@ -7,7 +7,7 @@ import { ChevronDown } from "lucide-react";
   FAQ Section
   - Interactive accordion component
   - Clean, minimalist aesthetic with subtle shadows and borders
-  - Fully responsive and user-friendly
+  - No scroll animation so content is static when you reach it
 */
 
 const faqData = [
@@ -63,7 +63,7 @@ const FAQ = () => {
             Frequently asked questions
           </h2>
           <p className="text-body-medium text-foreground">
-            Whether you're browsing or selling, we've made it easy.
+            Whether you&apos;re browsing or selling, we&apos;ve made it easy.
           </p>
         </div>
 
@@ -101,14 +101,14 @@ const FAQ = () => {
               </button>
 
               <div
-                className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                  openIndex === index
-                    ? "max-h-96 opacity-100"
-                    : "max-h-0 opacity-0"
+                className={`grid transition-[grid-template-rows] duration-300 ease-out ${
+                  openIndex === index ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
                 }`}
               >
-                <div className="px-6 md:px-8 pb-8 text-gray-500 text-base leading-relaxed md:text-lg">
-                  {faq.answer}
+                <div className="min-h-0 overflow-hidden">
+                  <div className="px-6 md:px-8 pb-8 text-gray-500 text-base leading-relaxed md:text-lg">
+                    {faq.answer}
+                  </div>
                 </div>
               </div>
             </div>
