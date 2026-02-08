@@ -30,7 +30,7 @@ const categories = [
 
 export default function Categories() {
   return (
-    <section className="w-full bg-background section-padding-bottom">
+    <section className="w-full bg-mint-faint section-padding-bottom">
       <div className="mx-auto container px-4 sm:px-6 lg:px-8">
         <SectionHeader
           title="Browse by category"
@@ -50,7 +50,7 @@ export default function Categories() {
         </AnimateInView>
 
         {/* Category Cards - stagger when in view */}
-        <AnimateInView variants={defaultStagger} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <AnimateInView variants={defaultStagger} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {categories.map((category) => (
             <motion.div key={category.id} variants={fadeUp} transition={defaultTransition}>
               <Link href={category.href} className="group flex flex-col items-center">

@@ -1,31 +1,19 @@
-"use client";
+'use client';
 
-import AnimateInView from "@/components/ui/AnimateInView";
-import Button from "@/components/ui/Button";
-import {
-  defaultStagger,
-  defaultTransition,
-  fadeInRight,
-  fadeUp,
-} from "@/lib/animations";
-import { motion } from "motion/react";
-import Image from "next/image";
+import AnimateInView from '@/components/ui/AnimateInView';
+import Button from '@/components/ui/Button';
+import { defaultStagger, defaultTransition, fadeInRight, fadeUp } from '@/lib/animations';
+import { motion } from 'motion/react';
+import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <section className="relative w-full overflow-hidden ">
+    <section className="relative w-full overflow-hidden bg-mint-faint">
       <div className="mx-auto container px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center section-padding-top-bottom">
           {/* Left Content - stagger when in view */}
-          <AnimateInView
-            variants={defaultStagger}
-            className="flex flex-col items-start gap-6 sm:gap-8 "
-          >
-            <motion.div
-              className="relative"
-              variants={fadeUp}
-              transition={defaultTransition}
-            >
+          <AnimateInView variants={defaultStagger} className="flex flex-col items-start gap-6 sm:gap-8 ">
+            <motion.div className="relative" variants={fadeUp} transition={defaultTransition}>
               <h1 className="text-hero-primary">
                 <span className="block">Browse</span>
                 hundreds of listings
