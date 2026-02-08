@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme inline {
   /* Color System */
@@ -446,7 +446,7 @@ body {
 
   @media (min-width: 1024px) {
     .section-padding-top {
-      padding-top: 96px;
+      padding-top: 110px;
     }
   }
 
@@ -462,7 +462,7 @@ body {
 
   @media (min-width: 1024px) {
     .section-padding-bottom {
-      padding-bottom: 96px;
+      padding-bottom: 110px;
     }
   }
 
@@ -480,8 +480,8 @@ body {
 
   @media (min-width: 1024px) {
     .section-padding-top-bottom {
-      padding-top: 96px;
-      padding-bottom: 96px;
+      padding-top: 110px;
+      padding-bottom: 110px;
     }
   }
 
