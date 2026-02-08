@@ -1,8 +1,14 @@
-'use client';
+"use client";
 
-import AnimateInView from '@/components/ui/AnimateInView';
-import { defaultStagger, defaultTransition, fadeIn, fadeUp, scaleIn } from '@/lib/animations';
-import { motion } from 'motion/react';
+import AnimateInView from "@/components/ui/AnimateInView";
+import {
+  defaultStagger,
+  defaultTransition,
+  fadeIn,
+  fadeUp,
+  scaleIn,
+} from "@/lib/animations";
+import { motion } from "motion/react";
 
 /* 
   Newsletter Section
@@ -14,7 +20,7 @@ import { motion } from 'motion/react';
 
 const Newsletter = () => {
   return (
-    <section className="bg-white section-padding-top-bottom font-jakarta">
+    <section className="bg-white section-padding-bottom font-jakarta">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <AnimateInView
           variants={scaleIn}
@@ -27,9 +33,15 @@ const Newsletter = () => {
             viewport={{ once: true, amount: 0.2 }}
             className="relative z-10 max-w-2xl mx-auto space-y-4"
           >
-            <motion.div variants={fadeUp} transition={defaultTransition} className="space-y-3">
+            <motion.div
+              variants={fadeUp}
+              transition={defaultTransition}
+              className="space-y-3"
+            >
               <h2 className="text-display-large">Never miss a new listing</h2>
-              <p className="text-body-medium">Be the first to know when verified breeders list new pets</p>
+              <p className="text-body-medium">
+                Be the first to know when verified breeders list new pets
+              </p>
             </motion.div>
 
             <motion.form
@@ -59,8 +71,9 @@ const Newsletter = () => {
               transition={defaultTransition}
               className="text-accent-small opacity-80 pt-2 max-w-lg mx-auto"
             >
-              We respect your privacy. Your email address will only be used to send you updates and offers. We do not
-              sell or share your information with third parties.
+              We respect your privacy. Your email address will only be used to
+              send you updates and offers. We do not sell or share your
+              information with third parties.
             </motion.p>
           </AnimateInView>
         </AnimateInView>
