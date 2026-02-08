@@ -4,7 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
 import AnimateInView from "@/components/ui/AnimateInView";
-import { defaultStagger, defaultTransition, fadeUp, fadeInRight } from "@/lib/animations";
+import {
+  defaultStagger,
+  defaultTransition,
+  fadeUp,
+  fadeInRight,
+} from "@/lib/animations";
 
 /* 
   BreederCTA Section
@@ -41,13 +46,13 @@ const BreederCTA = () => {
             transition={defaultTransition}
             className="flex-1 space-y-4 text-center md:text-left"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground tracking-tight">
+            <h2 className="text-display-large  ">
               Are you a responsible breeder?
             </h2>
-            <p className="text-foreground text-lg leading-relaxed">
-              We&apos;d love to invite you to join our community of trusted breeders.
-              We only list screened breeders and help connect you directly with
-              educated, serious buyers.
+            <p className="text-body-medium text-left!">
+              We&apos;d love to invite you to join our community of trusted
+              breeders. We only list screened breeders and help connect you
+              directly with educated, serious buyers.
             </p>
             <div>
               <Link

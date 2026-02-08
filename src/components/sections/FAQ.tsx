@@ -79,10 +79,12 @@ const FAQ = () => {
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full flex items-center justify-between p-6 md:p-8 text-left outline-none"
+                className={`w-full flex items-center justify-between pt-6 md:pt-8 px-6 md:px-8 pb-6 md:pb-8 text-left outline-none transition-[padding] duration-300 ease-out ${
+                  openIndex === index ? "pb-2.5!" : ""
+                }`}
               >
                 <span
-                  className={`text-lg md:text-xl font-bold transition-colors duration-300 ${
+                  className={`text-heading-large transition-colors duration-300 ${
                     openIndex === index ? "text-foreground" : "text-gray-700"
                   }`}
                 >
@@ -106,7 +108,7 @@ const FAQ = () => {
                 }`}
               >
                 <div className="min-h-0 overflow-hidden">
-                  <div className="px-6 md:px-8 pb-8 text-gray-500 text-base leading-relaxed md:text-lg">
+                  <div className="px-6 md:px-8 pb-8 text-gray-500 text-body-medium text-left!">
                     {faq.answer}
                   </div>
                 </div>
