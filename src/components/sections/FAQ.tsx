@@ -73,7 +73,7 @@ const FAQ = () => {
               key={index}
               className={`group bg-white rounded-3xl border transition-all duration-300 ${
                 openIndex === index
-                  ? "border-[#2e2e2e] shadow-xl shadow-gray-200/50"
+                  ? "border-foreground shadow-xl shadow-gray-200/50"
                   : "border-gray-100 hover:border-gray-200 hover:shadow-md"
               }`}
             >
@@ -83,7 +83,7 @@ const FAQ = () => {
               >
                 <span
                   className={`text-lg md:text-xl font-bold transition-colors duration-300 ${
-                    openIndex === index ? "text-[#2e2e2e]" : "text-gray-700"
+                    openIndex === index ? "text-foreground" : "text-gray-700"
                   }`}
                 >
                   {faq.question}
@@ -94,7 +94,7 @@ const FAQ = () => {
                   <ChevronDown
                     size={24}
                     className={
-                      openIndex === index ? "text-[#2e2e2e]" : "text-gray-400"
+                      openIndex === index ? "text-foreground" : "text-gray-400"
                     }
                   />
                 </div>

@@ -2,14 +2,92 @@
 
 import Button from "@/components/ui/Button";
 import Image from "next/image";
+import { useRef, useCallback } from "react";
+import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
+import type { MotionValue } from "motion/react";
+import AnimateInView from "@/components/ui/AnimateInView";
+import { defaultStagger, defaultTransition, fadeUp, fadeInRight, scaleIn } from "@/lib/animations";
+
+function VerifiedBadge({ mouseX, mouseY }: { mouseX: MotionValue<number>; mouseY: MotionValue<number> }) {
+  const springConfig = { stiffness: 80, damping: 22, mass: 0.5 };
+  const x = useSpring(useTransform(mouseX, [-0.5, 0.5], [-6, 6]), springConfig);
+  const y = useSpring(useTransform(mouseY, [-0.5, 0.5], [-6, 6]), springConfig);
+
+  return (
+    <motion.div
+      className="absolute top-4 right-4 sm:top-10 sm:-right-4 lg:-right-40 bg-surface rounded-xl px-4 py-3 shadow-lg flex items-center gap-3 pointer-events-none"
+      variants={scaleIn}
+      initial="initial"
+      whileInView="animate"
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ ...defaultTransition, delay: 0.25 }}
+      style={{ x, y, willChange: "transform" }}
+    >
+      <Image
+        src="/check-circle.svg"
+        alt="Verified"
+        width={53}
+        height={53}
+      />
+      <div>
+        <p className="text-body-medium text-foreground leading-tight!">
+          Verified Breeder
+        </p>
+        <p className="text-body-base">Health Guaranteed</p>
+      </div>
+    </motion.div>
+  );
+}
 
 export default function VerifiedBreeders() {
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  const rafId = useRef<number | null>(null);
+  const targetRef = useRef({ x: 0, y: 0 });
+
+  const handleSectionMouseMove = useCallback(
+    (e: React.MouseEvent<HTMLElement>) => {
+      const rect = e.currentTarget.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      targetRef.current = {
+        x: (e.clientX - centerX) / rect.width,
+        y: (e.clientY - centerY) / rect.height,
+      };
+      if (rafId.current === null) {
+        rafId.current = requestAnimationFrame(() => {
+          rafId.current = null;
+          mouseX.set(targetRef.current.x);
+          mouseY.set(targetRef.current.y);
+        });
+      }
+    },
+    [mouseX, mouseY]
+  );
+
+  const handleSectionMouseLeave = useCallback(() => {
+    if (rafId.current !== null) {
+      cancelAnimationFrame(rafId.current);
+      rafId.current = null;
+    }
+    mouseX.set(0);
+    mouseY.set(0);
+  }, [mouseX, mouseY]);
+
   return (
-    <section className="w-full bg-mint-subtle! py-12 sm:py-16 lg:py-24">
+    <section
+      className="w-full bg-mint-subtle! py-12 sm:py-16 lg:py-24"
+      onMouseMove={handleSectionMouseMove}
+      onMouseLeave={handleSectionMouseLeave}
+    >
       <div className="mx-auto container px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-52 items-center">
           {/* Left - Image */}
-          <div className="relative col-span-2">
+          <AnimateInView
+            variants={fadeInRight}
+            transition={defaultTransition}
+            className="relative col-span-2"
+          >
             <div className="relative rounded-3xl overflow-hidden">
               <Image
                 src="/verified.png"
@@ -21,37 +99,37 @@ export default function VerifiedBreeders() {
             </div>
 
             {/* Verified Badge */}
-            <div className="absolute top-4 right-4 sm:top-10 sm:-right-4 lg:-right-40 bg-surface rounded-xl px-4 py-3 shadow-lg flex items-center gap-3">
-              <Image
-                src="/check-circle.svg"
-                alt="Verified"
-                width={53}
-                height={53}
-              />
-              <div>
-                <p className="text-body-medium text-foreground leading-tight!">
-                  Verified Breeder
-                </p>
-                <p className="text-body-base">Health Guaranteed</p>
-              </div>
-            </div>
-          </div>
+            <VerifiedBadge mouseX={mouseX} mouseY={mouseY} />
+          </AnimateInView>
 
-          {/* Right - Content */}
-          <div className="flex flex-col items-start gap-6 lg:col-span-3">
-            <h2 className="text-hero-secondary text-foreground text-left!">
+          {/* Right - Content - stagger when in view */}
+          <AnimateInView
+            variants={defaultStagger}
+            className="flex flex-col items-start gap-6 lg:col-span-3"
+          >
+            <motion.h2
+              className="text-hero-secondary text-foreground text-left!"
+              variants={fadeUp}
+              transition={defaultTransition}
+            >
               Every member is carefully screened before joining.
-            </h2>
+            </motion.h2>
 
-            <p className="text-body-medium text-foreground max-w-lg text-left!">
+            <motion.p
+              className="text-body-medium text-foreground max-w-lg text-left!"
+              variants={fadeUp}
+              transition={defaultTransition}
+            >
               Every seller on our platform is carefully screened to help ensure
               authenticity, transparency, and responsible practices.
-            </p>
+            </motion.p>
 
-            <Button variant="primary" size="default">
-              Browse listings
-            </Button>
-          </div>
+            <motion.div variants={fadeUp} transition={defaultTransition}>
+              <Button variant="primary" size="default">
+                Browse listings
+              </Button>
+            </motion.div>
+          </AnimateInView>
         </div>
       </div>
     </section>

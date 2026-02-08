@@ -12,7 +12,7 @@ const BreederCTA = () => {
   return (
     <section className="bg-white py-12 sm:py-16 lg:py-24 font-jakarta">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-mint-faint rounded-[2rem] p-6 sm:p-10 lg:p-16 flex flex-col md:flex-row items-center gap-8 md:gap-12">
+        <div className="bg-mint-faint rounded-4xl p-6 sm:p-10 lg:p-16 flex flex-col md:flex-row items-center gap-8 md:gap-12">
           {/* Illustration - Left side */}
           <div className="shrink-0 w-32 h-32 md:w-48 md:h-48 relative">
             <Image

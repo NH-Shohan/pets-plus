@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { ChevronDown } from 'lucide-react';
-import { useEffect, useRef, useState } from 'react';
+import { ChevronDown } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 
 export interface DropdownItem {
   id: string;
@@ -15,7 +15,11 @@ export interface NavDropdownProps {
   className?: string;
 }
 
-export default function NavDropdown({ label, items, className = '' }: NavDropdownProps) {
+export default function NavDropdown({
+  label,
+  items,
+  className = "",
+}: NavDropdownProps) {
   const [isOpen, setIsOpen] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -58,7 +62,7 @@ export default function NavDropdown({ label, items, className = '' }: NavDropdow
       >
         <span className="text-heading-small">{label}</span>
         <ChevronDown
-          className={`w-4.5 h-4.5 transition-transform duration-200 text-light ${isOpen ? 'rotate-180' : ''}`}
+          className={`w-4.5 h-4.5 transition-transform duration-200 text-light ${isOpen ? "rotate-180" : ""}`}
         />
       </button>
 
@@ -66,7 +70,7 @@ export default function NavDropdown({ label, items, className = '' }: NavDropdow
       {isOpen && (
         <div className="absolute top-full left-0 mt-1 min-w-[180px] bg-surface border border-border rounded-xl shadow-lg z-50 overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200">
           <ul className="p-2">
-            {items.map((item, index) => (
+            {items.map((item) => (
               <li key={item.id}>
                 <a
                   href={item.href}
