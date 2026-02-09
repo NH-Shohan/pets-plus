@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @theme inline {
   /* Color System */
@@ -61,11 +61,11 @@ body {
 
 /* Heading Spacing */
 .heading-bottom-padding {
-  margin-bottom: max(1rem, 1.25vw);
+  margin-bottom: max(1rem, 6.5vw);
 }
 
 .heading-top-padding {
-  margin-top: max(1rem, 1.4vw);
+  margin-top: max(1rem, 6.5vw);
 }
 
 .margin-bottom-lg {
