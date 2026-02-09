@@ -171,7 +171,7 @@ export default function Navbar() {
                     transition={defaultTransition}
                     className="py-2"
                   >
-                    <p className="px-1 py-2 text-xs font-semibold text-primary uppercase tracking-wider">
+                    <p className="px-1 py-2 text-body-extra-small font-semibold text-primary uppercase tracking-wider">
                       Browse
                     </p>
                     <motion.ul
@@ -188,7 +188,7 @@ export default function Navbar() {
                         >
                           <Link
                             href={item.href}
-                            className="block px-1 py-2 text-2xl hover:text-primary hover:bg-mint-faint rounded-lg transition-colors duration-150"
+                            className="block px-1 py-2 card-title-large font-normal! hover:text-primary hover:bg-mint-faint rounded-lg transition-colors duration-150"
                             onClick={() => setIsMobileMenuOpen(false)}
                           >
                             {item.label}
@@ -211,7 +211,7 @@ export default function Navbar() {
                     transition={defaultTransition}
                     className="py-2"
                   >
-                    <p className="px-1 py-2 text-xs font-semibold text-primary uppercase tracking-wider">
+                    <p className="px-1 py-2 text-body-extra-small font-semibold text-primary uppercase tracking-wider">
                       Shop
                     </p>
                     <motion.ul
@@ -228,7 +228,7 @@ export default function Navbar() {
                         >
                           <Link
                             href={item.href}
-                            className="block px-1 py-2 text-2xl hover:text-primary hover:bg-mint-faint rounded-lg transition-colors duration-150"
+                            className="block px-1 py-2 card-title-large font-normal! hover:text-primary hover:bg-mint-faint rounded-lg transition-colors duration-150"
                             onClick={() => setIsMobileMenuOpen(false)}
                           >
                             {item.label}

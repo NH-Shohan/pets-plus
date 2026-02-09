@@ -42,76 +42,26 @@ body {
 /* Typography System - Semantic Classes */
 @layer utilities {
   .main-container {
-    @apply mx-auto w-[90vw] md:w-[76.67vw]!;
+    @apply mx-auto w-[90vw] sm:w-[76.67vw]!;
   }
 
   /* Section Spacing */
   .section-padding-top {
-    padding-top: 56px;
-  }
-
-  @media (min-width: 640px) {
-    .section-padding-top {
-      padding-top: 64px;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .section-padding-top {
-      padding-top: 110px;
-    }
+    padding-top: max(2.25rem, 6.5104167vw);
   }
 
   .section-padding-bottom {
-    padding-bottom: 56px;
-  }
-
-  @media (min-width: 640px) {
-    .section-padding-bottom {
-      padding-bottom: 64px;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .section-padding-bottom {
-      padding-bottom: 110px;
-    }
+    padding-bottom: max(2.25rem, 6.5104167vw);
   }
 
   .section-padding-top-bottom {
-    padding-top: 56px;
-    padding-bottom: 56px;
-  }
-
-  @media (min-width: 640px) {
-    .section-padding-top-bottom {
-      padding-top: 64px;
-      padding-bottom: 64px;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .section-padding-top-bottom {
-      padding-top: 110px;
-      padding-bottom: 110px;
-    }
+    padding-top: max(2.25rem, 6.5104167vw);
+    padding-bottom: max(2.25rem, 6.5104167vw);
   }
 
   /* Heading Spacing */
   .heading-bottom-padding {
-    margin-bottom: 16px;
-  }
-
-  @media (min-width: 640px) {
-    .heading-bottom-padding {
-      margin-bottom: 24px;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .heading-bottom-padding {
-      margin-bottom: 32px;
-    }
+    margin-bottom: max(1rem, 1.25vw);
   }
 }
 
@@ -133,36 +83,43 @@ body {
   font-size: max(20px, 1.042vw);
   line-height: 1.5;
 }
+
 .text-body-large-vietnam {
   @apply font-vietnam! font-extrabold!;
   font-size: max(20px, 1.042vw);
   line-height: 1.5;
 }
+
 .text-body-medium {
   @apply font-jakarta font-light;
   font-size: max(18px, 0.938vw);
   line-height: 1.5;
 }
+
 .text-body-medium-vietnam {
   @apply font-vietnam font-light;
   font-size: max(18px, 0.938vw);
   line-height: 1.5;
 }
+
 .text-body-base {
   @apply font-jakarta;
   font-size: max(16px, 0.833vw);
   line-height: 1.5;
 }
+
 .text-body-small {
   @apply font-jakarta;
   font-size: max(14px, 0.729167vw);
   line-height: 1.5;
 }
+
 .text-body-small-vietnam {
   @apply font-vietnam font-light;
   font-size: max(14px, 0.729167vw);
   line-height: 1.5;
 }
+
 .text-body-extra-small {
   @apply font-jakarta;
   font-size: max(12px, 0.625vw);
@@ -183,14 +140,17 @@ body {
   @apply font-jakarta font-bold leading-normal;
   font-size: max(26px, 1.77vw);
 }
+
 .card-title-large {
   @apply font-jakarta font-bold leading-normal;
   font-size: max(24px, 1.56vw);
 }
+
 .card-title-medium {
   @apply font-jakarta font-bold leading-normal;
   font-size: max(20px, 1.35vw);
 }
+
 .card-title-normal {
   @apply font-jakarta font-bold leading-normal;
   font-size: max(20px, 1.25vw);

@@ -1,7 +1,14 @@
-'use client';
+"use client";
 
-import { Search } from 'lucide-react';
-import { useEffect, useMemo, useRef, useState, type ChangeEvent, type KeyboardEvent } from 'react';
+import { Search } from "lucide-react";
+import {
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  type ChangeEvent,
+  type KeyboardEvent,
+} from "react";
 
 export interface SearchSuggestion {
   id: string;
@@ -17,18 +24,18 @@ export interface SearchInputProps {
 
 // Static dummy suggestions for demo
 const defaultSuggestions: SearchSuggestion[] = [
-  { id: '1', label: 'Bernedoddle' },
-  { id: '2', label: 'Bernes' },
-  { id: '3', label: 'Berna' },
+  { id: "1", label: "Bernedoddle" },
+  { id: "2", label: "Bernes" },
+  { id: "3", label: "Berna" },
 ];
 
 export default function SearchInput({
-  placeholder = '',
+  placeholder = "",
   suggestions = defaultSuggestions,
   onSearch,
-  className = '',
+  className = "",
 }: SearchInputProps) {
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState("");
   const [isFocused, setIsFocused] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(-1);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -37,7 +44,9 @@ export default function SearchInput({
   // Filter suggestions based on query using useMemo
   const filteredSuggestions = useMemo(() => {
     if (query.trim()) {
-      return suggestions.filter((s) => s.label.toLowerCase().includes(query.toLowerCase()));
+      return suggestions.filter((s) =>
+        s.label.toLowerCase().includes(query.toLowerCase()),
+      );
     }
     return suggestions;
   }, [query, suggestions]);
@@ -45,12 +54,15 @@ export default function SearchInput({
   // Close dropdown when clicking outside
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
-      if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
+      if (
+        containerRef.current &&
+        !containerRef.current.contains(event.target as Node)
+      ) {
         setIsFocused(false);
       }
     }
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -59,20 +71,22 @@ export default function SearchInput({
   };
 
   const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'ArrowDown') {
+    if (e.key === "ArrowDown") {
       e.preventDefault();
-      setSelectedIndex((prev) => (prev < filteredSuggestions.length - 1 ? prev + 1 : prev));
-    } else if (e.key === 'ArrowUp') {
+      setSelectedIndex((prev) =>
+        prev < filteredSuggestions.length - 1 ? prev + 1 : prev,
+      );
+    } else if (e.key === "ArrowUp") {
       e.preventDefault();
       setSelectedIndex((prev) => (prev > 0 ? prev - 1 : -1));
-    } else if (e.key === 'Enter') {
+    } else if (e.key === "Enter") {
       e.preventDefault();
       if (selectedIndex >= 0 && filteredSuggestions[selectedIndex]) {
         handleSelectSuggestion(filteredSuggestions[selectedIndex].label);
       } else if (query.trim()) {
         onSearch?.(query);
       }
-    } else if (e.key === 'Escape') {
+    } else if (e.key === "Escape") {
       setIsFocused(false);
       inputRef.current?.blur();
     }
@@ -84,10 +98,14 @@ export default function SearchInput({
     onSearch?.(label);
   };
 
-  const showDropdown = isFocused && query.trim().length > 0 && filteredSuggestions.length > 0;
+  const showDropdown =
+    isFocused && query.trim().length > 0 && filteredSuggestions.length > 0;
 
   return (
-    <div ref={containerRef} className={`relative ${showDropdown ? 'z-100' : ''} ${className}`}>
+    <div
+      ref={containerRef}
+      className={`relative ${showDropdown ? "z-100" : ""} ${className}`}
+    >
       {/* Search Input */}
       <div className="relative flex items-center">
         <input
@@ -98,9 +116,9 @@ export default function SearchInput({
           onFocus={() => setIsFocused(true)}
           onKeyDown={handleKeyDown}
           placeholder={placeholder}
-          className="w-full h-12 pl-4 pr-12 bg-background-light border border-border rounded-xl text-heading-small text-foreground placeholder:text-gray-400 focus:outline-none transition-all duration-200"
+          className="w-full pl-4 pr-12 h-[3.5rem] bg-background-light border border-border rounded-xl text-body-medium font-semibold! placeholder:text-light focus:outline-none transition-all duration-200"
         />
-        <Search className="absolute right-4 w-5 h-5 text-gray-300 pointer-events-none" />
+        <Search className="absolute right-4 w-5 h-5 text-light pointer-events-none" />
       </div>
 
       {/* Suggestions Dropdown - fixed stacking so it overlays nav in mobile menu */}
@@ -113,8 +131,10 @@ export default function SearchInput({
                   type="button"
                   onClick={() => handleSelectSuggestion(suggestion.label)}
                   onMouseEnter={() => setSelectedIndex(index)}
-                  className={`w-full px-4 text-left transition-colors duration-150 cursor-pointer rounded-[10px] text-heading-small ${
-                    index === selectedIndex ? 'bg-mint-light text-primary' : 'text-foreground hover:bg-mint-faint'
+                  className={`w-full px-4 py-2.5 text-left transition-colors duration-150 cursor-pointer rounded-[10px] text-body-medium font-semibold! ${
+                    index === selectedIndex
+                      ? "bg-mint-light text-primary"
+                      : "text-foreground hover:bg-mint-faint"
                   }`}
                 >
                   {suggestion.label}

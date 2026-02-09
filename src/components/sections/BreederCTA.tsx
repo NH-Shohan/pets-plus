@@ -37,7 +37,7 @@ const BreederCTA = () => {
             <div>
               <Link
                 href="/become-a-breeder"
-                className="text-foreground font-bold text-xl underline underline-offset-8 decoration-2 hover:text-primary transition-colors"
+                className="text-body-large font-bold underline underline-offset-8 decoration-2 hover:text-primary transition-colors"
               >
                 Learn more
               </Link>

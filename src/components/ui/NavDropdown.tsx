@@ -68,13 +68,13 @@ export default function NavDropdown({
 
       {/* Dropdown Menu */}
       {isOpen && (
-        <div className="absolute top-full left-0 mt-1 min-w-[180px] bg-surface border border-border rounded-[20px] z-50 overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200">
+        <div className="absolute top-full left-0 mt-3 min-w-[260px] bg-surface border border-border rounded-[20px] z-50 overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200">
           <ul className="p-[10px]">
             {items.map((item) => (
               <li key={item.id}>
                 <a
                   href={item.href}
-                  className={`block px-4 text-body-medium font-semibold transition-colors duration-150 rounded-[10px] text-nowrap hover:bg-mint-light hover:text-primary`}
+                  className={`block px-4 py-2.5 text-body-medium font-semibold! transition-colors duration-150 rounded-[10px] text-nowrap hover:bg-mint-light hover:text-primary`}
                 >
                   {item.label}
                 </a>
