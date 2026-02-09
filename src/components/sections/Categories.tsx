@@ -35,7 +35,7 @@ export default function Categories() {
         />
 
         {/* View all link */}
-        <div className="flex justify-end mb-[27px] mr-6">
+        <div className="flex justify-end mb-[27px] mr-8">
           <Link
             href="/"
             className="text-body-small text-foreground underline underline-offset-4 hover:text-primary transition-colors"
