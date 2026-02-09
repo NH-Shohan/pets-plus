@@ -51,7 +51,7 @@ const Footer = () => {
     "relative inline-block w-fit text-paragraph text-body-small transition-colors duration-300 hover:text-white after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-px after:w-full after:scale-x-0 after:origin-left after:bg-white after:transition-transform after:duration-300 hover:after:scale-x-100";
 
   return (
-    <footer className="bg-primary-dark text-white pt-12 pb-6 border-t border-white/5">
+    <footer className="bg-primary-dark text-white footer-padding-top">
       <div className="main-container">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-12 gap-8 md:gap-12 mb-12">
@@ -115,7 +115,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar - Refined with subtle border and better hierarchy */}
-        <div className="border-t border-[#2C413C] pt-6 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="border-t border-[#2C413C] py-6 xl:py-10 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
             <p className="text-paragraph text-body-extra-small">
               © {currentYear} Pets & Plus. All rights reserved.

@@ -15,22 +15,22 @@ const breedData = [
     link: "/breeds/pets",
     items: [
       "Dogs",
-      "Cats",
-      "Birds",
-      "Rabbits",
-      "Hamsters",
-      "Guinea pigs",
-      "Gerbils",
-      "Mice & Rats",
-      "Ferrets",
       "Chinchillas",
+      "Cats",
       "Hedgehogs",
+      "Birds",
       "Sugar gliders",
+      "Rabbits",
       "Turtles",
+      "Hamsters",
       "Lizards",
+      "Guinea pigs",
       "Snakes",
+      "Gerbils",
       "Frogs",
+      "Mice & Rats",
       "Mini pigs",
+      "Ferrets",
     ],
   },
   {
@@ -38,21 +38,21 @@ const breedData = [
     link: "/breeds/farm",
     items: [
       "Horses",
+      "Turkeys",
       "Ponies",
+      "Geese",
       "Cows (Cattle)",
+      "Quail",
       "Bulls",
+      "Donkeys",
       "Goats",
+      "Mules",
       "Sheep",
+      "Alpacas",
       "Pigs",
+      "Llamas",
       "Chickens",
       "Ducks",
-      "Turkeys",
-      "Geese",
-      "Quail",
-      "Donkeys",
-      "Mules",
-      "Alpacas",
-      "Llamas",
     ],
   },
   {
@@ -60,20 +60,20 @@ const breedData = [
     link: "/breeds/exotic",
     items: [
       "Snakes",
-      "Lizards",
-      "Chameleons",
-      "Turtles",
-      "Tortoises",
-      "Parrots",
-      "Macaws",
-      "Cockatoos",
       "Freshwater tropical fish",
+      "Lizards",
       "Saltwater reef fish",
+      "Chameleons",
       "Shrimp",
+      "Turtles",
       "Snails",
+      "Tortoises",
       "Crayfish",
+      "Parrots",
       "Corals",
+      "Macaws",
       "Degus",
+      "Cockatoos",
       "Hedgehogs",
     ],
   },
@@ -91,7 +91,7 @@ const PopularBreeds = () => {
           {breedData.map((category) => (
             <div
               key={category.title}
-              className="flex flex-col h-full space-y-6"
+              className="flex flex-col h-full space-y-4"
             >
               <h3 className="card-title-normal font-bold">{category.title}</h3>
 
@@ -107,7 +107,7 @@ const PopularBreeds = () => {
                 ))}
               </div>
 
-              <div className="mt-auto pt-4">
+              <div className="mt-auto">
                 <Link
                   href={category.link}
                   className="text-primary font-normal text-body-base underline underline-offset-2"
