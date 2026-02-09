@@ -31,26 +31,37 @@ export default function Hero() {
 
           {/* Right Content */}
           <div className="relative flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-md sm:max-w-lg lg:max-w-4xl">
-              <div className="relative w-full aspect-square mx-auto lg:mx-0">
-                {/* Main Image */}
-                <div className="absolute inset-0 z-10">
-                  <Image
-                    src="/hero-girl-background.png"
-                    alt="Happy pet owner"
-                    fill
-                    className="object-contain object-bottom"
-                    sizes="(max-width: 768px) 100vw, 500px"
-                    priority
-                  />
-                </div>
+            <div
+              className="relative"
+              style={{
+                width: 'max(350px, 37vw)',
+                height: 'max(350px, 37vw)'
+              }}
+            >
+              {/* Main Image */}
+              <div className="absolute inset-0 z-10">
+                <Image
+                  src="/hero-girl-background.png"
+                  alt="Happy pet owner"
+                  fill
+                  className="object-contain object-bottom"
+                  sizes="max(350px, 37vw)"
+                  priority
+                />
+              </div>
 
-                {/* Floating Rabbit - Fixed position */}
-                <div className="absolute bottom-0 right-0 z-20 translate-x-[10%] translate-y-[0%]">
-                  <div className="relative w-24 h-24 sm:w-32 sm:h-32 md:w-32 md:h-32 lg:w-40 lg:h-40 xl:w-40 xl:h-40 2xl:w-48 2xl:h-48 overflow-hidden">
-                    <Image src="/hero-rabbit.png" alt="Rabbit" fill className="object-contain" sizes="160px" />
-                  </div>
-                </div>
+              {/* Floating Rabbit - Fixed position with vw-based sizing */}
+              <div
+                className="absolute z-20 overflow-hidden"
+                style={{
+                  bottom: 0,
+                  right: 0,
+                  transform: 'translateX(20%)',
+                  width: 'max(120px, 11vw)',
+                  height: 'max(120px, 11vw)'
+                }}
+              >
+                <Image src="/hero-rabbit.png" alt="Rabbit" fill className="object-contain" sizes="max(120px, 11vw)" />
               </div>
             </div>
           </div>

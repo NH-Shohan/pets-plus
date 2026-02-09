@@ -87,7 +87,7 @@ body {
 .text-hero-primary {
   @apply font-jakarta font-bold tracking-tight;
   font-size: max(3rem, 5.2083vw);
-  line-height: 0.89;
+  line-height: 0.9;
 }
 
 .text-hero-secondary {
