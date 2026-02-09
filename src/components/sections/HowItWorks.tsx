@@ -52,7 +52,7 @@ export default function HowItWorks() {
               </div>
 
               {/* Title */}
-              <h3 className="text-display-small text-foreground mb-3">
+              <h3 className="card-title-large text-foreground mb-3">
                 {step.title}
               </h3>
 

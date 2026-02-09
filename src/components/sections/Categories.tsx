@@ -66,7 +66,7 @@ export default function Categories() {
                 </div>
 
                 {/* Category Name */}
-                <h3 className="text-display-medium text-foreground transition-colors duration-300 ease-out group-hover:text-primary">
+                <h3 className="card-title-large text-foreground transition-colors duration-300 ease-out group-hover:text-primary">
                   {category.name}
                 </h3>
               </Link>
