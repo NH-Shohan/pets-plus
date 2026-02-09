@@ -30,8 +30,8 @@ export default function Categories() {
         <SectionHeader
           title="Browse by category"
           description="These dogs have the potential to be wonderful companions for your whole family with the right training."
-          headingClassName="section-title"
-          descriptionClassName="text-body-medium max-w-[max(750px,30vw)]"
+          headingClassName="section-title--lg"
+          descriptionClassName="text-body-medium max-w-[max(750px,40vw)]"
         />
 
         {/* View all link */}

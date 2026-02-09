@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme inline {
   /* Color System */
@@ -145,13 +145,14 @@ body {
 }
 
 .section-title {
-  @apply font-jakarta font-bold leading-none;
-  font-size: max(28px, 4.16vw);
+  @apply font-jakarta font-bold text-[max(28px,4.16vw)] lg:leading-none leading-normal;
 }
 
+.section-title--lg {
+  @apply font-jakarta font-bold text-[max(28px,3.12vw)] lg:leading-none leading-normal;
+}
 .section-title--medium {
-  @apply font-jakarta font-bold leading-none;
-  font-size: max(24px, 2.08vw);
+  @apply font-jakarta font-bold leading-normal lg:leading-none text-[max(24px,2.08vw)];
 }
 
 .card-title-xl {
