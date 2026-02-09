@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme inline {
   /* Color System */
@@ -135,7 +135,7 @@ body {
 
 .section-title {
   @apply font-jakarta font-bold leading-none;
-  font-size: max(28px, 3.125vw);
+  font-size: max(28px, 4.16vw);
 }
 
 .section-title--medium {
