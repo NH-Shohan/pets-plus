@@ -30,7 +30,7 @@ const Newsletter = () => {
                 <input
                   type="email"
                   placeholder="Email Address"
-                  className="w-full sm:flex-1 px-12 py-4 bg-transparent placeholder-foreground text-foreground outline-none text-body-medium-vietnam text-left!"
+                  className="w-full sm:flex-1 px-3 md:px-12 py-4 bg-transparent placeholder-foreground text-foreground outline-none text-body-medium-vietnam text-left!"
                   required
                 />
                 <button
