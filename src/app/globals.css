@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @theme inline {
   /* Color System */
@@ -68,15 +68,15 @@ body {
 }
 
 .heading-top-padding {
-  margin-top: max(1rem, 6.5vw);
+  margin-top: max(1rem, 2.5vw);
 }
 
 .margin-bottom-lg {
-  margin-bottom: max(0.5rem, 2.5vw);
+  margin-bottom: max(30px, 2.5vw);
 }
 
 .margin-top-lg {
-  margin-top: max(0.5rem, 2.3vw);
+  margin-top: max(24px, 2.3vw);
 }
 
 .footer-padding-top {
@@ -93,7 +93,7 @@ body {
 .text-hero-secondary {
   @apply font-jakarta;
   font-size: max(18px, 1.25vw);
-  line-height: 1;
+  line-height: 1.5;
 }
 
 .text-body-large {

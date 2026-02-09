@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import Button from '@/components/ui/Button';
-import Image from 'next/image';
+import Button from "@/components/ui/Button";
+import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -48,7 +48,13 @@ export default function Hero() {
                 {/* Floating Rabbit - Fixed position */}
                 <div className="absolute bottom-0 right-0 z-20 translate-x-[10%] translate-y-[0%]">
                   <div className="relative w-24 h-24 sm:w-32 sm:h-32 md:w-32 md:h-32 lg:w-40 lg:h-40 xl:w-40 xl:h-40 2xl:w-48 2xl:h-48 overflow-hidden">
-                    <Image src="/hero-rabbit.png" alt="Rabbit" fill className="object-contain" sizes="160px" />
+                    <Image
+                      src="/hero-rabbit.png"
+                      alt="Rabbit"
+                      fill
+                      className="object-contain"
+                      sizes="160px"
+                    />
                   </div>
                 </div>
               </div>
