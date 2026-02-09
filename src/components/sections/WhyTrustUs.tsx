@@ -1,27 +1,30 @@
-import Image from "next/image";
-import SectionHeader from "../ui/SectionHeader";
+import Image from 'next/image';
+import SectionHeader from '../ui/SectionHeader';
 
 const features = [
   {
     id: 1,
-    title: "Verified Breeders",
-    description:
-      "Every breeder undergoes thorough background checks and certification",
-    icon: "/check.svg",
+    title: 'Verified Breeders',
+    description: 'Every breeder undergoes thorough background checks and certification',
+    icon: '/check.svg',
+    width: 40,
+    height: 40,
   },
   {
     id: 2,
-    title: "Secure Messaging",
-    description:
-      "Strict breeding standards ensure healthy, well-cared-for animals",
-    icon: "/shield.svg",
+    title: 'Secure Messaging',
+    description: 'Strict breeding standards ensure healthy, well-cared-for animals',
+    icon: '/shield.svg',
+    width: 36,
+    height: 36,
   },
   {
     id: 3,
-    title: "Reviewed & Rated",
-    description:
-      "Expert team available around the clock to assist buyers and breeders.",
-    icon: "/people.svg",
+    title: 'Reviewed & Rated',
+    description: 'Expert team available around the clock to assist buyers and breeders.',
+    icon: '/people.svg',
+    width: 48,
+    height: 48,
   },
 ];
 
@@ -42,23 +45,14 @@ export default function WhyTrustUs() {
             >
               {/* Icon */}
               <div className="mb-4">
-                <Image
-                  src={feature.icon}
-                  alt={feature.title}
-                  width={40}
-                  height={40}
-                />
+                <Image src={feature.icon} alt={feature.title} width={feature.width} height={feature.height} />
               </div>
 
               {/* Title */}
-              <h3 className="text-display-small text-primary mb-3">
-                {feature.title}
-              </h3>
+              <h3 className="text-display-small text-primary mb-3">{feature.title}</h3>
 
               {/* Description */}
-              <p className="text-body-base text-foreground max-w-[300px] w-full">
-                {feature.description}
-              </p>
+              <p className="text-body-base text-foreground max-w-[300px] w-full">{feature.description}</p>
             </div>
           ))}
         </div>

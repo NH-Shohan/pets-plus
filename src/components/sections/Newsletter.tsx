@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 /* 
   Newsletter Section
@@ -15,15 +15,10 @@ const Newsletter = () => {
           <div className="relative z-10 max-w-2xl mx-auto space-y-4">
             <div className="space-y-3">
               <h2 className="text-display-large">Never miss a new listing</h2>
-              <p className="text-body-medium">
-                Be the first to know when verified breeders list new pets
-              </p>
+              <p className="text-body-medium">Be the first to know when verified breeders list new pets</p>
             </div>
 
-            <form
-              className="mt-8 max-w-2xl mx-auto"
-              onSubmit={(e) => e.preventDefault()}
-            >
+            <form className="mt-8 max-w-2xl mx-auto" onSubmit={(e) => e.preventDefault()}>
               <div className="relative flex flex-col sm:flex-row items-center p-1 pr-[5px] bg-white rounded-2xl sm:rounded-full">
                 <input
                   type="email"
@@ -33,7 +28,7 @@ const Newsletter = () => {
                 />
                 <button
                   type="submit"
-                  className="w-full sm:w-auto px-10 h-[60px] bg-primary text-white font-black rounded-xl sm:rounded-full uppercase tracking-wider text-sm transition-transform active:scale-95"
+                  className="w-full sm:w-auto px-10 h-[60px] bg-primary text-white font-black rounded-xl sm:rounded-full uppercase tracking-wider text-xl transition-transform active:scale-95"
                 >
                   SUBSCRIBE
                 </button>
@@ -41,9 +36,8 @@ const Newsletter = () => {
             </form>
 
             <p className="text-accent-small opacity-80 pt-2 max-w-[624px] mx-auto">
-              We respect your privacy. Your email address will only be used to
-              send you updates and offers. We do not sell or share your
-              information with third parties.
+              We respect your privacy. Your email address will only be used to send you updates and offers. We do not
+              sell or share your information with third parties.
             </p>
           </div>
         </div>
