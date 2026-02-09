@@ -1,0 +1,70 @@
+{
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "typescript.suggest.autoImports": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "vue.inlayHints.optionsWrapper": true,
+  "files.associations": {
+    "*.vue": "vue",
+    "*.css": "tailwindcss"
+  },
+  "emmet.includeLanguages": {
+    "vue": "html",
+    "vue-html": "html"
+  },
+  "tailwindCSS.includeLanguages": {
+    "vue": "html",
+    "vue-html": "html"
+  },
+  "tailwindCSS.experimental.classRegex": [
+    [
+      "classList\\.add\\(([^)]*)\\)",
+      "([^)]*)"
+    ],
+    [
+      "className\\s*=\\s*['\"`]([^'\"`]*)['\"`]",
+      "([^'\"`]*)"
+    ]
+  ],
+  "files.exclude": {
+    "**/.nuxt": true,
+    "**/node_modules": true,
+    "**/.output": true
+  },
+  "search.exclude": {
+    "**/.nuxt": true,
+    "**/node_modules": true,
+    "**/.output": true
+  },
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "vue"
+  ],
+  "eslint.workingDirectories": [
+    "."
+  ],
+  "eslint.format.enable": true,
+  "prettier.documentSelectors": [
+    "**/*.vue",
+    "**/*.ts",
+    "**/*.js",
+    "**/*.json"
+  ],
+  "prettier.configPath": ".prettierrc",
+  "[vue]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  }
+}
