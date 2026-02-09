@@ -68,8 +68,8 @@ const FAQ = () => {
           {faqData.map((faq, index) => (
             <div
               key={index}
-              className={`group bg-white rounded-3xl border transition-all duration-300 ${
-                openIndex === index ? "border-foreground" : "hover:shadow-sm"
+              className={`group bg-white rounded-[40px] border transition-all duration-300 ${
+                openIndex === index ? "border-foreground" : ""
               }`}
               style={{
                 borderColor:
@@ -82,7 +82,7 @@ const FAQ = () => {
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full flex items-center justify-between p-6 md:p-8 text-left outline-none cursor-pointer"
+                className={`w-full flex items-center justify-between pt-6 pr-6 pl-6 md:pt-8 md:pr-8 md:pl-8 text-left outline-none cursor-pointer transition-[padding] duration-300 ease-out ${openIndex === index ? "pb-5" : "pb-6 md:pb-8"}`}
               >
                 <span
                   className="text-heading-large transition-colors duration-300"

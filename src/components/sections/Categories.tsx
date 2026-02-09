@@ -25,7 +25,7 @@ const categories = [
 
 export default function Categories() {
   return (
-    <section className="w-full bg-mint-faint section-padding-bottom">
+    <section className="w-full bg-[#F8F9FA] section-padding-bottom">
       <div className="mx-auto container px-4 sm:px-6 lg:px-8">
         <SectionHeader
           title="Browse by category"
@@ -45,7 +45,7 @@ export default function Categories() {
         </div>
 
         {/* Category Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
           {categories.map((category) => (
             <div key={category.id}>
               <Link
@@ -53,12 +53,12 @@ export default function Categories() {
                 className="group flex flex-col items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-2xl"
               >
                 {/* Image Container */}
-                <div className="w-full rounded-2xl overflow-hidden mb-5 lg:mb-7 bg-surface-light shadow-none">
-                  <div className="w-full aspect-4/5 overflow-hidden">
+                <div className="w-full rounded-[20px] overflow-hidden mb-5 lg:mb-7 bg-surface-light shadow-none">
+                  <div className="w-full aspect-[4/4.4] overflow-hidden">
                     <Image
                       src={category.image}
                       alt={category.name}
-                      width={400}
+                      width={460}
                       height={500}
                       className="w-full h-full object-cover"
                     />
