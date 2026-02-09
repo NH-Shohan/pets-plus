@@ -41,6 +41,9 @@ body {
 
 /* Typography System - Semantic Classes */
 @layer utilities {
+  .main-container {
+    @apply mx-auto w-[76.67vw]!;
+  }
   /* Hero Titles - Responsive */
   .text-hero-primary {
     @apply font-jakarta font-bold tracking-tight;

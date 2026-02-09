@@ -6,7 +6,7 @@ import Image from 'next/image';
 export default function Hero() {
   return (
     <section className="relative w-full overflow-hidden bg-mint-faint">
-      <div className="mx-auto container px-4 sm:px-6 lg:px-8">
+      <div className="main-container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center section-padding-top-bottom">
           {/* Left Content */}
           <div className="flex flex-col items-start gap-6 sm:gap-8">

@@ -31,7 +31,7 @@ const features = [
 export default function WhyTrustUs() {
   return (
     <section className="w-full bg-[#FCFCFD] section-padding-top-bottom">
-      <div className="mx-auto container px-4 sm:px-6 lg:px-8">
+      <div className="main-container">
         <SectionHeader
           title="Why buyers trust us"
           description="Whether you're browsing or selling, we've made it easy."

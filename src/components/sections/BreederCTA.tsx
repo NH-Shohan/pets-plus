@@ -1,5 +1,5 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image';
+import Link from 'next/link';
 
 /* 
   BreederCTA Section
@@ -11,28 +11,19 @@ import Link from "next/link";
 const BreederCTA = () => {
   return (
     <section className="bg-white section-padding-bottom font-jakarta">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="main-container">
         <div className="bg-[#F3FAF8] rounded-[20px] p-6 sm:p-10 lg:p-16 flex flex-col md:flex-row items-center gap-8 md:gap-12  ">
           {/* Illustration - Left side */}
           <div className="shrink-0 max-w-[137px] w-full h-full relative">
-            <Image
-              src="/breeder.svg"
-              alt="Breeder illustration"
-              width={140}
-              height={200}
-              className="object-contain"
-            />
+            <Image src="/breeder.svg" alt="Breeder illustration" width={140} height={200} className="object-contain" />
           </div>
 
           {/* Content - Right side */}
           <div className="flex-1 space-y-4 text-center md:text-left">
-            <h2 className="text-display-large  ">
-              Are you a responsible breeder?
-            </h2>
+            <h2 className="text-display-large  ">Are you a responsible breeder?</h2>
             <p className="text-body-medium text-left!">
-              We&apos;d love to invite you to join our community of trusted
-              breeders. We only list screened breeders and help connect you
-              directly with educated, serious buyers.
+              We&apos;d love to invite you to join our community of trusted breeders. We only list screened breeders and
+              help connect you directly with educated, serious buyers.
             </p>
             <div>
               <Link

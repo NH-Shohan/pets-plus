@@ -28,7 +28,7 @@ const steps = [
 export default function HowItWorks() {
   return (
     <section className="w-full bg-white section-padding-top-bottom">
-      <div className="mx-auto container px-4 sm:px-6 lg:px-8">
+      <div className="main-container">
         <SectionHeader title="How it works" description="Whether you're browsing or selling, we've made it easy." />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-12">

@@ -45,7 +45,7 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-surface border-b border-border">
-      <nav className="container mx-auto px-4 sm:px-6 xl:px-8 py-2">
+      <nav className="main-container">
         <div className="flex items-center justify-between lg:gap-5 xl:gap-12 h-16 lg:h-20">
           {/* Logo */}
           <Link href="/" className="shrink-0">

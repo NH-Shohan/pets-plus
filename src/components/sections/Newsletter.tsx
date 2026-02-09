@@ -10,7 +10,7 @@
 const Newsletter = () => {
   return (
     <section className="bg-white section-padding-bottom font-jakarta">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="main-container">
         <div className="relative bg-primary rounded-[20px] px-6 py-16 sm:px-8 sm:py-20 md:px-16 md:py-24 text-center text-white shadow-2xl shadow-teal-900/10">
           <div className="relative z-10 max-w-2xl mx-auto space-y-4">
             <div className="space-y-3">
