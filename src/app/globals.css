@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @theme inline {
   /* Color System */
@@ -47,16 +47,16 @@ body {
 
   /* Section Spacing */
   .section-padding-top {
-    padding-top: max(2.25rem, 6.5104167vw);
+    padding-top: max(56px, 6.5104167vw);
   }
 
   .section-padding-bottom {
-    padding-bottom: max(2.25rem, 6.5104167vw);
+    padding-bottom: max(56px, 6.5104167vw);
   }
 
   .section-padding-top-bottom {
-    padding-top: max(2.25rem, 6.5104167vw);
-    padding-bottom: max(2.25rem, 6.5104167vw);
+    padding-top: max(56px, 6.5104167vw);
+    padding-bottom: max(56px, 6.5104167vw);
   }
 
   /* Heading Spacing */
