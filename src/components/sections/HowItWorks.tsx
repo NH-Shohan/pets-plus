@@ -35,10 +35,16 @@ export default function HowItWorks() {
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-12">
-          {steps.map((step) => (
+          {steps.map((step, index) => (
             <div
               key={step.id}
-              className="flex flex-col items-center text-center"
+              className={`flex flex-col items-center text-center ${
+                index === 0
+                  ? "lg:justify-self-start"
+                  : index === steps.length - 1
+                    ? "lg:justify-self-end"
+                    : ""
+              }`}
             >
               {/* Image */}
               <div className="mb-6">
@@ -47,7 +53,7 @@ export default function HowItWorks() {
                   alt={step.title}
                   width={255}
                   height={255}
-                  className="object-contain"
+                  className="object-contain w-[13.28125vw]"
                 />
               </div>
 

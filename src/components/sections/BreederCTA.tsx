@@ -14,13 +14,13 @@ const BreederCTA = () => {
       <div className="main-container">
         <div className="bg-[#F3FAF8] rounded-[20px] p-6 sm:p-10 lg:p-16 flex flex-col md:flex-row items-center gap-8 md:gap-12  ">
           {/* Illustration - Left side */}
-          <div className="shrink-0 max-w-[137px] w-full h-full relative">
+          <div className="h-full relative">
             <Image
               src="/breeder.svg"
               alt="Breeder illustration"
               width={140}
               height={200}
-              className="object-contain"
+              className="object-contain w-[7.2916666667vw]"
             />
           </div>
 
