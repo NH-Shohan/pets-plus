@@ -127,12 +127,12 @@ body {
 }
 
 .section-title {
-  @apply font-jakarta font-bold leading-normal;
+  @apply font-jakarta font-bold leading-none;
   font-size: max(28px, 3.125vw);
 }
 
 .section-title--medium {
-  @apply font-jakarta font-bold leading-normal;
+  @apply font-jakarta font-bold leading-none;
   font-size: max(24px, 2.08vw);
 }
 
