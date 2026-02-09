@@ -8,7 +8,7 @@ function VerifiedBadge() {
     <div className="absolute top-4 right-4 sm:top-10 sm:-right-4 lg:-right-40 bg-surface rounded-xl px-4 py-3 shadow-lg flex items-center gap-3 pointer-events-none">
       <Image src="/check-circle.svg" alt="Verified" width={53} height={53} />
       <div>
-        <p className="text-body-medium text-foreground leading-tight!">Verified Breeder</p>
+        <p className="text-body-large text-foreground font-bold">Verified Breeder</p>
         <p className="text-body-base">Health Guaranteed</p>
       </div>
     </div>
