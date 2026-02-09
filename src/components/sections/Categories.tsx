@@ -1,26 +1,26 @@
-import SectionHeader from "@/components/ui/SectionHeader";
-import Image from "next/image";
-import Link from "next/link";
+import SectionHeader from '@/components/ui/SectionHeader';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const categories = [
   {
     id: 1,
-    name: "Pets & Companions",
-    image: "/category-1.png",
-    href: "/",
+    name: 'Pets & Companions',
+    image: '/category-1.png',
+    href: '/'
   },
   {
     id: 2,
-    name: "Farm & Livestock",
-    image: "/category-2.png",
-    href: "/",
+    name: 'Farm & Livestock',
+    image: '/category-2.png',
+    href: '/'
   },
   {
     id: 3,
-    name: "Exotic Species",
-    image: "/category-3.png",
-    href: "/",
-  },
+    name: 'Exotic Species',
+    image: '/category-3.png',
+    href: '/'
+  }
 ];
 
 export default function Categories() {
@@ -31,7 +31,7 @@ export default function Categories() {
           title="Browse by category"
           description="These dogs have the potential to be wonderful companions for your whole family with the right training."
           headingClassName="section-title"
-          descriptionClassName="text-body-medium max-w-4xl"
+          descriptionClassName="text-body-medium max-w-[max(750px,30vw)]"
         />
 
         {/* View all link */}
@@ -46,14 +46,14 @@ export default function Categories() {
 
         {/* Category Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
-          {categories.map((category) => (
+          {categories.map(category => (
             <div key={category.id}>
               <Link
                 href={category.href}
                 className="group flex flex-col items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-2xl"
               >
                 {/* Image Container */}
-                <div className="w-full rounded-[20px] overflow-hidden mb-5 lg:mb-7 bg-surface-light shadow-none">
+                <div className="w-full rounded-[20px] overflow-hidden mb-5  bg-surface-light shadow-none">
                   <div className="w-full aspect-[4/4.4] overflow-hidden">
                     <Image
                       src={category.image}

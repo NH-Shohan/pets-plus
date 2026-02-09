@@ -43,7 +43,7 @@ export default function HowItWorks() {
               <h3 className="card-title-large mb-3">{step.title}</h3>
 
               {/* Description */}
-              <p className="text-body-base max-w-[450px] w-full">{step.description}</p>
+              <p className="text-body-base max-w-[450px] w-full font-light!">{step.description}</p>
             </div>
           ))}
         </div>
