@@ -64,8 +64,16 @@ body {
   margin-bottom: max(1rem, 1.25vw);
 }
 
+.heading-top-padding {
+  margin-top: max(1rem, 1.4vw);
+}
+
 .margin-bottom-lg {
-  margin-bottom: max(0.5rem, 1.6vw);
+  margin-bottom: max(0.5rem, 2.5vw);
+}
+
+.margin-top-lg {
+  margin-top: max(0.5rem, 2.3vw);
 }
 
 .footer-padding-top {
