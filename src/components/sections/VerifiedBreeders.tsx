@@ -41,15 +41,16 @@ export default function VerifiedBreeders() {
               Every member is carefully screened before joining.
             </h2>
 
-            <p className="text-body-medium text-foreground  text-left!">
-              Every seller on our platform is carefully screened to help ensure authenticity, transparency, and
-              responsible practices.
-            </p>
-
-            <div>
-              <Button variant="primary" size="default">
-                Browse listings
-              </Button>
+            <div className="">
+              <p className="text-body-medium text-foreground  text-left! margin-bottom-lg">
+                Every seller on our platform is carefully screened to help ensure authenticity, transparency, and
+                responsible practices.
+              </p>
+              <div className="">
+                <Button variant="primary" size="default">
+                  Browse listings
+                </Button>
+              </div>
             </div>
           </div>
         </div>
