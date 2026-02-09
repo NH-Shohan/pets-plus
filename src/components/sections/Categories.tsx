@@ -1,25 +1,25 @@
-import SectionHeader from '@/components/ui/SectionHeader';
-import Image from 'next/image';
-import Link from 'next/link';
+import SectionHeader from "@/components/ui/SectionHeader";
+import Image from "next/image";
+import Link from "next/link";
 
 const categories = [
   {
     id: 1,
-    name: 'Pets & Companions',
-    image: '/category-1.png',
-    href: '/',
+    name: "Pets & Companions",
+    image: "/category-1.png",
+    href: "/",
   },
   {
     id: 2,
-    name: 'Farm & Livestock',
-    image: '/category-2.png',
-    href: '/',
+    name: "Farm & Livestock",
+    image: "/category-2.png",
+    href: "/",
   },
   {
     id: 3,
-    name: 'Exotic Species',
-    image: '/category-3.png',
-    href: '/',
+    name: "Exotic Species",
+    image: "/category-3.png",
+    href: "/",
   },
 ];
 
@@ -30,7 +30,7 @@ export default function Categories() {
         <SectionHeader
           title="Browse by category"
           description="These dogs have the potential to be wonderful companions for your whole family with the right training."
-          headingClassName="text-hero-tertiary"
+          headingClassName="section-title"
           descriptionClassName="text-body-medium max-w-4xl"
         />
 

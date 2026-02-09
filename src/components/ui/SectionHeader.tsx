@@ -23,7 +23,7 @@ interface SectionHeaderProps {
 export default function SectionHeader({
   title,
   description,
-  headingClassName = "text-hero-secondary",
+  headingClassName = "section-title",
   descriptionClassName = "text-body-medium",
   containerClassName = "",
 }: SectionHeaderProps) {
