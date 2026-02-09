@@ -63,13 +63,17 @@ body {
   .heading-bottom-padding {
     margin-bottom: max(1rem, 1.25vw);
   }
+
+  .margin-bottom-lg {
+    margin-bottom: max(0.5rem, 1vw);
+  }
 }
 
 /* Hero Titles - Responsive */
 .text-hero-primary {
   @apply font-jakarta font-bold tracking-tight;
   font-size: max(3rem, 5.2083vw);
-  line-height: 1;
+  line-height: 0.89;
 }
 
 .text-hero-secondary {

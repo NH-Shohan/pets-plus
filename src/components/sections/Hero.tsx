@@ -17,7 +17,7 @@ export default function Hero() {
               </h1>
             </div>
 
-            <p className="text-hero-secondary">
+            <p className="text-hero-secondary margin-bottom-lg">
               Connect directly with trusted breeders.
             </p>
 

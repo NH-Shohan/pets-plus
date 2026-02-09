@@ -101,6 +101,32 @@ export default function SearchInput({
   const showDropdown =
     isFocused && query.trim().length > 0 && filteredSuggestions.length > 0;
 
+  // Responsive inline styles for vw-based sizing
+  const inputStyles: React.CSSProperties = {
+    height: "max(44px, 2.5vw)",
+    paddingLeft: "max(14px, 0.972vw)",
+    paddingRight: "max(40px, 2.778vw)",
+    borderRadius: "max(10px, 0.694vw)",
+    fontSize: "max(14px, 0.875vw)",
+  };
+
+  const iconStyles: React.CSSProperties = {
+    width: "max(18px, 1.111vw)",
+    height: "max(18px, 1.111vw)",
+    right: "max(14px, 0.972vw)",
+  };
+
+  const dropdownStyles: React.CSSProperties = {
+    borderRadius: "max(16px, 1.111vw)",
+    padding: "max(8px, 0.556vw)",
+  };
+
+  const suggestionStyles: React.CSSProperties = {
+    padding: "max(8px, 0.556vw) max(14px, 0.972vw)",
+    borderRadius: "max(8px, 0.556vw)",
+    fontSize: "max(14px, 0.875vw)",
+  };
+
   return (
     <div
       ref={containerRef}
@@ -116,26 +142,37 @@ export default function SearchInput({
           onFocus={() => setIsFocused(true)}
           onKeyDown={handleKeyDown}
           placeholder={placeholder}
-          className="w-full pl-4 pr-12 h-[3.5rem] bg-background-light border border-border rounded-xl text-body-medium font-semibold! placeholder:text-light focus:outline-none transition-all duration-200"
+          className="w-full bg-background-light border border-border text-body-medium font-semibold! placeholder:text-light focus:outline-none transition-all duration-200"
+          style={inputStyles}
         />
-        <Search className="absolute right-4 w-5 h-5 text-light pointer-events-none" />
+        <Search
+          className="absolute text-light pointer-events-none"
+          style={iconStyles}
+        />
       </div>
 
       {/* Suggestions Dropdown - fixed stacking so it overlays nav in mobile menu */}
       {showDropdown && (
-        <div className="absolute top-full left-0 right-0 mt-1 w-full min-w-0 bg-surface border border-border rounded-[20px] z-100 overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200">
-          <ul className="p-[10px] max-h-[min(16rem,60vh)] overflow-y-auto">
+        <div
+          className="absolute top-full left-0 right-0 mt-1 w-full min-w-0 bg-surface border border-border z-100 overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200"
+          style={dropdownStyles}
+        >
+          <ul
+            className="max-h-[min(16rem,60vh)] overflow-y-auto"
+            style={{ padding: 0 }}
+          >
             {filteredSuggestions.map((suggestion, index) => (
               <li key={suggestion.id}>
                 <button
                   type="button"
                   onClick={() => handleSelectSuggestion(suggestion.label)}
                   onMouseEnter={() => setSelectedIndex(index)}
-                  className={`w-full px-4 py-2.5 text-left transition-colors duration-150 cursor-pointer rounded-[10px] text-body-medium font-semibold! ${
+                  className={`w-full text-left transition-colors duration-150 cursor-pointer font-semibold! ${
                     index === selectedIndex
                       ? "bg-mint-light text-primary"
                       : "text-foreground hover:bg-mint-faint"
                   }`}
+                  style={suggestionStyles}
                 >
                   {suggestion.label}
                 </button>
