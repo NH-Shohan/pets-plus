@@ -57,6 +57,42 @@ body {
     line-height: 1;
   }
 
+  .text-body-large {
+    @apply font-jakarta;
+    font-size: max(20px, 1.042vw);
+    line-height: 1.5;
+  }
+  .text-body-large-vietnam {
+    @apply font-vietnam! font-extrabold!;
+    font-size: max(20px, 1.042vw);
+    line-height: 1.5;
+  }
+  .text-body-medium {
+    @apply font-jakarta font-light;
+    font-size: max(18px, 0.938vw);
+    line-height: 1.5;
+  }
+  .text-body-medium-vietnam {
+    @apply font-vietnam font-light;
+    font-size: max(18px, 0.938vw);
+    line-height: 1.5;
+  }
+  .text-body-base {
+    @apply font-jakarta;
+    font-size: max(16px, 0.833vw);
+    line-height: 1.5;
+  }
+  .text-body-small {
+    @apply font-jakarta;
+    font-size: max(14px, 0.729167vw);
+    line-height: 1.5;
+  }
+  .text-body-small-vietnam {
+    @apply font-vietnam font-light;
+    font-size: max(14px, 0.729167vw);
+    line-height: 1.5;
+  }
+
   .text-hero-tertiary {
     @apply font-jakarta font-bold tracking-tight text-center;
     font-size: 28px;
@@ -247,76 +283,6 @@ body {
   }
 
   /* Body Text - Responsive */
-  .text-body-large {
-    @apply font-jakarta font-normal;
-    letter-spacing: 0;
-    font-size: 16px;
-    line-height: 26px;
-  }
-
-  @media (min-width: 640px) {
-    .text-body-large {
-      font-size: 18px;
-      line-height: 28px;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .text-body-large {
-      font-size: 24px;
-      line-height: 34px;
-    }
-  }
-
-  .text-body-medium {
-    @apply font-jakarta font-normal text-center;
-    letter-spacing: 0.01em;
-    font-size: 14px;
-    line-height: 24px;
-  }
-
-  @media (min-width: 640px) {
-    .text-body-medium {
-      font-size: 16px;
-      line-height: 26px;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .text-body-medium {
-      font-size: 20px;
-      line-height: 30px;
-    }
-  }
-
-  .text-body-small {
-    @apply font-jakarta  text-center;
-    letter-spacing: 0;
-    font-size: 14px;
-    line-height: 24px;
-  }
-
-  @media (min-width: 1024px) {
-    .text-body-small {
-      font-size: 18px;
-      line-height: 30px;
-    }
-  }
-
-  .text-body-base {
-    @apply font-jakarta;
-    letter-spacing: 0;
-    font-size: 14px;
-    line-height: 24px;
-  }
-
-  @media (min-width: 1024px) {
-    .text-body-base {
-      font-size: 16px;
-      line-height: 30px;
-    }
-  }
-
   .text-body-xs {
     @apply font-jakarta;
     letter-spacing: 0;

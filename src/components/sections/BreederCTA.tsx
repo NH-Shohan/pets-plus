@@ -29,7 +29,7 @@ const BreederCTA = () => {
             <h2 className="section-title--medium">
               Are you a responsible breeder?
             </h2>
-            <p className="text-body-medium text-left!">
+            <p className="text-body-large">
               We&apos;d love to invite you to join our community of trusted
               breeders. We only list screened breeders and help connect you
               directly with educated, serious buyers.

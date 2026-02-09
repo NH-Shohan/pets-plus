@@ -24,7 +24,7 @@ export default function SectionHeader({
   title,
   description,
   headingClassName = "section-title",
-  descriptionClassName = "text-body-medium",
+  descriptionClassName = "text-body-large",
   containerClassName = "",
 }: SectionHeaderProps) {
   return (
@@ -32,11 +32,11 @@ export default function SectionHeader({
       className={`flex flex-col items-center text-center heading-bottom-padding mb-12! lg:mb-18! ${containerClassName}`}
     >
       <h2
-        className={`${headingClassName} text-foreground heading-bottom-padding font-extrabold tracking-tight`}
+        className={`${headingClassName} heading-bottom-padding font-extrabold tracking-tight`}
       >
         {title}
       </h2>
-      <p className={`${descriptionClassName} text-foreground`}>{description}</p>
+      <p className={`${descriptionClassName}`}>{description}</p>
     </div>
   );
 }

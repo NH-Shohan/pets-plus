@@ -62,7 +62,7 @@ export default function WhyTrustUs() {
               </h3>
 
               {/* Description */}
-              <p className="text-body-base text-foreground max-w-[300px] w-full">
+              <p className="text-body-medium max-w-[470px] w-full">
                 {feature.description}
               </p>
             </div>
