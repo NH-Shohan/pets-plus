@@ -38,12 +38,12 @@ export default function VerifiedBreeders() {
           </div>
 
           {/* Right - Content */}
-          <div className="flex flex-col items-start gap-6 lg:col-span-3">
+          <div className="flex flex-col items-start gap-6 lg:col-span-3 max-w-[750px] w-full">
             <h2 className="text-hero-secondary text-foreground text-left!">
               Every member is carefully screened before joining.
             </h2>
 
-            <p className="text-body-medium text-foreground max-w-lg text-left!">
+            <p className="text-body-medium text-foreground  text-left!">
               Every seller on our platform is carefully screened to help ensure
               authenticity, transparency, and responsible practices.
             </p>
