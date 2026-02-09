@@ -1,9 +1,4 @@
-'use client';
-
-import AnimateInView from '@/components/ui/AnimateInView';
 import SectionHeader from '@/components/ui/SectionHeader';
-import { defaultStagger, defaultTransition, fadeUp } from '@/lib/animations';
-import { motion } from 'motion/react';
 import Image from 'next/image';
 
 const steps = [
@@ -36,13 +31,10 @@ export default function HowItWorks() {
       <div className="mx-auto container px-4 sm:px-6 lg:px-8">
         <SectionHeader title="How it works" description="Whether you're browsing or selling, we've made it easy." />
 
-        {/* Steps - stagger when in view */}
-        <AnimateInView variants={defaultStagger} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {steps.map((step) => (
-            <motion.div
+            <div
               key={step.id}
-              variants={fadeUp}
-              transition={defaultTransition}
               className="flex flex-col items-center text-center"
             >
               {/* Image */}
@@ -61,9 +53,9 @@ export default function HowItWorks() {
 
               {/* Description */}
               <p className="text-body-base text-foreground max-w-[300px]">{step.description}</p>
-            </motion.div>
+            </div>
           ))}
-        </AnimateInView>
+        </div>
       </div>
     </section>
   );

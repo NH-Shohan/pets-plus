@@ -1,8 +1,3 @@
-'use client';
-
-import AnimateInView from '@/components/ui/AnimateInView';
-import { defaultStagger, defaultTransition, fadeInRight, fadeUp } from '@/lib/animations';
-import { motion } from 'motion/react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -17,25 +12,14 @@ const BreederCTA = () => {
   return (
     <section className="bg-white section-padding-bottom font-jakarta">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <AnimateInView
-          variants={defaultStagger}
-          className="bg-mint-faint rounded-4xl p-6 sm:p-10 lg:p-16 flex flex-col md:flex-row items-center gap-8 md:gap-12"
-        >
+        <div className="bg-mint-faint rounded-4xl p-6 sm:p-10 lg:p-16 flex flex-col md:flex-row items-center gap-8 md:gap-12">
           {/* Illustration - Left side */}
-          <motion.div
-            variants={fadeInRight}
-            transition={defaultTransition}
-            className="shrink-0 w-32 h-32 md:w-48 md:h-48 relative"
-          >
+          <div className="shrink-0 w-32 h-32 md:w-48 md:h-48 relative">
             <Image src="/breeder.svg" alt="Breeder illustration" fill className="object-contain" />
-          </motion.div>
+          </div>
 
           {/* Content - Right side */}
-          <motion.div
-            variants={fadeUp}
-            transition={defaultTransition}
-            className="flex-1 space-y-4 text-center md:text-left"
-          >
+          <div className="flex-1 space-y-4 text-center md:text-left">
             <h2 className="text-display-large  ">Are you a responsible breeder?</h2>
             <p className="text-body-medium text-left!">
               We&apos;d love to invite you to join our community of trusted breeders. We only list screened breeders and
@@ -49,8 +33,8 @@ const BreederCTA = () => {
                 Learn more
               </Link>
             </div>
-          </motion.div>
-        </AnimateInView>
+          </div>
+        </div>
       </div>
     </section>
   );

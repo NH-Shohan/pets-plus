@@ -1,6 +1,5 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import SmoothScrollWrapper from "@/components/providers/SmoothScrollWrapper";
 import type { Metadata } from "next";
 import { Be_Vietnam_Pro, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
@@ -34,11 +33,9 @@ export default function RootLayout({
       <body
         className={`${plusJakartaSans.variable} ${beVietnamPro.variable} antialiased`}
       >
-        <SmoothScrollWrapper>
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
-        </SmoothScrollWrapper>
+        <Navbar />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );

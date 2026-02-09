@@ -1,8 +1,5 @@
 'use client';
 
-import AnimateInView from '@/components/ui/AnimateInView';
-import { defaultStagger, defaultTransition, fadeUp } from '@/lib/animations';
-import { motion } from 'motion/react';
 import Link from 'next/link';
 
 /* 
@@ -10,7 +7,6 @@ import Link from 'next/link';
   - Premium directory-style section for SEO and navigation
   - Responsive multi-column layout
   - Clean, minimalist aesthetic following Pets&Plus brand
-  - Animated on scroll: heading fade-up, category cards stagger in
 */
 
 const breedData = [
@@ -87,23 +83,13 @@ const PopularBreeds = () => {
   return (
     <section className="bg-[#F8F8F8] section-padding-top-bottom font-jakarta">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <AnimateInView variants={fadeUp} transition={defaultTransition} className="mb-12">
-          <h2 className="text-3xl lg:text-4xl font-bold text-foreground tracking-tight">
-            Learn more about our popular breeds
-          </h2>
-        </AnimateInView>
+        <h2 className="text-3xl lg:text-4xl font-bold text-foreground tracking-tight mb-12">
+          Learn more about our popular breeds
+        </h2>
 
-        <AnimateInView
-          variants={defaultStagger}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16 items-stretch"
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16 items-stretch">
           {breedData.map((category) => (
-            <motion.div
-              key={category.title}
-              variants={fadeUp}
-              transition={defaultTransition}
-              className="flex flex-col h-full space-y-4"
-            >
+            <div key={category.title} className="flex flex-col h-full space-y-4">
               <h3 className="text-xl font-bold text-foreground">{category.title}</h3>
 
               <div className="grid grid-cols-2 gap-x-4 gap-y-3">
@@ -123,9 +109,9 @@ const PopularBreeds = () => {
                   view all {category.title.toLowerCase()}
                 </Link>
               </div>
-            </motion.div>
+            </div>
           ))}
-        </AnimateInView>
+        </div>
       </div>
     </section>
   );

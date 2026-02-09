@@ -1,8 +1,5 @@
 "use client";
 
-import AnimateInView from "@/components/ui/AnimateInView";
-import { defaultStagger, defaultTransition, fadeUp } from "@/lib/animations";
-import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -99,17 +96,9 @@ const Footer = () => {
           </div>
 
           {/* Links Columns - Responsive grid */}
-          <AnimateInView
-            variants={defaultStagger}
-            className="md:col-span-4 lg:col-span-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8"
-          >
+          <div className="md:col-span-4 lg:col-span-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
             {FOOTER_SECTIONS.map((section) => (
-              <motion.div
-                key={section.title}
-                variants={fadeUp}
-                transition={defaultTransition}
-                className="space-y-2"
-              >
+              <div key={section.title} className="space-y-2">
                 <h4 className="text-heading-medium text-left! text-paragraph">
                   {section.title}
                 </h4>
@@ -122,9 +111,9 @@ const Footer = () => {
                     </li>
                   ))}
                 </ul>
-              </motion.div>
+              </div>
             ))}
-          </AnimateInView>
+          </div>
         </div>
 
         {/* Bottom Bar - Refined with subtle border and better hierarchy */}

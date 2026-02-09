@@ -50,7 +50,7 @@ const faqData = [
 ];
 
 const FAQ = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(0); // Defaulting to the second item open as per design reference
+  const [openIndex, setOpenIndex] = useState<number | null>(null); // Defaulting to the second item open as per design reference
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);

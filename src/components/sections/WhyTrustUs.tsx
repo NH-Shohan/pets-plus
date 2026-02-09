@@ -1,8 +1,3 @@
-'use client';
-
-import AnimateInView from '@/components/ui/AnimateInView';
-import { defaultStagger, defaultTransition, fadeUp } from '@/lib/animations';
-import { motion } from 'motion/react';
 import Image from 'next/image';
 import SectionHeader from '../ui/SectionHeader';
 
@@ -36,13 +31,10 @@ export default function WhyTrustUs() {
           description="Whether you're browsing or selling, we've made it easy."
         />
 
-        {/* Feature Cards - stagger when in view */}
-        <AnimateInView variants={defaultStagger} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {features.map((feature) => (
-            <motion.div
+            <div
               key={feature.id}
-              variants={fadeUp}
-              transition={defaultTransition}
               className="flex flex-col items-center text-center p-8 md:p-12 rounded-2xl border border-border"
             >
               {/* Icon */}
@@ -55,9 +47,9 @@ export default function WhyTrustUs() {
 
               {/* Description */}
               <p className="text-body-base text-foreground">{feature.description}</p>
-            </motion.div>
+            </div>
           ))}
-        </AnimateInView>
+        </div>
       </div>
     </section>
   );
