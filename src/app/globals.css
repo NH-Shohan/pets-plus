@@ -42,75 +42,19 @@ body {
 /* Typography System - Semantic Classes */
 @layer utilities {
   .main-container {
-    @apply mx-auto w-[76.67vw]!;
+    @apply mx-auto w-[90vw] md:w-[76.67vw]!;
   }
   /* Hero Titles - Responsive */
   .text-hero-primary {
     @apply font-jakarta font-bold tracking-tight;
-    font-size: 48px;
-    line-height: 1.1;
-  }
-
-  @media (min-width: 640px) {
-    .text-hero-primary {
-      font-size: 56px;
-      line-height: 60px;
-    }
-  }
-
-  @media (min-width: 768px) {
-    .text-hero-primary {
-      font-size: 72px;
-      line-height: 76px;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .text-hero-primary {
-      font-size: 84px;
-      line-height: 88px;
-    }
-  }
-
-  @media (min-width: 1440px) {
-    .text-hero-primary {
-      font-size: 100px;
-      line-height: 1;
-    }
+    font-size: max(3rem, 5.2083vw);
+    line-height: 1;
   }
 
   .text-hero-secondary {
-    @apply font-jakarta font-bold tracking-tight text-center;
-    font-size: 32px;
-    line-height: 36px;
-  }
-
-  @media (min-width: 640px) {
-    .text-hero-secondary {
-      font-size: 48px;
-      line-height: 52px;
-    }
-  }
-
-  @media (min-width: 768px) {
-    .text-hero-secondary {
-      font-size: 56px;
-      line-height: 68px;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .text-hero-secondary {
-      font-size: 56px;
-      line-height: 100%;
-    }
-  }
-
-  @media (min-width: 1440px) {
-    .text-hero-secondary {
-      font-size: 64px;
-      line-height: 100%;
-    }
+    @apply font-jakarta;
+    font-size: max(18px, 1.25vw);
+    line-height: 1;
   }
 
   .text-hero-tertiary {

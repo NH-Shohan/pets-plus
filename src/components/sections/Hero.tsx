@@ -17,7 +17,7 @@ export default function Hero() {
               </h1>
             </div>
 
-            <p className="text-body-large text-foreground max-w-md">Connect directly with trusted breeders.</p>
+            <p className="text-hero-secondary">Connect directly with trusted breeders.</p>
 
             <div>
               <Button variant="primary" size="default">
