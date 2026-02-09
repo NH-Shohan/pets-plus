@@ -57,7 +57,7 @@ export default function WhyTrustUs() {
               </div>
 
               {/* Title */}
-              <h3 className="card-title-medium  text-primary mb-3">
+              <h3 className="card-title-medium text-primary mb-3">
                 {feature.title}
               </h3>
 

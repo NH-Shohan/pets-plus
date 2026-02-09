@@ -82,7 +82,7 @@ const FAQ = () => {
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className={`w-full flex items-center justify-between pt-6 pr-6 pl-6 md:pt-8 md:pr-8 md:pl-8 text-left outline-none cursor-pointer transition-[padding] duration-300 ease-out ${openIndex === index ? "pb-5" : "pb-6 md:pb-8"}`}
+                className={`w-full flex items-center justify-between p-[32px] md:p-[40px] text-left outline-none cursor-pointer transition-[padding] duration-300 ease-out ${openIndex === index ? "pb-5" : "pb-6 md:pb-8"}`}
               >
                 <span
                   className="card-title-normal transition-colors duration-300"

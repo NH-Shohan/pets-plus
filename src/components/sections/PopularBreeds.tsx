@@ -81,9 +81,9 @@ const breedData = [
 
 const PopularBreeds = () => {
   return (
-    <section className="bg-[#F8F8F8] section-padding-top-bottom font-jakarta">
+    <section className="bg-[#F8F8F8] section-padding-top-bottom">
       <div className="main-container">
-        <h2 className="card-title-xl font-bold text-foreground mb-12">
+        <h2 className="card-title-xl font-bold mb-12">
           Learn more about our popular breeds
         </h2>
 
@@ -91,18 +91,16 @@ const PopularBreeds = () => {
           {breedData.map((category) => (
             <div
               key={category.title}
-              className="flex flex-col h-full space-y-4"
+              className="flex flex-col h-full space-y-6"
             >
-              <h3 className="card-title-normal font-bold text-foreground">
-                {category.title}
-              </h3>
+              <h3 className="card-title-normal font-bold">{category.title}</h3>
 
               <div className="grid grid-cols-2 gap-x-4 gap-y-3">
                 {category.items.map((item) => (
                   <Link
                     key={item}
                     href={`/breeds/${item.toLowerCase().replace(/\s+/g, "-")}`}
-                    className="relative inline-block w-fit max-w-full text-foreground text-base font-light truncate transition-colors duration-300 hover:text-primary after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-px after:w-full after:scale-x-0 after:origin-left after:bg-primary after:transition-transform after:duration-300 hover:after:scale-x-100"
+                    className="relative inline-block w-fit max-w-full  text-body-base font-light truncate transition-colors duration-300 hover:text-primary after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-px after:w-full after:scale-x-0 after:origin-left after:bg-primary after:transition-transform after:duration-300 hover:after:scale-x-100"
                   >
                     {item}
                   </Link>
@@ -112,7 +110,7 @@ const PopularBreeds = () => {
               <div className="mt-auto pt-4">
                 <Link
                   href={category.link}
-                  className="text-primary font-normal text-base underline"
+                  className="text-primary font-normal text-body-base underline underline-offset-2"
                 >
                   view all {category.title.toLowerCase()}
                 </Link>

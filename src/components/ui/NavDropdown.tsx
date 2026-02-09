@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { ChevronDown } from 'lucide-react';
-import { useEffect, useRef, useState } from 'react';
+import { ChevronDown } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 
 export interface DropdownItem {
   id: string;
@@ -15,7 +15,11 @@ export interface NavDropdownProps {
   className?: string;
 }
 
-export default function NavDropdown({ label, items, className = '' }: NavDropdownProps) {
+export default function NavDropdown({
+  label,
+  items,
+  className = "",
+}: NavDropdownProps) {
   const [isOpen, setIsOpen] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -56,9 +60,9 @@ export default function NavDropdown({ label, items, className = '' }: NavDropdow
         aria-expanded={isOpen}
         aria-haspopup="true"
       >
-        <span className="text-heading-small">{label}</span>
+        <span className="text-body-large font-bold">{label}</span>
         <ChevronDown
-          className={`w-4.5 h-4.5 transition-transform duration-200 text-light ${isOpen ? 'rotate-180' : ''}`}
+          className={`w-4.5 h-4.5 transition-transform duration-200 text-light ${isOpen ? "rotate-180" : ""}`}
         />
       </button>
 
@@ -70,7 +74,7 @@ export default function NavDropdown({ label, items, className = '' }: NavDropdow
               <li key={item.id}>
                 <a
                   href={item.href}
-                  className={`block px-4 text-heading-small transition-colors duration-150 rounded-[10px] text-nowrap text-foreground hover:bg-mint-light hover:text-primary`}
+                  className={`block px-4 text-body-medium font-semibold transition-colors duration-150 rounded-[10px] text-nowrap hover:bg-mint-light hover:text-primary`}
                 >
                   {item.label}
                 </a>
