@@ -81,7 +81,7 @@ const FAQ = () => {
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className={`w-full flex items-center justify-between p-[32px] md:p-[40px] text-left outline-none cursor-pointer transition-[padding] duration-300 ease-out ${openIndex === index ? 'pb-5!' : ''}`}
+                className={`w-full flex items-center justify-between p-[20px] md:p-[40px] text-left outline-none cursor-pointer transition-[padding] duration-300 ease-out ${openIndex === index ? 'pb-5!' : ''}`}
               >
                 <span
                   className="card-title-normal transition-colors duration-300"
@@ -109,7 +109,7 @@ const FAQ = () => {
               >
                 <div className="min-h-0 overflow-hidden">
                   <div
-                    className="px-6 md:px-8 pb-8 text-base leading-relaxed md:text-lg"
+                    className="px-[20px] md:px-[40px] pb-[20px] md:pb-[40px] text-base leading-relaxed md:text-lg"
                     style={{ color: 'var(--color-foreground)', opacity: 0.7 }}
                   >
                     {faq.answer}
