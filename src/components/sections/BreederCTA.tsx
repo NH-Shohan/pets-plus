@@ -9,7 +9,7 @@ const BreederCTA = () => {
           {/* Illustration - Left side */}
           <div className="h-full relative">
             <Image
-              src="/breeder.svg"
+              src="/breeder.webp"
               alt="Breeder illustration"
               width={140}
               height={200}

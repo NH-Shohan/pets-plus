@@ -125,13 +125,13 @@ export default function Navbar() {
 
               {/* Dropdown Menu */}
               {activeDropdown === 'Dots' && (
-                <div className="absolute top-full left-0 mt-[max(5.88px,0.30625vw)] min-w-[260px] bg-surface border border-border rounded-[20px] z-50 overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200 shadow-[0_0_30.3px_0_#E2E3F240]">
-                  <ul className="p-[10px]">
+                <div className="absolute top-full left-0 mt-[max(5.88px,0.30625vw)] min-w-[max(260px,13.55vw)] bg-surface border border-border rounded-[max(20px,1.0416666667vw)] z-50 overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200 shadow-[0_0_30.3px_0_#E2E3F240]">
+                  <ul className="p-[max(10px,.52vw)]">
                     {browseItems.map(item => (
                       <li key={item.id}>
                         <a
                           href={item.href}
-                          className="block px-4 py-2.5 text-body-medium font-semibold! transition-colors duration-150 rounded-[10px] text-nowrap hover:bg-mint-light hover:text-primary"
+                          className="block px-[max(16px,0.83vw)] py-[max(10px,.52vw)] text-body-medium font-semibold! transition-colors duration-150 rounded-[max(10px,0.52vw)] text-nowrap hover:bg-mint-light hover:text-primary"
                         >
                           {item.label}
                         </a>

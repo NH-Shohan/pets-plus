@@ -143,14 +143,14 @@ export default function SearchInput({
           className="absolute top-full left-0 right-0 mt-1 w-full min-w-0 bg-surface border border-border z-100 overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200"
           style={dropdownStyles}
         >
-          <ul className="max-h-[min(16rem,60vh)] overflow-y-auto" style={{ padding: 0 }}>
+          <ul className="" style={{ padding: 0 }}>
             {filteredSuggestions.map((suggestion, index) => (
               <li key={suggestion.id}>
                 <button
                   type="button"
                   onClick={() => handleSelectSuggestion(suggestion.label)}
                   onMouseEnter={() => setSelectedIndex(index)}
-                  className={`w-full text-left transition-colors duration-150 cursor-pointer font-semibold! ${
+                  className={`w-full text-left transition-colors duration-150 text-body-medium cursor-pointer font-semibold! ${
                     index === selectedIndex ? 'bg-mint-light text-primary' : 'text-foreground hover:bg-mint-faint'
                   }`}
                   style={suggestionStyles}
