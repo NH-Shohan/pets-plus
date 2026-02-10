@@ -13,12 +13,25 @@ export interface NavDropdownProps {
   label: string;
   items: DropdownItem[];
   className?: string;
+  isOpen?: boolean;
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
 }
 
-export default function NavDropdown({ label, items, className = '' }: NavDropdownProps) {
-  const [isOpen, setIsOpen] = useState(false);
+export default function NavDropdown({
+  label,
+  items,
+  className = '',
+  isOpen: controlledIsOpen,
+  onMouseEnter: controlledOnMouseEnter,
+  onMouseLeave: controlledOnMouseLeave
+}: NavDropdownProps) {
+  const [internalIsOpen, setInternalIsOpen] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+
+  const isControlled = controlledIsOpen !== undefined;
+  const isOpen = isControlled ? controlledIsOpen : internalIsOpen;
 
   // Clear timeout on unmount
   useEffect(() => {
@@ -30,16 +43,24 @@ export default function NavDropdown({ label, items, className = '' }: NavDropdow
   }, []);
 
   const handleMouseEnter = () => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
+    if (isControlled) {
+      controlledOnMouseEnter?.();
+    } else {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+      setInternalIsOpen(true);
     }
-    setIsOpen(true);
   };
 
   const handleMouseLeave = () => {
-    timeoutRef.current = setTimeout(() => {
-      setIsOpen(false);
-    }, 150); // Small delay to allow mouse to move to dropdown
+    if (isControlled) {
+      controlledOnMouseLeave?.();
+    } else {
+      timeoutRef.current = setTimeout(() => {
+        setInternalIsOpen(false);
+      }, 150); // Small delay to allow mouse to move to dropdown
+    }
   };
 
   return (
@@ -65,7 +86,7 @@ export default function NavDropdown({ label, items, className = '' }: NavDropdow
 
       {/* Dropdown Menu */}
       {isOpen && (
-        <div className="absolute top-full left-0 mt-3 min-w-[260px] bg-surface border border-border rounded-[20px] z-50 overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200 shadow-[0_0_30.3px_0_#E2E3F240]">
+        <div className="absolute top-full left-0 mt-[max(17px,0.8854166667vw)] min-w-[260px] bg-surface border border-border rounded-[20px] z-50 overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200 shadow-[0_0_30.3px_0_#E2E3F240]">
           <ul className="p-[10px]">
             {items.map(item => (
               <li key={item.id}>

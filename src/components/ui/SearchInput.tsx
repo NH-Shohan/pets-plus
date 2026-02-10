@@ -127,7 +127,7 @@ export default function SearchInput({
           onFocus={() => setIsFocused(true)}
           onKeyDown={handleKeyDown}
           placeholder={placeholder}
-          className="w-[max(580px,30.2083333333vw)] bg-background-light border border-border text-body-medium font-semibold! placeholder:text-light focus:outline-none transition-all duration-200"
+          className="w-full lg:w-[max(370px,19.2708333333vw)] 2xl:w-[max(580px,30.2083333333vw)] bg-background-light border border-border text-body-medium font-semibold! placeholder:text-light focus:outline-none transition-all duration-200"
           style={inputStyles}
         />
         <Search strokeWidth={1.5} className="absolute text-[#98A2B3] pointer-events-none" style={iconStyles} />

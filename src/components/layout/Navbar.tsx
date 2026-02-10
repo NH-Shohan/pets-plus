@@ -1,13 +1,13 @@
 'use client';
 
+import MobileMenuPanel from '@/components/layout/MobileMenuPanel';
 import Button from '@/components/ui/Button';
 import NavDropdown, { type DropdownItem } from '@/components/ui/NavDropdown';
 import SearchInput from '@/components/ui/SearchInput';
-import { defaultStagger, defaultTransition, fadeUp } from '@/lib/animations';
 import { AnimatePresence, motion } from 'motion/react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 // Static data for Browse dropdown
 const browseItems: DropdownItem[] = [
@@ -26,6 +26,8 @@ const shopItems: DropdownItem[] = [
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(prev => !prev);
@@ -42,6 +44,24 @@ export default function Navbar() {
     };
   }, [isMobileMenuOpen]);
 
+  // Handle dropdown interactions with delay
+  const handleDropdownEnter = (id: string) => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+    setActiveDropdown(id);
+  };
+
+  const handleDropdownLeave = () => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+    }
+    closeTimeoutRef.current = setTimeout(() => {
+      setActiveDropdown(null);
+    }, 150);
+  };
+
   return (
     <header className="sticky top-0 z-50 w-full bg-surface border-b border-border">
       <nav className="main-container py-[max(20px,1.0416666667vw)]">
@@ -54,10 +74,7 @@ export default function Navbar() {
                 alt="Pets&Plus"
                 width={242}
                 height={60}
-                style={{
-                  width: 'max(180px, 12.6041666667vw)',
-                  height: 'max(60px, 3.125vw)'
-                }}
+                className="w-[max(163px,8.4895833333vw)] lg:w-[max(180px,12.6041666667vw)] lg:h-[max(60px, 3.125vw)]"
                 priority
               />
             </Link>
@@ -72,20 +89,58 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center gap-[max(50px,2.6041666667vw)]">
             <div className="flex items-center gap-[max(28px,1.4583333333vw)]">
               {/* Browse Dropdown */}
-              <NavDropdown label="Browse" items={browseItems} />
+              <NavDropdown
+                label="Browse"
+                items={browseItems}
+                isOpen={activeDropdown === 'Browse'}
+                onMouseEnter={() => handleDropdownEnter('Browse')}
+                onMouseLeave={handleDropdownLeave}
+              />
 
               {/* Shop Link */}
-              <NavDropdown label="Shop" items={shopItems} />
+              <NavDropdown
+                label="Shop"
+                items={shopItems}
+                isOpen={activeDropdown === 'Shop'}
+                onMouseEnter={() => handleDropdownEnter('Shop')}
+                onMouseLeave={handleDropdownLeave}
+              />
             </div>
 
-            {/* Three Dots Menu */}
-            <button
-              type="button"
-              className="w-[max(50px,2.6041666667vw)] h-[max(50px,2.6041666667vw)]  hover:bg-background-light rounded-full transition-all duration-200 cursor-pointer flex items-center justify-center relative"
-              aria-label="More options"
+            {/* Three Dots Menu with Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => handleDropdownEnter('Dots')}
+              onMouseLeave={handleDropdownLeave}
             >
-              <Image src="/dots.svg" alt="More options" fill className="object-contain p-[max(12px,0.625vw)]" />
-            </button>
+              <button
+                type="button"
+                className="w-[max(50px,2.6041666667vw)] h-[max(50px,2.6041666667vw)] hover:bg-background-light rounded-full transition-all duration-200 cursor-pointer flex items-center justify-center relative"
+                aria-label="More options"
+                aria-expanded={activeDropdown === 'Dots'}
+                aria-haspopup="true"
+              >
+                <Image src="/dots.svg" alt="More options" fill className="object-contain p-[max(12px,0.625vw)]" />
+              </button>
+
+              {/* Dropdown Menu */}
+              {activeDropdown === 'Dots' && (
+                <div className="absolute top-full left-0 mt-[max(5.88px,0.30625vw)] min-w-[260px] bg-surface border border-border rounded-[20px] z-50 overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200 shadow-[0_0_30.3px_0_#E2E3F240]">
+                  <ul className="p-[10px]">
+                    {browseItems.map(item => (
+                      <li key={item.id}>
+                        <a
+                          href={item.href}
+                          className="block px-4 py-2.5 text-body-medium font-semibold! transition-colors duration-150 rounded-[10px] text-nowrap hover:bg-mint-light hover:text-primary"
+                        >
+                          {item.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
 
             {/* Sign Up Button */}
             <Button variant="primary">Sign up</Button>
@@ -95,7 +150,7 @@ export default function Navbar() {
           <button
             type="button"
             onClick={toggleMobileMenu}
-            className="lg:hidden transition-all duration-200 flex flex-col gap-[10px] w-10 h-10 items-start justify-center"
+            className="lg:hidden transition-all duration-200 flex flex-col gap-[10px] items-start justify-center"
             aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={isMobileMenuOpen}
           >
@@ -116,11 +171,6 @@ export default function Navbar() {
             />
           </button>
         </div>
-
-        {/* Mobile Search - Below navbar on desktop, visible on tablet */}
-        <div className="hidden md:flex lg:hidden py-4">
-          <SearchInput placeholder="Search" className="w-full" onSearch={query => console.log('Search:', query)} />
-        </div>
       </nav>
 
       {/* Mobile Menu Overlay */}
@@ -138,96 +188,12 @@ export default function Navbar() {
       </AnimatePresence>
 
       {/* Mobile Menu Panel - Slides from right */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ x: '100%' }}
-            animate={{ x: 0 }}
-            exit={{ x: '100%' }}
-            transition={{
-              type: 'spring',
-              stiffness: 300,
-              damping: 30
-            }}
-            className="lg:hidden fixed top-[80px] right-0 bottom-0 w-full max-w-md z-50 bg-surface/95 backdrop-blur-md border-l border-border shadow-2xl"
-          >
-            <div className="px-6 py-8 h-full overflow-y-auto flex flex-col">
-              <div className="flex-1">
-                {/* Mobile Search */}
-                <div className="md:hidden mb-6">
-                  <SearchInput
-                    placeholder="Search pets, breeders..."
-                    className="w-full"
-                    onSearch={query => {
-                      console.log('Search:', query);
-                      setIsMobileMenuOpen(false);
-                    }}
-                  />
-                </div>
-
-                {/* Mobile Navigation Links with Stagger Animation */}
-                <motion.nav variants={defaultStagger} initial="initial" animate="animate" className="space-y-4">
-                  {/* Browse Section */}
-                  <motion.div variants={fadeUp} transition={defaultTransition}>
-                    <p className="px-2 py-2 text-body-small font-bold text-primary uppercase tracking-wide mb-3">
-                      Browse
-                    </p>
-                    <motion.ul variants={defaultStagger} initial="initial" animate="animate" className="space-y-2">
-                      {browseItems.map(item => (
-                        <motion.li key={item.id} variants={fadeUp} transition={defaultTransition}>
-                          <Link
-                            href={item.href}
-                            className="block px-4 py-3 text-lg font-medium text-text hover:text-primary hover:bg-mint-faint/50 rounded-xl transition-all duration-200 hover:translate-x-1"
-                            onClick={() => setIsMobileMenuOpen(false)}
-                          >
-                            {item.label}
-                          </Link>
-                        </motion.li>
-                      ))}
-                    </motion.ul>
-                  </motion.div>
-
-                  {/* Divider */}
-                  <motion.div variants={fadeUp} transition={defaultTransition} className="border-t border-border/50" />
-
-                  {/* Shop Section */}
-                  <motion.div variants={fadeUp} transition={defaultTransition}>
-                    <p className="px-2 py-2 text-body-small font-bold text-primary uppercase tracking-wide mb-3">
-                      Shop
-                    </p>
-                    <motion.ul variants={defaultStagger} initial="initial" animate="animate" className="space-y-2">
-                      {shopItems.map(item => (
-                        <motion.li key={item.id} variants={fadeUp} transition={defaultTransition}>
-                          <Link
-                            href={item.href}
-                            className="block px-4 py-3 text-lg font-medium text-text hover:text-primary hover:bg-mint-faint/50 rounded-xl transition-all duration-200 hover:translate-x-1"
-                            onClick={() => setIsMobileMenuOpen(false)}
-                          >
-                            {item.label}
-                          </Link>
-                        </motion.li>
-                      ))}
-                    </motion.ul>
-                  </motion.div>
-                </motion.nav>
-              </div>
-
-              {/* Mobile Sign Up Button */}
-              <motion.div
-                variants={fadeUp}
-                initial="initial"
-                animate="animate"
-                transition={{ ...defaultTransition, delay: 0.4 }}
-                className="pt-6 mt-auto border-t border-border/50"
-              >
-                <Button variant="primary" className="w-full text-lg py-4">
-                  Sign up
-                </Button>
-              </motion.div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <MobileMenuPanel
+        isOpen={isMobileMenuOpen}
+        onClose={() => setIsMobileMenuOpen(false)}
+        browseItems={browseItems}
+        shopItems={shopItems}
+      />
     </header>
   );
 }

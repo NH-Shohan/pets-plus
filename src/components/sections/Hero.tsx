@@ -1,12 +1,16 @@
 'use client';
 
 import Button from '@/components/ui/Button';
+import SearchInput from '@/components/ui/SearchInput';
 import Image from 'next/image';
 
 export default function Hero() {
   return (
     <section className="relative w-full overflow-hidden bg-mint-faint heading-top-padding hero-heading-bottom-padding">
       <div className="main-container">
+        <div className="hidden md:flex lg:hidden py-4">
+          <SearchInput placeholder="Search" className="w-full" onSearch={query => console.log('Search:', query)} />
+        </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Content */}
           <div className="flex flex-col items-start">
