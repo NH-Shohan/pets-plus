@@ -15,16 +15,16 @@ const features = [
     title: 'Secure Messaging',
     description: 'Strict breeding standards ensure healthy, well-cared-for animals',
     icon: '/shield.svg',
-    width: 'max(40px,1.875vw)',
-    height: 'max(40px,1.875vw)'
+    width: 'max(30px,1.5625vw)',
+    height: 'max(38px,1.9791666667vw)'
   },
   {
     id: 3,
     title: 'Reviewed & Rated',
     description: 'Expert team available around the clock to assist buyers and breeders.',
     icon: '/people.svg',
-    width: 'max(40px,2.5vw)',
-    height: 'max(40px,2.5vw)'
+    width: 'max(48px,2.5vw)',
+    height: 'max(48px,2.5vw)'
   }
 ];
 
@@ -37,28 +37,28 @@ export default function WhyTrustUs() {
           description="Whether you're browsing or selling, we've made it easy."
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-15">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[max(23px,3.125vw)]">
           {features.map(feature => (
             <div
               key={feature.id}
-              className="flex flex-col items-center text-center p-8 md:p-12 rounded-[20px] border border-[#EEEEEE]"
+              className="flex flex-col items-center text-center p-[max(30px,2.65625vw)] rounded-[max(20px,1.0416666667vw)] border border-border"
             >
               {/* Icon */}
-              <div className="mb-4">
+              <div className="mb-[max(10px,0.5208333333vw)]" style={{ width: feature.width, height: feature.height }}>
                 <Image
                   src={feature.icon}
                   alt={feature.title}
                   width={40}
                   height={40}
-                  className={`w-[${feature.width}] h-[${feature.height}]`}
+                  style={{ width: feature.width, height: feature.height }}
                 />
               </div>
 
               {/* Title */}
-              <h3 className="card-title-medium text-primary mb-3">{feature.title}</h3>
+              <h3 className="card-title-medium text-primary mb-[max(20px,1.0416666667vw)]">{feature.title}</h3>
 
               {/* Description */}
-              <p className="text-body-medium max-w-[max(470px,18vw)] w-full">{feature.description}</p>
+              <p className="text-body-medium max-w-[max(320px,17vw)] w-full">{feature.description}</p>
             </div>
           ))}
         </div>

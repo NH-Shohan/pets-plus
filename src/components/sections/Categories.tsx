@@ -3,11 +3,10 @@
 import SectionHeader from '@/components/ui/SectionHeader';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 const categories = [
   {
@@ -34,9 +33,9 @@ function CategoryCard({ category }: { category: (typeof categories)[number] }) {
   return (
     <Link
       href={category.href}
-      className="group flex flex-col items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-2xl"
+      className="group flex flex-col items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-[max(10px,1.0416666667vw)]"
     >
-      <div className="w-full rounded-[20px] overflow-hidden mb-[16px] sm:mb-5 bg-surface-light shadow-none">
+      <div className="w-full rounded-[max(10px,1.0416666667vw)] overflow-hidden mb-[16px] sm:mb-5 bg-surface-light shadow-none">
         <div className="w-full aspect-[4/4.4] overflow-hidden">
           <Image
             src={category.image}
@@ -62,7 +61,7 @@ export default function Categories() {
           title="Browse by category"
           description="These dogs have the potential to be wonderful companions for your whole family with the right training."
           headingClassName="section-title--lg"
-          descriptionClassName="text-body-medium max-w-[max(342px,17.81vw)] sm:max-w-[max(750px,40vw)]"
+          descriptionClassName="text-body-large font-normal! max-w-[max(342px,17.81vw)] sm:max-w-[max(750px,40vw)]"
           containerClassName="mb-[64px]"
         />
 
@@ -70,7 +69,7 @@ export default function Categories() {
         <div className="flex justify-center lg:justify-end mb-[23px] lg:mr-8">
           <Link
             href="/"
-            className="text-body-base text-foreground underline underline-offset-4 hover:text-primary transition-colors"
+            className="text-body-medium font-normal! text-foreground underline underline-offset-4 hover:text-primary transition-colors"
           >
             View all listings
           </Link>

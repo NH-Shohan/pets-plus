@@ -111,13 +111,13 @@ body {
 
 .text-body-medium {
   @apply font-jakarta font-light;
-  font-size: max(16px, 0.938vw);
+  font-size: max(16px, 0.9375vw);
   line-height: 1.5;
 }
 
 .text-body-medium-vietnam {
   @apply font-vietnam font-light;
-  font-size: max(18px, 0.938vw);
+  font-size: max(18px, 0.9375vw);
   line-height: 1.5;
 }
 

@@ -18,7 +18,7 @@ export default function SectionHeader({
   containerClassName = ''
 }: SectionHeaderProps) {
   return (
-    <div className={cn('flex flex-col items-center text-center mb-15 lg:mb-18', containerClassName)}>
+    <div className={cn('flex flex-col items-center text-center mb-[max(61px,3.125vw)]', containerClassName)}>
       <h2 className={cn('heading-bottom-padding font-extrabold tracking-tight', headingClassName)}>{title}</h2>
       <p className={cn('text-body-large', descriptionClassName)}>{description}</p>
     </div>
