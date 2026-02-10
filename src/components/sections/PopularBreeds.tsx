@@ -88,7 +88,7 @@ const PopularBreeds = () => {
   return (
     <section className="bg-[#F8F8F8] section-padding-top-bottom">
       <div className="main-container">
-        <h2 className="text-[max(20px,1.77vw)] font-bold sm:mb-12 mb-8">Learn more about our popular breeds</h2>
+        <h2 className="text-[max(20px,1.8vw)] font-bold sm:mb-12 mb-8">Learn more about our popular breeds</h2>
 
         {/* Mobile: accordion */}
         <div className="flex flex-col gap-6 md:hidden">
