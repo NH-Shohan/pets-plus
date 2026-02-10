@@ -145,7 +145,7 @@ body {
 }
 
 .section-title {
-  @apply font-jakarta font-bold text-[max(30px,4.16vw)] lg:leading-none leading-normal;
+  @apply font-jakarta font-bold text-[max(30px,4.1666666667vw)] lg:leading-none leading-normal;
 }
 
 .section-title--lg {

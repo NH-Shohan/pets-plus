@@ -1,5 +1,6 @@
 'use client';
 
+import { cn } from '@/lib/utils';
 import { forwardRef, type ButtonHTMLAttributes, type ReactNode } from 'react';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -40,7 +41,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <button
         ref={ref}
-        className={`${baseStyles} ${variantStyles[variant]} ${sizeClasses[size]} ${className}`}
+        className={cn(baseStyles, variantStyles[variant], sizeClasses[size], className)}
         style={{ ...sizeInlineStyles[size], ...style }}
         {...props}
       >
