@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 interface SectionHeaderProps {
   title: string;
@@ -23,19 +23,15 @@ interface SectionHeaderProps {
 export default function SectionHeader({
   title,
   description,
-  headingClassName = "section-title",
-  descriptionClassName = "text-body-large",
-  containerClassName = "",
+  headingClassName = 'section-title',
+  descriptionClassName = 'text-body-large',
+  containerClassName = ''
 }: SectionHeaderProps) {
   return (
     <div
       className={`flex flex-col items-center text-center heading-bottom-padding mb-12! lg:mb-18! ${containerClassName}`}
     >
-      <h2
-        className={`${headingClassName} heading-bottom-padding font-extrabold tracking-tight`}
-      >
-        {title}
-      </h2>
+      <h2 className={`${headingClassName} heading-bottom-padding font-extrabold tracking-tight`}>{title}</h2>
       <p className={`${descriptionClassName}`}>{description}</p>
     </div>
   );

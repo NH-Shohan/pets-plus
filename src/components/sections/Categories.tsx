@@ -1,18 +1,25 @@
+'use client';
+
 import SectionHeader from '@/components/ui/SectionHeader';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 const categories = [
   {
     id: 1,
     name: 'Pets & Companions',
-    image: '/category-1.png',
+    image: '/category-1.jpg',
     href: '/'
   },
   {
     id: 2,
     name: 'Farm & Livestock',
-    image: '/category-2.png',
+    image: '/category-2.jpg',
     href: '/'
   },
   {
@@ -23,9 +30,33 @@ const categories = [
   }
 ];
 
+function CategoryCard({ category }: { category: (typeof categories)[number] }) {
+  return (
+    <Link
+      href={category.href}
+      className="group flex flex-col items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-2xl"
+    >
+      <div className="w-full rounded-[20px] overflow-hidden mb-[16px] sm:mb-5 bg-surface-light shadow-none">
+        <div className="w-full aspect-[4/4.4] overflow-hidden">
+          <Image
+            src={category.image}
+            alt={category.name}
+            width={460}
+            height={500}
+            className="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+      <h3 className="card-title-large text-foreground transition-colors duration-300 ease-out group-hover:text-primary">
+        {category.name}
+      </h3>
+    </Link>
+  );
+}
+
 export default function Categories() {
   return (
-    <section className="w-full bg-[#F8F9FA] section-padding-bottom">
+    <section className="w-full bg-[#F8F9FA] section-padding-bottom overflow-hidden">
       <div className="main-container">
         <SectionHeader
           title="Browse by category"
@@ -35,7 +66,7 @@ export default function Categories() {
         />
 
         {/* View all link */}
-        <div className="flex justify-end mb-[27px] mr-8">
+        <div className="flex justify-center lg:justify-end mb-[23px] lg:mr-8">
           <Link
             href="/"
             className="text-body-base text-foreground underline underline-offset-4 hover:text-primary transition-colors"
@@ -44,34 +75,33 @@ export default function Categories() {
           </Link>
         </div>
 
-        {/* Category Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+        {/* Category Cards - Grid on desktop (lg+) */}
+        <div className="hidden lg:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
           {categories.map(category => (
-            <div key={category.id}>
-              <Link
-                href={category.href}
-                className="group flex flex-col items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-2xl"
-              >
-                {/* Image Container */}
-                <div className="w-full rounded-[20px] overflow-hidden mb-5  bg-surface-light shadow-none">
-                  <div className="w-full aspect-[4/4.4] overflow-hidden">
-                    <Image
-                      src={category.image}
-                      alt={category.name}
-                      width={460}
-                      height={500}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </div>
-
-                {/* Category Name */}
-                <h3 className="card-title-large text-foreground transition-colors duration-300 ease-out group-hover:text-primary">
-                  {category.name}
-                </h3>
-              </Link>
-            </div>
+            <CategoryCard key={category.id} category={category} />
           ))}
+        </div>
+
+        {/* Category Cards - Swiper on responsive */}
+        <div className="lg:hidden">
+          <Swiper
+            spaceBetween={21}
+            slidesPerView={1.1}
+            centeredSlides={false}
+            navigation
+            pagination={{ clickable: true }}
+            breakpoints={{
+              640: { slidesPerView: 1.5 },
+              768: { slidesPerView: 2.5 }
+            }}
+            className="categories-swiper overflow-visible!"
+          >
+            {categories.map(category => (
+              <SwiperSlide key={category.id}>
+                <CategoryCard category={category} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
     </section>
