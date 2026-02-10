@@ -56,14 +56,13 @@ const FAQ = () => {
           title="Frequently asked questions"
           description="Whether you're browsing or selling, we've made it easy."
           descriptionClassName="sm:block hidden "
-          containerClassName="mb-8 sm:mb-15 lg:mb-18"
         />
 
         <div className="space-y-4">
           {faqData.map((faq, index) => (
             <div
               key={index}
-              className={`group bg-white rounded-[40px] border transition-all duration-300 ${
+              className={`group bg-white rounded-[max(40px,2.7083333333vw)] border transition-all duration-300 ${
                 openIndex === index ? 'border-foreground' : ''
               }`}
               style={{
@@ -76,7 +75,7 @@ const FAQ = () => {
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className={`w-full flex items-center justify-between py-[20px] gap-x-2 px-[40px] md:p-[40px] text-left outline-none cursor-pointer transition-[padding] duration-300 ease-out ${openIndex === index ? 'pb-[10px] sm:pb-5!' : ''}`}
+                className={`w-full flex items-center justify-between py-[max(20px,2.0833333333vw)] gap-x-2 px-[max(40px,2.7083333333vw)] text-left outline-none cursor-pointer transition-[padding] duration-300 ease-out ${openIndex === index ? 'pb-[max(10px,0.5208333333vw)]' : ''}`}
               >
                 <span
                   className="card-title-normal transition-colors duration-300"
@@ -102,7 +101,7 @@ const FAQ = () => {
                 }`}
               >
                 <div className="min-h-0 overflow-hidden">
-                  <div className=" px-[40px] pb-[20px] text-[#3A3A3A] md:pb-[40px] text-body-large leading-relaxed md:text-lg">
+                  <div className=" px-[max(40px,2.7083333333vw)] pb-[max(20px,2.0833333333vw)] text-[#3A3A3A] md:pb-[max(40px,2.7083333333vw)] text-body-large leading-relaxed md:text-lg">
                     {faq.answer}
                   </div>
                 </div>
