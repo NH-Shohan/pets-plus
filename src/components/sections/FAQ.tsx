@@ -58,11 +58,11 @@ const FAQ = () => {
           descriptionClassName="sm:block hidden "
         />
 
-        <div className="space-y-4">
+        <div className="space-y-[max(12px,1.25vw)]">
           {faqData.map((faq, index) => (
             <div
               key={index}
-              className={`group bg-white rounded-[max(40px,2.7083333333vw)] border transition-all duration-300 ${
+              className={`group bg-white rounded-[2.5rem] border transition-all duration-300 ${
                 openIndex === index ? 'border-foreground' : ''
               }`}
               style={{
