@@ -66,7 +66,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 w-full bg-surface border-b border-border">
       <nav className="main-container py-[max(20px,1.0416666667vw)]">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-[max(50px,2.6041666667vw)]">
+          <div className="flex items-center gap-[2.6041666667vw]">
             {/* Logo */}
             <Link href="/" className="shrink-0">
               <Image
@@ -86,7 +86,7 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-[max(50px,2.6041666667vw)]">
+          <div className="hidden lg:flex items-center gap-[2.6041666667vw]">
             <div className="flex items-center gap-[max(28px,1.4583333333vw)]">
               {/* Browse Dropdown */}
               <NavDropdown

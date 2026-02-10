@@ -26,7 +26,7 @@ const Newsletter = () => {
                 />
                 <button
                   type="submit"
-                  className="w-full lg:max-w-full sm:w-auto px-[max(10px,2.0833333333vw)] py-[max(8px,0.4166666667vw)] h-[max(38px,3.125vw)] bg-primary hover:bg-primary-light cursor-pointer text-white rounded-full uppercase tracking-wider font-black text-[max(12px,1vw)]"
+                  className="w-fit lg:max-w-full sm:w-auto px-[max(20px,2.0833333333vw)] py-[max(8px,0.4166666667vw)] h-[max(38px,3.125vw)] bg-primary hover:bg-primary-light cursor-pointer text-white rounded-full uppercase tracking-wider font-black text-[max(12px,1vw)]"
                 >
                   SUBSCRIBE
                 </button>

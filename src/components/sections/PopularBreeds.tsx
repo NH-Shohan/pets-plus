@@ -1,8 +1,8 @@
 'use client';
 
-import { useState } from 'react';
-import Link from 'next/link';
 import { ChevronDown } from '@/components/icons/ChevronDown';
+import Link from 'next/link';
+import { useState } from 'react';
 
 /* 
   PopularBreeds Section
@@ -118,7 +118,7 @@ const PopularBreeds = () => {
                         <Link
                           key={item}
                           href={`/breeds/${item.toLowerCase().replace(/\s+/g, '-')}`}
-                          className="relative inline-block w-fit max-w-full text-body-base font-light truncate transition-colors duration-300 hover:text-primary after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-px after:w-full after:scale-x-0 after:origin-left after:bg-primary after:transition-transform after:duration-300 hover:after:scale-x-100"
+                          className="relative inline-block w-fit max-w-full text-body-base font-light text-nowrap transition-colors duration-300 hover:text-primary after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-px after:w-full after:scale-x-0 after:origin-left after:bg-primary after:transition-transform after:duration-300 hover:after:scale-x-100"
                         >
                           {item}
                         </Link>
@@ -148,7 +148,7 @@ const PopularBreeds = () => {
                   <Link
                     key={item}
                     href={`/breeds/${item.toLowerCase().replace(/\s+/g, '-')}`}
-                    className="relative inline-block w-fit max-w-full  text-body-base font-light truncate transition-colors duration-300 hover:text-primary after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-px after:w-full after:scale-x-0 after:origin-left after:bg-primary after:transition-transform after:duration-300 hover:after:scale-x-100"
+                    className="relative inline-block w-fit max-w-full  text-body-base font-light text-nowrap transition-colors duration-300 hover:text-primary after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-px after:w-full after:scale-x-0 after:origin-left after:bg-primary after:transition-transform after:duration-300 hover:after:scale-x-100"
                   >
                     {item}
                   </Link>
