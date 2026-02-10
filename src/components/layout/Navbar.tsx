@@ -131,7 +131,7 @@ export default function Navbar() {
                       <li key={item.id}>
                         <a
                           href={item.href}
-                          className="block px-[max(16px,0.83vw)] py-[max(10px,.52vw)] text-body-medium font-semibold! transition-colors duration-150 rounded-[max(10px,0.52vw)] text-nowrap hover:bg-mint-light hover:text-primary"
+                          className="block px-[max(16px,0.83vw)] py-[max(10px,0.52vw)] text-body-medium font-semibold! transition-colors duration-150 rounded-[max(10px,0.52vw)] text-nowrap hover:bg-mint-light hover:text-primary"
                         >
                           {item.label}
                         </a>

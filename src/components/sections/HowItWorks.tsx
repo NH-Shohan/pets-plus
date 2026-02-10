@@ -7,21 +7,21 @@ const steps = [
     title: 'Browse',
     description:
       'Search through thousands of verified listings from trusted breeders. Filter by breed, location, price, and more to find your perfect match.',
-    image: '/sitting-man.png'
+    image: '/sitting-man.webp'
   },
   {
     id: 2,
     title: 'Connect',
     description:
       'Message breeders directly to ask questions about health, temperament, and care. Schedule visits or video calls to meet your future companion.',
-    image: '/sitting-man.png'
+    image: '/sitting-man.webp'
   },
   {
     id: 3,
     title: 'Welcome',
     description:
       'Complete your purchase with secure payment processing, health guarantees, and full buyer protection. Welcome your new family member home!',
-    image: '/sitting-man.png'
+    image: '/sitting-man.webp'
   }
 ];
 

@@ -46,7 +46,14 @@ const Footer = () => {
           {/* Brand Column - Wider for logo and description */}
           <div className="md:col-span-4 lg:col-span-4  flex flex-col sm:items-start items-center text-center sm:text-left ">
             <Link href="/">
-              <Image src="/logo-1.svg" alt="Pets&Plus" width={242} height={60} className="w-auto" priority />
+              <Image
+                src="/logo-1.svg"
+                alt="Pets&Plus"
+                width={242}
+                height={60}
+                className="w-[max(242px,12.6041666667vw)] h-[max(60px,3.125vw)]"
+                priority
+              />
             </Link>
 
             <div className="mb-5">
@@ -58,10 +65,16 @@ const Footer = () => {
             </div>
 
             {/* Social Icons with animated hover circles */}
-            <div className="flex gap-5">
+            <div className="flex gap-[max(20px,1.0416666667vw)]">
               {SOCIAL_LINKS.map(social => (
                 <Link key={social.label} href={social.href} aria-label={social.label}>
-                  <Image src={social.icon} alt={social.label} width={20} height={20} />
+                  <Image
+                    src={social.icon}
+                    alt={social.label}
+                    width={20}
+                    height={20}
+                    className="w-[max(20px,1.0416666667vw)] h-[max(20px,1.0416666667vw)]"
+                  />
                 </Link>
               ))}
             </div>

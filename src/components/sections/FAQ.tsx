@@ -101,7 +101,7 @@ const FAQ = () => {
                 }`}
               >
                 <div className="min-h-0 overflow-hidden">
-                  <div className=" px-[max(40px,2.7083333333vw)] pb-[max(20px,2.0833333333vw)] text-[#3A3A3A] md:pb-[max(40px,2.7083333333vw)] text-[max(14px,1.0416666667vw)] leading-relaxed">
+                  <div className=" px-[max(40px,2.7083333333vw)] pb-[max(20px,2.0833333333vw)] text-[#3A3A3A] md:pb-[max(40px,2.7083333333vw)] text-[max(16px,1.0416666667vw)] leading-relaxed">
                     {faq.answer}
                   </div>
                 </div>
