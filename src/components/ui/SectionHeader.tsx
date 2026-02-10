@@ -1,5 +1,7 @@
 'use client';
 
+import { twMerge } from 'tailwind-merge';
+
 interface SectionHeaderProps {
   title: string;
   description: string;
@@ -28,11 +30,9 @@ export default function SectionHeader({
   containerClassName = ''
 }: SectionHeaderProps) {
   return (
-    <div
-      className={`flex flex-col items-center text-center heading-bottom-padding mb-12! lg:mb-18! ${containerClassName}`}
-    >
-      <h2 className={`${headingClassName} heading-bottom-padding font-extrabold tracking-tight`}>{title}</h2>
-      <p className={`${descriptionClassName}`}>{description}</p>
+    <div className={twMerge('flex flex-col items-center text-center  mb-15 lg:mb-18', containerClassName)}>
+      <h2 className={twMerge('heading-bottom-padding font-extrabold tracking-tight', headingClassName)}>{title}</h2>
+      <p className={twMerge('text-body-large', descriptionClassName)}>{description}</p>
     </div>
   );
 }

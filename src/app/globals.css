@@ -61,7 +61,7 @@ body {
 
 /* Heading Spacing */
 .heading-bottom-padding {
-  margin-bottom: max(1rem, 1.6vw);
+  padding-bottom: max(12px, 1.6vw);
 }
 .hero-heading-bottom-padding {
   margin-bottom: max(4rem, 6.5vw);
@@ -110,7 +110,7 @@ body {
 
 .text-body-medium {
   @apply font-jakarta font-light;
-  font-size: max(18px, 0.938vw);
+  font-size: max(16px, 0.938vw);
   line-height: 1.5;
 }
 
@@ -145,11 +145,11 @@ body {
 }
 
 .section-title {
-  @apply font-jakarta font-bold text-[max(28px,4.16vw)] lg:leading-none leading-normal;
+  @apply font-jakarta font-bold text-[max(30px,4.16vw)] lg:leading-none leading-normal;
 }
 
 .section-title--lg {
-  @apply font-jakarta font-bold text-[max(28px,3.12vw)] lg:leading-none leading-normal;
+  @apply font-jakarta font-bold text-[max(30px,3.12vw)] lg:leading-none leading-normal;
 }
 .section-title--medium {
   @apply font-jakarta font-bold leading-normal lg:leading-none text-[max(24px,2.08vw)];

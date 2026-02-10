@@ -62,7 +62,8 @@ export default function Categories() {
           title="Browse by category"
           description="These dogs have the potential to be wonderful companions for your whole family with the right training."
           headingClassName="section-title--lg"
-          descriptionClassName="text-body-medium max-w-[max(750px,40vw)]"
+          descriptionClassName="text-body-medium max-w-[max(342px,17.81vw)] sm:max-w-[max(750px,40vw)]"
+          containerClassName="mb-[64px]"
         />
 
         {/* View all link */}
