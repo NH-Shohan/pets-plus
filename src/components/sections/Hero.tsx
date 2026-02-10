@@ -1,24 +1,21 @@
 'use client';
 
 import Button from '@/components/ui/Button';
-import SearchInput from '@/components/ui/SearchInput';
 import Image from 'next/image';
+import SearchInput from '../ui/SearchInput';
 
 export default function Hero() {
   return (
     <section className="relative w-full overflow-hidden bg-mint-faint heading-top-padding hero-heading-bottom-padding">
       <div className="main-container">
-        <div className="hidden md:flex lg:hidden py-4">
-          <SearchInput placeholder="Search" className="w-full" onSearch={query => console.log('Search:', query)} />
+        <div className="block lg:hidden pt-[13px] pb-[28px]">
+          <SearchInput placeholder="Search" className="bg-white" onSearch={query => console.log('Search:', query)} />
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Content */}
-          <div className="flex flex-col items-start">
+          <div className="flex flex-col">
             <div className="relative">
-              <h1 className="text-hero-primary">
-                <span className="block">Browse</span>
-                hundreds of listings
-              </h1>
+              <h1 className="text-hero-primary leading-[1.1] sm:leading-[0.9]">Browse hundreds of listings</h1>
             </div>
 
             <div className="flex flex-col">
@@ -45,7 +42,7 @@ export default function Hero() {
               {/* Main Image */}
               <div className="absolute inset-0 z-10">
                 <Image
-                  src="/hero-girl-background.png"
+                  src="/girl-holding-dog.avif"
                   alt="Happy pet owner"
                   fill
                   className="object-contain object-bottom"
@@ -65,7 +62,7 @@ export default function Hero() {
                   height: 'max(120px, 11vw)'
                 }}
               >
-                <Image src="/hero-rabbit.png" alt="Rabbit" fill className="object-contain" sizes="max(120px, 11vw)" />
+                <Image src="/rabbit.avif" alt="Rabbit" fill className="object-contain" sizes="max(120px, 11vw)" />
               </div>
             </div>
           </div>

@@ -1,5 +1,6 @@
 'use client';
 
+import { cn } from '@/lib/utils';
 import { Search } from 'lucide-react';
 import { useEffect, useMemo, useRef, useState, type ChangeEvent, type KeyboardEvent } from 'react';
 
@@ -91,8 +92,7 @@ export default function SearchInput({
     height: 'max(55px,2.8645833333vw)',
     paddingLeft: 'max(14px, 0.972vw)',
     paddingRight: 'max(20px, 1.0416666667vw)',
-    borderRadius: 'max(10px, 0.5208333333vw)',
-    fontSize: 'max(14px, 0.875vw)'
+    borderRadius: 'max(10px, 0.5208333333vw)'
   };
 
   const iconStyles: React.CSSProperties = {
@@ -108,14 +108,15 @@ export default function SearchInput({
 
   const suggestionStyles: React.CSSProperties = {
     padding: 'max(8px, 0.556vw) max(14px, 0.972vw)',
-    borderRadius: 'max(8px, 0.556vw)',
-    fontSize: 'max(14px, 0.875vw)'
+    borderRadius: 'max(8px, 0.556vw)'
   };
 
   return (
     <div
       ref={containerRef}
-      className={`relative w-[max(580px,30.2083333333vw)] ${showDropdown ? 'z-100' : ''} ${className}`}
+      className={`relative w-full lg:w-[max(370px,19.2708333333vw)] 2xl:w-[max(580px,30.2083333333vw)] ${
+        showDropdown ? 'z-100' : ''
+      }`}
     >
       {/* Search Input */}
       <div className="relative flex items-center">
@@ -127,7 +128,10 @@ export default function SearchInput({
           onFocus={() => setIsFocused(true)}
           onKeyDown={handleKeyDown}
           placeholder={placeholder}
-          className="w-full lg:w-[max(370px,19.2708333333vw)] 2xl:w-[max(580px,30.2083333333vw)] bg-background-light border border-border text-body-medium font-semibold! placeholder:text-light focus:outline-none transition-all duration-200"
+          className={cn(
+            'w-full bg-background-light border border-border text-body-medium font-semibold! placeholder:text-light focus:outline-none transition-all duration-200',
+            className
+          )}
           style={inputStyles}
         />
         <Search strokeWidth={1.5} className="absolute text-[#98A2B3] pointer-events-none" style={iconStyles} />

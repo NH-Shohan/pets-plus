@@ -79,8 +79,7 @@ const FAQ = () => {
                 <span
                   className="card-title-normal transition-colors duration-300"
                   style={{
-                    color: openIndex === index ? 'var(--color-foreground)' : 'var(--color-foreground)',
-                    opacity: openIndex === index ? 1 : 0.8
+                    color: openIndex === index ? 'var(--color-foreground)' : 'var(--color-foreground)'
                   }}
                 >
                   {faq.question}
