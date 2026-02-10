@@ -89,7 +89,7 @@ const FAQ = () => {
                   <ChevronDown
                     size={24}
                     style={{
-                      color: openIndex === index ? 'var(--color-foreground)' : 'var(--color-light)'
+                      color: openIndex === index ? 'var(--color-foreground)' : '#DDDDDD'
                     }}
                   />
                 </div>
