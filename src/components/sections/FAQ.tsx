@@ -4,13 +4,6 @@ import { ChevronDown } from 'lucide-react';
 import { useState } from 'react';
 import SectionHeader from '../ui/SectionHeader';
 
-/* 
-  FAQ Section
-  - Interactive accordion component
-  - Clean, minimalist aesthetic with subtle shadows and borders
-  - No scroll animation so content is static when you reach it
-*/
-
 const faqData = [
   {
     question: 'Do you sell the animals directly?',

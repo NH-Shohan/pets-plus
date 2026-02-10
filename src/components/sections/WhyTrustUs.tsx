@@ -7,24 +7,24 @@ const features = [
     title: 'Verified Breeders',
     description: 'Every breeder undergoes thorough background checks and certification',
     icon: '/check.svg',
-    width: 40,
-    height: 40
+    width: 'max(40px,2.083vw)',
+    height: 'max(40px,2.083vw)'
   },
   {
     id: 2,
     title: 'Secure Messaging',
     description: 'Strict breeding standards ensure healthy, well-cared-for animals',
     icon: '/shield.svg',
-    width: 36,
-    height: 36
+    width: 'max(40px,1.875vw)',
+    height: 'max(40px,1.875vw)'
   },
   {
     id: 3,
     title: 'Reviewed & Rated',
     description: 'Expert team available around the clock to assist buyers and breeders.',
     icon: '/people.svg',
-    width: 48,
-    height: 48
+    width: 'max(40px,2.5vw)',
+    height: 'max(40px,2.5vw)'
   }
 ];
 
@@ -45,14 +45,20 @@ export default function WhyTrustUs() {
             >
               {/* Icon */}
               <div className="mb-4">
-                <Image src={feature.icon} alt={feature.title} width={feature.width} height={feature.height} />
+                <Image
+                  src={feature.icon}
+                  alt={feature.title}
+                  width={40}
+                  height={40}
+                  className={`w-[${feature.width}] h-[${feature.height}]`}
+                />
               </div>
 
               {/* Title */}
               <h3 className="card-title-medium text-primary mb-3">{feature.title}</h3>
 
               {/* Description */}
-              <p className="text-body-medium max-w-[470px] w-full">{feature.description}</p>
+              <p className="text-body-medium max-w-[max(470px,18vw)] w-full">{feature.description}</p>
             </div>
           ))}
         </div>
