@@ -50,7 +50,7 @@ const Footer = () => {
             </Link>
 
             <div className="mb-5">
-              <p className="text-paragraph text-body-small sm:max-w-[max(335px,18vw)] mt-4">
+              <p className="text-paragraph text-body-small leading-[1.8]! sm:max-w-[max(335px,18vw)] mt-4">
                 Connecting loving families with verified breeders since 2020.
               </p>
 
