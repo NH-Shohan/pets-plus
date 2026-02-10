@@ -39,11 +39,32 @@ export default function Hero() {
                 height: 'max(350px, 37vw)'
               }}
             >
-              {/* Main Image */}
-              <div className="absolute inset-0 z-10">
+              {/* Girl Background SVG - positioned slightly right, sized proportionally */}
+              <div
+                className="absolute"
+                style={{
+                  bottom: '-3.5%',
+                  right: '-0.6%',
+                  width: '82%',
+                  height: '92%'
+                }}
+              >
+                <Image
+                  src="/girl-background.svg"
+                  alt=""
+                  fill
+                  className="object-contain"
+                  sizes="max(280px, 30vw)"
+                  priority
+                  aria-hidden="true"
+                />
+              </div>
+
+              {/* Girl Holding Dog Photo - fills the container */}
+              <div className="absolute inset-0 z-40">
                 <Image
                   src="/girl-holding-dog.avif"
-                  alt="Happy pet owner"
+                  alt="Happy pet owner holding a dog"
                   fill
                   className="object-contain object-bottom"
                   sizes="max(350px, 37vw)"
@@ -51,18 +72,44 @@ export default function Hero() {
                 />
               </div>
 
-              {/* Floating Rabbit - Fixed position with vw-based sizing */}
+              {/* Floating Rabbit with background - bottom right corner */}
               <div
-                className="absolute z-20 overflow-hidden"
+                className="absolute"
                 style={{
-                  bottom: 0,
-                  right: 0,
-                  transform: 'translateX(20%)',
-                  width: 'max(120px, 11vw)',
-                  height: 'max(120px, 11vw)'
+                  bottom: '0%',
+                  right: '-7%',
+                  width: '30%',
+                  height: '30%'
                 }}
               >
-                <Image src="/rabbit.avif" alt="Rabbit" fill className="object-contain" sizes="max(120px, 11vw)" />
+                {/* Rabbit Background */}
+                <div
+                  className="absolute"
+                  style={{
+                    bottom: '3%',
+                    right: '4%',
+                    width: '90%',
+                    height: '80%'
+                  }}
+                >
+                  <Image
+                    src="/rabbit-background.svg"
+                    alt=""
+                    fill
+                    className="object-contain"
+                    aria-hidden="true"
+                    priority
+                  />
+                </div>
+                {/* Rabbit Photo */}
+                <Image
+                  src="/rabbit.avif"
+                  alt="Cute rabbit"
+                  fill
+                  className="object-contain object-bottom"
+                  sizes="max(80px, 10vw)"
+                  priority
+                />
               </div>
             </div>
           </div>

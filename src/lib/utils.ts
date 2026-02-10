@@ -11,6 +11,7 @@ const customTwMerge = extendTailwindMerge({
         'text-body-large-vietnam',
         'text-body-medium',
         'text-body-medium-vietnam',
+        'text-body-medium-vietnam-sm',
         'text-body-base',
         'text-body-small',
         'text-body-small-vietnam',

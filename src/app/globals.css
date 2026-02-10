@@ -121,6 +121,12 @@ body {
   line-height: 1.5;
 }
 
+.text-body-medium-vietnam-sm {
+  @apply font-vietnam font-light;
+  font-size: max(14px, 0.9375vw);
+  line-height: 1.5;
+}
+
 .text-body-base {
   @apply font-jakarta;
   font-size: max(16px, 0.833vw);
