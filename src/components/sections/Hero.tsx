@@ -8,7 +8,7 @@ export default function Hero() {
   return (
     <section className="relative w-full overflow-hidden bg-mint-faint heading-top-padding hero-heading-bottom-padding">
       <div className="main-container">
-        <div className="block lg:hidden pt-[13px] pb-[28px]">
+        <div className="block min-[1380px]:hidden pt-[13px] pb-[28px]">
           <SearchInput placeholder="Search" className="bg-white" onSearch={query => console.log('Search:', query)} />
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">

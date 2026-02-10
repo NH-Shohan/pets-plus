@@ -114,7 +114,7 @@ export default function SearchInput({
   return (
     <div
       ref={containerRef}
-      className={`relative w-full lg:w-[max(370px,19.2708333333vw)] 2xl:w-[max(580px,30.2083333333vw)] ${
+      className={`relative w-full min-[1380px]:w-[max(370px,19.2708333333vw)] 2xl:w-[max(580px,30.2083333333vw)] ${
         showDropdown ? 'z-100' : ''
       }`}
     >

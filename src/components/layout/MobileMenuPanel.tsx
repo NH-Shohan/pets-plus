@@ -69,7 +69,7 @@ export default function MobileMenuPanel({ isOpen, onClose, browseItems, shopItem
           animate={{ x: 0 }}
           exit={{ x: '100%' }}
           transition={SLIDE_TRANSITION}
-          className="lg:hidden fixed top-[80px] right-0 bottom-0 w-full max-w-md z-50 bg-surface border-l border-border shadow-2xl"
+          className="min-[1380px]:hidden fixed top-[80px] right-0 bottom-0 w-full max-w-md z-50 bg-surface border-l border-border shadow-2xl"
         >
           <div className="px-6 py-8 h-full overflow-y-auto flex flex-col">
             <div className="flex-1">

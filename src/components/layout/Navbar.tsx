@@ -66,7 +66,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 w-full bg-surface border-b border-border">
       <nav className="main-container py-[max(20px,1.0416666667vw)]">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-[2.6041666667vw]">
+          <div className="flex items-center gap-[2vw]">
             {/* Logo */}
             <Link href="/" className="shrink-0">
               <Image
@@ -80,13 +80,13 @@ export default function Navbar() {
             </Link>
 
             {/* Desktop Search - Centered */}
-            <div className="hidden lg:flex justify-center">
+            <div className="hidden min-[1380px]:flex justify-center">
               <SearchInput className="w-full" onSearch={query => console.log('Search:', query)} />
             </div>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-[2.6041666667vw]">
+          <div className="hidden min-[1380px]:flex items-center gap-[2.6041666667vw]">
             <div className="flex items-center gap-[max(28px,1.4583333333vw)]">
               {/* Browse Dropdown */}
               <NavDropdown
@@ -152,7 +152,7 @@ export default function Navbar() {
           <button
             type="button"
             onClick={toggleMobileMenu}
-            className="lg:hidden transition-all duration-200 flex flex-col gap-[10px] items-start justify-center"
+            className="min-[1380px]:hidden transition-all duration-200 flex flex-col gap-[10px] items-start justify-center"
             aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={isMobileMenuOpen}
           >
@@ -183,7 +183,7 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="lg:hidden fixed inset-0 top-20 z-40 bg-black/50 h-screen"
+            className="min-[1380px]:hidden fixed inset-0 top-20 z-40 bg-black/50 h-screen"
             onClick={toggleMobileMenu}
           />
         )}
