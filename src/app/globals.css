@@ -37,6 +37,7 @@ body {
   background-color: var(--color-background);
   color: var(--color-foreground);
   font-family: var(--font-plus-jakarta-sans), sans-serif;
+  overflow-x: hidden;
 }
 
 /* Typography System - Semantic Classes */
@@ -152,7 +153,7 @@ body {
   @apply font-jakarta font-bold text-[max(30px,3.12vw)] lg:leading-none leading-normal;
 }
 .section-title--medium {
-  @apply font-jakarta font-bold leading-normal lg:leading-none text-[max(24px,2.08vw)];
+  @apply font-jakarta font-bold leading-normal lg:leading-none text-[max(26px,2.08vw)];
 }
 
 .card-title-xl {
@@ -166,6 +167,11 @@ body {
 }
 
 .card-title-medium {
+  @apply font-jakarta font-bold leading-normal;
+  font-size: max(20px, 1.35vw);
+}
+
+.card-title-medium--no-res {
   @apply font-jakarta font-bold leading-normal;
   font-size: max(20px, 1.35vw);
 }

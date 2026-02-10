@@ -55,6 +55,8 @@ const FAQ = () => {
         <SectionHeader
           title="Frequently asked questions"
           description="Whether you're browsing or selling, we've made it easy."
+          descriptionClassName="sm:block hidden "
+          containerClassName="mb-8 sm:mb-15 lg:mb-18"
         />
 
         <div className="space-y-4">
@@ -74,7 +76,7 @@ const FAQ = () => {
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className={`w-full flex items-center justify-between p-[20px] md:p-[40px] text-left outline-none cursor-pointer transition-[padding] duration-300 ease-out ${openIndex === index ? 'pb-5!' : ''}`}
+                className={`w-full flex items-center justify-between py-[20px] gap-x-2 px-[40px] md:p-[40px] text-left outline-none cursor-pointer transition-[padding] duration-300 ease-out ${openIndex === index ? 'pb-[10px] sm:pb-5!' : ''}`}
               >
                 <span
                   className="card-title-normal transition-colors duration-300"
@@ -100,7 +102,7 @@ const FAQ = () => {
                 }`}
               >
                 <div className="min-h-0 overflow-hidden">
-                  <div className="px-[20px] md:px-[40px] pb-[20px] text-[#3A3A3A] md:pb-[40px] text-body-large leading-relaxed md:text-lg">
+                  <div className=" px-[40px] pb-[20px] text-[#3A3A3A] md:pb-[40px] text-body-large leading-relaxed md:text-lg">
                     {faq.answer}
                   </div>
                 </div>

@@ -1,5 +1,5 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image';
+import Link from 'next/link';
 
 /* 
   BreederCTA Section
@@ -20,24 +20,21 @@ const BreederCTA = () => {
               alt="Breeder illustration"
               width={140}
               height={200}
-              className="object-contain w-[7.2916666667vw]"
+              className="object-contain w-[max(122px,7.29vw)]"
             />
           </div>
 
           {/* Content - Right side */}
-          <div className="flex-1 space-y-5 text-center md:text-left">
-            <h2 className="section-title--medium">
-              Are you a responsible breeder?
-            </h2>
+          <div className="flex-1 space-y-5 text-left">
+            <h2 className="section-title--medium">Are you a responsible breeder?</h2>
             <p className="text-body-large">
-              We&apos;d love to invite you to join our community of trusted
-              breeders. We only list screened breeders and help connect you
-              directly with educated, serious buyers.
+              We&apos;d love to invite you to join our community of trusted breeders. We only list screened breeders and
+              help connect you directly with educated, serious buyers.
             </p>
             <div>
               <Link
                 href="/"
-                className="text-body-large font-bold underline underline-offset-8 decoration-2 hover:text-primary transition-colors"
+                className="card-title-normal font-bold underline underline-offset-8 decoration-2 hover:text-primary transition-colors"
               >
                 Learn more
               </Link>
