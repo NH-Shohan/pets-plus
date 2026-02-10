@@ -143,7 +143,9 @@ export default function Navbar() {
             </div>
 
             {/* Sign Up Button */}
-            <Button variant="primary">Sign up</Button>
+            <Button variant="primary" className="whitespace-nowrap!">
+              Sign up
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
