@@ -58,13 +58,14 @@ export default function NavDropdown({ label, items, className = '' }: NavDropdow
       >
         <span className="text-body-large font-bold">{label}</span>
         <ChevronDown
-          className={`w-[max(18px, 0.9375vw)] h-[max(18px, 0.9375vw)] mt-1 transition-transform duration-200 text-light ${isOpen ? 'rotate-180' : ''}`}
+          stroke-width={2.3}
+          className={`w-[max(18px,0.9375vw)] h-[max(18px,0.9375vw)] mt-1 transition-transform duration-200 text-light ${isOpen ? 'rotate-180' : ''}`}
         />
       </button>
 
       {/* Dropdown Menu */}
       {isOpen && (
-        <div className="absolute top-full left-0 mt-3 min-w-[260px] bg-surface border border-border rounded-[20px] z-50 overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200">
+        <div className="absolute top-full left-0 mt-3 min-w-[260px] bg-surface border border-border rounded-[20px] z-50 overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200 shadow-[0_0_30.3px_0_#E2E3F240]">
           <ul className="p-[10px]">
             {items.map(item => (
               <li key={item.id}>

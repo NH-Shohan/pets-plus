@@ -4,7 +4,6 @@ import Button from '@/components/ui/Button';
 import NavDropdown, { type DropdownItem } from '@/components/ui/NavDropdown';
 import SearchInput from '@/components/ui/SearchInput';
 import { defaultStagger, defaultTransition, fadeUp } from '@/lib/animations';
-import { MoreHorizontal } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -45,9 +44,9 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-surface border-b border-border">
-      <nav className="main-container">
-        <div className="flex items-center justify-between lg:gap-5 xl:gap-12 py-4">
-          <div className="flex items-center gap-10 2xl:gap-20 flex-1">
+      <nav className="main-container py-[max(20px,1.0416666667vw)]">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-[max(50px,2.6041666667vw)]">
             {/* Logo */}
             <Link href="/" className="shrink-0">
               <Image
@@ -56,40 +55,40 @@ export default function Navbar() {
                 width={242}
                 height={60}
                 style={{
-                  width: 'max(180px, 14vw)',
-                  height: 'auto'
+                  width: 'max(180px, 12.6041666667vw)',
+                  height: 'max(60px, 3.125vw)'
                 }}
                 priority
               />
             </Link>
 
             {/* Desktop Search - Centered */}
-            <div className="hidden lg:flex flex-1 justify-center max-w-xl">
+            <div className="hidden lg:flex justify-center">
               <SearchInput className="w-full" onSearch={query => console.log('Search:', query)} />
             </div>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-4 xl:gap-8">
-            {/* Browse Dropdown */}
-            <NavDropdown label="Browse" items={browseItems} />
+          <div className="hidden lg:flex items-center gap-[max(50px,2.6041666667vw)]">
+            <div className="flex items-center gap-[max(28px,1.4583333333vw)]">
+              {/* Browse Dropdown */}
+              <NavDropdown label="Browse" items={browseItems} />
 
-            {/* Shop Link */}
-            <NavDropdown label="Shop" items={shopItems} />
+              {/* Shop Link */}
+              <NavDropdown label="Shop" items={shopItems} />
+            </div>
 
             {/* Three Dots Menu */}
             <button
               type="button"
-              className="p-3 hover:bg-background-light rounded-full transition-all duration-200 cursor-pointer"
+              className="w-[max(50px,2.6041666667vw)] h-[max(50px,2.6041666667vw)]  hover:bg-background-light rounded-full transition-all duration-200 cursor-pointer flex items-center justify-center relative"
               aria-label="More options"
             >
-              <MoreHorizontal className="w-[max(20px, 1.0416666667vw)] h-[max(20px, 1.0416666667vw)]" />
+              <Image src="/dots.svg" alt="More options" fill className="object-contain p-[max(12px,0.625vw)]" />
             </button>
 
             {/* Sign Up Button */}
-            <Button variant="primary" className="">
-              Sign up
-            </Button>
+            <Button variant="primary">Sign up</Button>
           </div>
 
           {/* Mobile Menu Button */}
