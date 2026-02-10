@@ -79,7 +79,7 @@ export default function NavDropdown({
       >
         <span className="text-body-large font-bold">{label}</span>
         <ChevronDown
-          stroke-width={2.3}
+          strokeWidth={2.3}
           className={`w-[max(18px,0.9375vw)] h-[max(18px,0.9375vw)] mt-1 transition-transform duration-200 text-light ${isOpen ? 'rotate-180' : ''}`}
         />
       </button>
