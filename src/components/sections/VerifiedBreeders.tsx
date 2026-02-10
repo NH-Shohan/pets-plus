@@ -46,7 +46,7 @@ export default function VerifiedBreeders() {
             <SectionHeader
               title="Every member is carefully screened before joining."
               description="Every seller on our platform is carefully screened to help ensure authenticity, transparency, and responsible practices."
-              headingClassName="section-title text-foreground"
+              headingClassName="section-title text-foreground -ml-[0.24vw]"
               containerClassName="lg:items-start lg:text-left margin-bottom-lg"
             />
             <Button variant="primary" size="default">

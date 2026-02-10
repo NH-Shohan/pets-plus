@@ -163,7 +163,7 @@ body {
 
 .card-title-large {
   @apply font-jakarta font-bold leading-normal;
-  font-size: max(20px, 1.56vw);
+  font-size: max(20px, 1.5625vw);
 }
 
 .card-title-medium {

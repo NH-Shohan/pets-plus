@@ -1,18 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-/* 
-  BreederCTA Section
-  - Premium CTA card for breeders
-  - Matches the design reference with a soft mint background
-  - Fully responsive layout
-*/
-
 const BreederCTA = () => {
   return (
     <section className="bg-white section-padding-bottom font-jakarta">
       <div className="main-container">
-        <div className="bg-[#F3FAF8] rounded-[20px] p-6 sm:p-10 lg:p-16 flex flex-col md:flex-row items-center gap-8 md:gap-12  ">
+        <div className="bg-[#F3FAF8] rounded-[max(20px,1.0416666667vw)] p-[max(40px,3.125vw)] flex flex-col md:flex-row items-center gap-[max(30px,2.8125vw)]">
           {/* Illustration - Left side */}
           <div className="h-full relative">
             <Image
@@ -25,7 +18,7 @@ const BreederCTA = () => {
           </div>
 
           {/* Content - Right side */}
-          <div className="flex-1 space-y-5 text-left">
+          <div className="flex-1 space-y-[max(20px,1.0416666667vw)] text-left">
             <h2 className="section-title--medium">Are you a responsible breeder?</h2>
             <p className="text-body-large">
               We&apos;d love to invite you to join our community of trusted breeders. We only list screened breeders and
