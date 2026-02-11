@@ -16,7 +16,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
     const variantStyles = {
       primary: 'bg-primary text-white hover:bg-primary-light',
-      secondary: 'bg-surface text-foreground border border-border hover:bg-mint-light',
+      secondary: 'bg-surface text-foreground border border-[#E2E4E9] hover:bg-mint-light rounded-[max(10px,0.52vw)]',
       ghost: 'bg-transparent text-foreground hover:bg-mint-light'
     };
 

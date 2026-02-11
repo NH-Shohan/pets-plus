@@ -1,5 +1,3 @@
-import Footer from '@/components/layout/Footer';
-import Navbar from '@/components/layout/Navbar';
 import type { Metadata } from 'next';
 import { Be_Vietnam_Pro, Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
@@ -31,9 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${plusJakartaSans.variable} ${beVietnamPro.variable} antialiased text-foreground`}>
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+        {children}
       </body>
     </html>
   );
